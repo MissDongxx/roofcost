@@ -1,6 +1,7 @@
 import bundleAnalyzer from '@next/bundle-analyzer';
 import { createMDX } from 'fumadocs-mdx/next';
 import createNextIntlPlugin from 'next-intl/plugin';
+import withPWA from 'next-pwa';
 
 const withMDX = createMDX();
 
@@ -10,6 +11,14 @@ const withBundleAnalyzer = bundleAnalyzer({
 
 const withNextIntl = createNextIntlPlugin({
   requestConfig: './src/core/i18n/request.ts',
+});
+
+// PWA configuration
+const withPWAConfig = withPWA({
+  dest: 'public',
+  register: true,
+  skipWaiting: true,
+  disable: process.env.NODE_ENV === 'development',
 });
 
 /** @type {import('next').NextConfig} */
@@ -59,4 +68,4 @@ const nextConfig = {
   reactCompiler: true,
 };
 
-export default withBundleAnalyzer(withNextIntl(withMDX(nextConfig)));
+export default withBundleAnalyzer(withNextIntl(withMDX(withPWAConfig(nextConfig))));
