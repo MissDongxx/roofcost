@@ -4,6 +4,7 @@ import {
   GeminiProvider,
   KieProvider,
   ReplicateProvider,
+  ZhipuProvider,
 } from '@/extensions/ai';
 import { Configs, getAllConfigs } from '@/shared/models/config';
 
@@ -44,6 +45,15 @@ export function getAIManagerWithConfigs(configs: Configs) {
     aiManager.addProvider(
       new GeminiProvider({
         apiKey: configs.gemini_api_key,
+      })
+    );
+  }
+
+  if (configs.zhipu_api_key) {
+    aiManager.addProvider(
+      new ZhipuProvider({
+        apiKey: configs.zhipu_api_key,
+        apiBase: configs.zhipu_api_base || 'https://open.bigmodel.cn/api/paas/v4',
       })
     );
   }

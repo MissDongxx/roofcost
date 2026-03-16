@@ -1,0 +1,182 @@
+[
+  {
+    "id": "missing_shingles",
+    "name": "Missing Shingles",
+    "xactimateCode": "RFG SSHNG",
+    "lineItem": "Remove and replace shingles",
+    "conditions": {
+      "damage": ["missing", "absent", "gone"],
+      "component": ["shingle", "shingles", "roof_surface", "asphalt_shingle", "composition_shingle"]
+    },
+    "priority": "high",
+    "category": "roof_surface"
+  },
+  {
+    "id": "damaged_shingles",
+    "name": "Damaged Shingles",
+    "xactimateCode": "RFG DSDSH",
+    "lineItem": "Repair damaged shingles",
+    "conditions": {
+      "damage": ["cracked", "broken", "curled", "cupped", "warped", "split", "torn"],
+      "component": ["shingle", "shingles", "roof_surface"]
+    },
+    "priority": "medium",
+    "category": "roof_surface"
+  },
+  {
+    "id": "granule_loss",
+    "name": "Granule Loss",
+    "xactimateCode": "RFG GRNLS",
+    "lineItem": "Replace shingles with granule loss",
+    "conditions": {
+      "damage": ["granule_loss", "bare_spots", "exposed_fiberglass", "wearing_thin"],
+      "component": ["shingle", "shingles", "roof_surface"]
+    },
+    "priority": "medium",
+    "category": "roof_surface"
+  },
+  {
+    "id": "flashing_damage_chimney",
+    "name": "Chimney Flashing Damage",
+    "xactimateCode": "RFG FLSHCH",
+    "lineItem": "Repair chimney flashing",
+    "conditions": {
+      "damage": ["rusted", "corroded", "cracked", "separated", "loose", "lifted", "deteriorated"],
+      "component": ["chimney_flashing", "flashing_chimney", "chimney_counter_flashing"]
+    },
+    "priority": "high",
+    "category": "flashing"
+  },
+  {
+    "id": "flashing_damage_valley",
+    "name": "Valley Flashing Damage",
+    "xactimateCode": "RFG FLSHVL",
+    "lineItem": "Repair valley flashing",
+    "conditions": {
+      "damage": ["rusted", "corroded", "cracked", "separated", "loose", "deteriorated", "open_seam"],
+      "component": ["valley_flashing", "flashing_valley", "valley"]
+    },
+    "priority": "high",
+    "category": "flashing"
+  },
+  {
+    "id": "flashing_damage_wall",
+    "name": "Wall/Sidewall Flashing Damage",
+    "xactimateCode": "RFG FLSHSW",
+    "lineItem": "Repair wall/sidewall flashing",
+    "conditions": {
+      "damage": ["rusted", "corroded", "cracked", "separated", "loose", "lifted", "missing_caulking"],
+      "component": ["wall_flashing", "sidewall_flashing", "step_flashing", "wall_transition"]
+    },
+    "priority": "high",
+    "category": "flashing"
+  },
+  {
+    "id": "flashing_damage_vent",
+    "name": "Vent Pipe Flashing Damage",
+    "xactimateCode": "RFG FLSHVP",
+    "lineItem": "Replace vent pipe flashing",
+    "conditions": {
+      "damage": ["rusted", "cracked", "split", "separated", "deteriorated", "broken", "loose"],
+      "component": ["vent_flashing", "vent_pipe_flashing", "pipe_boot", "plumbing_vent_flashings"]
+    },
+    "priority": "high",
+    "category": "flashing"
+  },
+  {
+    "id": "roof_penetration_damage",
+    "name": "Roof Penetration Damage",
+    "xactimateCode": "RFG PEN",
+    "lineItem": "Repair roof penetrations",
+    "conditions": {
+      "damage": ["leaking", "separated", "unsealed", "cracked", "deteriorated", "gaps"],
+      "component": ["skylight", "roof_window", "vent_stack", "duct_boot", "penetration_flashings"]
+    },
+    "priority": "high",
+    "category": "penetrations"
+  },
+  {
+    "id": "gutter_damage",
+    "name": "Gutter Damage",
+    "xactimateCode": "RFG GUT",
+    "lineItem": "Repair/replace gutters",
+    "conditions": {
+      "damage": ["dented", "sagging", "pulling_away", "separated", "clogged", "overflowing", "broken", "cracked", "rusted"],
+      "component": ["gutter", "gutters", "gutter_system", "downspout", "downspouts"]
+    },
+    "priority": "medium",
+    "category": "drainage"
+  },
+  {
+    "id": "fascia_damage",
+    "name": "Fascia Damage",
+    "xactimateCode": "RFG FSC",
+    "lineItem": "Repair/replace fascia",
+    "conditions": {
+      "damage": ["rotted", "warped", "cracked", "split", "water_damage", "deteriorated", "peeling_paint"],
+      "component": ["fascia", "fascia_board", "fascia_boards", "roof_edge_board"]
+    },
+    "priority": "medium",
+    "category": "trim"
+  },
+  {
+    "id": "soffit_damage",
+    "name": "Soffit Damage",
+    "xactimateCode": "RFG SFT",
+    "lineItem": "Repair/replace soffit",
+    "conditions": {
+      "damage": ["rotted", "warped", "sagging", "water_damage", "pest_damage", "vent_blocked", "deteriorated"],
+      "component": ["soffit", "soffits", "eave_soffit", "overhang_soffit"]
+    },
+    "priority": "medium",
+    "category": "trim"
+  },
+  {
+    "id": "roof_deck_damage",
+    "name": "Roof Deck Damage",
+    "xactimateCode": "RFG DCK",
+    "lineItem": "Replace damaged roof deck",
+    "conditions": {
+      "damage": ["rotted", "soft", "sagging", "water_damage", "delaminated", "moldy", "weakened"],
+      "component": ["roof_deck", "decking", "sheathing", "plywood_deck", "osb_deck", "substrate"]
+    },
+    "priority": "critical",
+    "category": "structure"
+  },
+  {
+    "id": "ridge_cap_damage",
+    "name": "Ridge Cap Damage",
+    "xactimateCode": "RFG RDG",
+    "lineItem": "Replace ridge cap shingles",
+    "conditions": {
+      "damage": ["missing", "cracked", "broken", "loose", "blown_off", "deteriorated"],
+      "component": ["ridge_cap", "ridge_caps", "ridge_vent", "roof_ridge", "hip_ridge"]
+    },
+    "priority": "medium",
+    "category": "roof_surface"
+  },
+  {
+    "id": "hail_damage",
+    "name": "Hail Damage",
+    "xactimateCode": "RFG HAIL",
+    "lineItem": "Repair hail damage",
+    "conditions": {
+      "damage": ["hail_hits", "hail_bruises", "granule_dislodged", "indentations", "pockmarks"],
+      "component": ["shingle", "shingles", "roof_surface", "metal_flashing", "vent"]
+    },
+    "priority": "high",
+    "category": "weather_damage"
+  },
+  {
+    "id": "tree_limb_damage",
+    "name": "Tree Limb Damage",
+    "xactimateCode": "RFG TRE",
+    "lineItem": "Repair tree damage to roof",
+    "conditions": {
+      "damage": ["punctured", "scratched", "cracked", "broken", "limb_impression", "branch_damage"],
+      "component": ["shingle", "shingles", "roof_surface", "flashing", "vent", "deck"]
+    },
+    "priority": "high",
+    "category": "physical_damage"
+  }
+]

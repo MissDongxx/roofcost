@@ -1,0 +1,254 @@
+[
+  {
+    "code": "RFG SSHNG",
+    "category": "roof_surface",
+    "description": "Remove and replace asphalt shingles - per SF",
+    "unit": "SF",
+    "material_cost": 1.85,
+    "labor_cost": 2.50,
+    "notes": "3-tab architectural shingles"
+  },
+  {
+    "code": "RFG DSDSH",
+    "category": "roof_surface",
+    "description": "Repair damaged asphalt shingles - each",
+    "unit": "EA",
+    "material_cost": 15.00,
+    "labor_cost": 25.00,
+    "notes": "Individual shingle replacement"
+  },
+  {
+    "code": "RFG GRNLS",
+    "category": "roof_surface",
+    "description": "Replace shingles with granule loss - per SF",
+    "unit": "SF",
+    "material_cost": 1.85,
+    "labor_cost": 2.50,
+    "notes": "When more than 30% affected"
+  },
+  {
+    "code": "RFG FLSHCH",
+    "category": "flashing",
+    "description": "Remove and replace chimney flashing - per LF",
+    "unit": "LF",
+    "material_cost": 12.00,
+    "labor_cost": 18.00,
+    "notes": "Includes counter flashing"
+  },
+  {
+    "code": "RFG FLSHVL",
+    "category": "flashing",
+    "description": "Install valley flashing - per LF",
+    "unit": "LF",
+    "material_cost": 8.50,
+    "labor_cost": 12.00,
+    "notes": "W-type valley metal, 26ga"
+  },
+  {
+    "code": "RFG FLSHSW",
+    "category": "flashing",
+    "description": "Install step flashing at wall - per LF",
+    "unit": "LF",
+    "material_cost": 10.00,
+    "labor_cost": 15.00,
+    "notes": "4x4 step flashing pieces"
+  },
+  {
+    "code": "RFG FLSHVP",
+    "category": "flashing",
+    "description": "Replace vent pipe flashing - each",
+    "unit": "EA",
+    "material_cost": 25.00,
+    "labor_cost": 35.00,
+    "notes": "Includes boot and flashing"
+  },
+  {
+    "code": "RFG PEN",
+    "category": "penetrations",
+    "description": "Reflash roof penetrations - each",
+    "unit": "EA",
+    "material_cost": 35.00,
+    "labor_cost": 50.00,
+    "notes": "Per penetration point"
+  },
+  {
+    "code": "RFG GUT",
+    "category": "drainage",
+    "description": "Install seamless aluminum gutters - per LF",
+    "unit": "LF",
+    "material_cost": 6.50,
+    "labor_cost": 8.00,
+    "notes": "5 or 6 K-style, includes corners"
+  },
+  {
+    "code": "RFG DWDSP",
+    "category": "drainage",
+    "description": "Install downspout - per LF",
+    "unit": "LF",
+    "material_cost": 4.00,
+    "labor_cost": 6.00,
+    "notes": "2x3 or 3x4 aluminum"
+  },
+  {
+    "code": "RFG FSC",
+    "category": "trim",
+    "description": "Replace fascia board - per LF",
+    "unit": "LF",
+    "material_cost": 5.50,
+    "labor_cost": 10.00,
+    "notes": "1x6 or 2x6 PVC or wood"
+  },
+  {
+    "code": "RFG SFT",
+    "category": "trim",
+    "description": "Replace soffit - per SF",
+    "unit": "SF",
+    "material_cost": 3.50,
+    "labor_cost": 6.00,
+    "notes": "Ventilated or solid soffit"
+  },
+  {
+    "code": "RFG DCK",
+    "category": "structure",
+    "description": "Replace roof deck sheathing - per SF",
+    "unit": "SF",
+    "material_cost": 2.25,
+    "labor_cost": 4.50,
+    "notes": "7/16 OSB or 1/2 CDX plywood"
+  },
+  {
+    "code": "RFG RDG",
+    "category": "roof_surface",
+    "description": "Install ridge cap shingles - per LF",
+    "unit": "LF",
+    "material_cost": 4.50,
+    "labor_cost": 6.00,
+    "notes": "Pre-formed ridge caps"
+  },
+  {
+    "code": "RFG HAIL",
+    "category": "weather_damage",
+    "description": "Repair hail damage - per SF",
+    "unit": "SF",
+    "material_cost": 1.85,
+    "labor_cost": 2.50,
+    "notes": "Full replacement when warranted"
+  },
+  {
+    "code": "RFG TRE",
+    "category": "physical_damage",
+    "description": "Repair tree damage to roof - per SF",
+    "unit": "SF",
+    "material_cost": 2.00,
+    "labor_cost": 3.00,
+    "notes": "Includes deck replacement if needed"
+  },
+  {
+    "code": "RFG UDL",
+    "category": "underlayment",
+    "description": "Install synthetic underlayment - per SF",
+    "unit": "SF",
+    "material_cost": 0.35,
+    "labor_cost": 0.50,
+    "notes": "Synthetic felt replacement"
+  },
+  {
+    "code": "RFG ICE",
+    "category": "underlayment",
+    "description": "Install ice and water barrier - per LF",
+    "unit": "LF",
+    "material_cost": 2.50,
+    "labor_cost": 3.50,
+    "notes": "3 feet wide at eaves and valleys"
+  },
+  {
+    "code": "RFG VLT",
+    "category": "ventilation",
+    "description": "Install roof vents - each",
+    "unit": "EA",
+    "material_cost": 45.00,
+    "labor_cost": 35.00,
+    "notes": "Ridge vent or box vents"
+  },
+  {
+    "code": "RFG INT",
+    "category": "ventilation",
+    "description": "Install intake ventilation - per LF",
+    "unit": "LF",
+    "material_cost": 4.00,
+    "labor_cost": 6.00,
+    "notes": "Eave intake or soffit vents"
+  },
+  {
+    "code": "RFG FELT",
+    "category": "underlayment",
+    "description": "Install 15# felt underlayment - per SF",
+    "unit": "SF",
+    "material_cost": 0.15,
+    "labor_cost": 0.25,
+    "notes": "Traditional felt paper"
+  },
+  {
+    "code": "RFG STRIP",
+    "category": "roof_surface",
+    "description": "Tear off existing roof - per SF",
+    "unit": "SF",
+    "material_cost": 0.25,
+    "labor_cost": 1.50,
+    "notes": "Removal and disposal"
+  },
+  {
+    "code": "RFG METCHIM",
+    "category": "chimney",
+    "description": "Install chimney cricket - each",
+    "unit": "EA",
+    "material_cost": 250.00,
+    "labor_cost": 350.00,
+    "notes": "Custom fabricated cricket"
+  },
+  {
+    "code": "RFG CRICK",
+    "category": "chimney",
+    "description": "Install chimney cricket - per SF",
+    "unit": "SF",
+    "material_cost": 5.00,
+    "labor_cost": 8.00,
+    "notes": "Small to medium size"
+  },
+  {
+    "code": "RFG COAT",
+    "category": "coatings",
+    "description": "Apply roof coating - per SF",
+    "unit": "SF",
+    "material_cost": 1.50,
+    "labor_cost": 1.00,
+    "notes": "Elastomeric coating"
+  },
+  {
+    "code": "RFG SEAL",
+    "category": "sealant",
+    "description": "Apply roof sealant - per LF",
+    "unit": "LF",
+    "material_cost": 2.00,
+    "labor_cost": 3.50,
+    "notes": "Polyurethane or silicone sealant"
+  },
+  {
+    "code": "RFG MSL",
+    "category": "accessories",
+    "description": "Install pipe flashing boot - each",
+    "unit": "EA",
+    "material_cost": 18.00,
+    "labor_cost": 25.00,
+    "notes": "Various sizes available"
+  },
+  {
+    "code": "RFG EDGE",
+    "category": "trim",
+    "description": "Install drip edge metal - per LF",
+    "unit": "LF",
+    "material_cost": 2.50,
+    "labor_cost": 4.00,
+    "notes": "L-profile metal at eaves and rakes"
+  }
+]
