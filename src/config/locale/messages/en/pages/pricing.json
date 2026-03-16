@@ -24,6 +24,10 @@
           {
             "name": "yearly",
             "title": "Annually"
+          },
+          {
+            "name": "per-report",
+            "title": "Per Report"
           }
         ],
         "items": [
@@ -58,6 +62,36 @@
             "credits": 100,
             "valid_days": 30,
             "group": "one-time"
+          },
+          {
+            "title": "Roof Inspection Report",
+            "description": "Professional roof inspection report with AI vision analysis and Xactimate scope.",
+            "features_title": "Includes",
+            "features": [
+              "1 AI-generated Inspection Report",
+              "Vision-based damage detection",
+              "Xactimate scope itemization",
+              "Photo annotation",
+              "Professional PDF export",
+              "Shareable report link"
+            ],
+            "interval": "one-time",
+            "amount": 3900,
+            "currency": "USD",
+            "price": "$39",
+            "unit": "/ report",
+            "is_featured": true,
+            "tip": "$39 per report. No subscription required.",
+            "button": {
+              "title": "Buy Report Credit",
+              "url": "/#pricing",
+              "icon": "RiFlashlightFill"
+            },
+            "product_id": "roof-report",
+            "product_name": "Roof Inspection Report",
+            "credits": 1,
+            "valid_days": 365,
+            "group": "per-report"
           },
           {
             "title": "Standard",

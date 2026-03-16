@@ -36,6 +36,7 @@ export const user = table(
     utmSource: text('utm_source').notNull().default(''),
     ip: text('ip').notNull().default(''),
     locale: text('locale').notNull().default(''),
+    reportCredits: integer('report_credits').default(0).notNull(),
   },
   (table) => [
     // Search users by name in admin dashboard
@@ -553,5 +554,102 @@ export const chatMessage = table(
   (table) => [
     index('idx_chat_message_chat_id').on(table.chatId, table.status),
     index('idx_chat_message_user_id').on(table.userId, table.status),
+  ]
+);
+
+export const inspection = table(
+  'inspection',
+  {
+    id: text('id').primaryKey(),
+    userId: text('user_id')
+      .notNull()
+      .references(() => user.id, { onDelete: 'cascade' }),
+    address: text('address').notNull(),
+    roofType: text('roof_type'),
+    status: text('status').notNull().default('draft'), // draft, processing, review, complete
+    createdAt: timestamp('created_at').defaultNow().notNull(),
+    updatedAt: timestamp('updated_at')
+      .defaultNow()
+      .$onUpdate(() => new Date())
+      .notNull(),
+  },
+  (table) => [
+    index('idx_inspection_user_id').on(table.userId),
+    index('idx_inspection_status').on(table.status),
+  ]
+);
+
+export const photo = table(
+  'photo',
+  {
+    id: text('id').primaryKey(),
+    inspectionId: text('inspection_id')
+      .notNull()
+      .references(() => inspection.id, { onDelete: 'cascade' }),
+    photoType: text('photo_type').notNull(), // 12 types
+    storageUrl: text('storage_url').notNull(),
+    processedUrl: text('processed_url'),
+    annotatedUrl: text('annotated_url'),
+    gps: text('gps'),
+    uploadedAt: timestamp('uploaded_at').defaultNow().notNull(),
+  },
+  (table) => [index('idx_photo_inspection_id').on(table.inspectionId)]
+);
+
+export const observation = table(
+  'observation',
+  {
+    id: text('id').primaryKey(),
+    photoId: text('photo_id')
+      .notNull()
+      .references(() => photo.id, { onDelete: 'cascade' }),
+    inspectionId: text('inspection_id')
+      .notNull()
+      .references(() => inspection.id, { onDelete: 'cascade' }),
+    component: text('component'),
+    damage: text('damage'),
+    severity: text('severity'),
+    location: text('location'),
+    rawDescription: text('raw_description'),
+    confidence: text('confidence'),
+  },
+  (table) => [
+    index('idx_observation_photo_id').on(table.photoId),
+    index('idx_observation_inspection_id').on(table.inspectionId),
+  ]
+);
+
+export const scopeItem = table(
+  'scope_item',
+  {
+    id: text('id').primaryKey(),
+    inspectionId: text('inspection_id')
+      .notNull()
+      .references(() => inspection.id, { onDelete: 'cascade' }),
+    xactimateCode: text('xactimate_code'),
+    lineItem: text('line_item'),
+    description: text('description'),
+    confirmed: boolean('confirmed').default(false).notNull(),
+    deleted: boolean('deleted').default(false).notNull(),
+    createdAt: timestamp('created_at').defaultNow().notNull(),
+  },
+  (table) => [index('idx_scope_item_inspection_id').on(table.inspectionId)]
+);
+
+export const report = table(
+  'report',
+  {
+    id: text('id').primaryKey(),
+    inspectionId: text('inspection_id')
+      .notNull()
+      .references(() => inspection.id, { onDelete: 'cascade' }),
+    storageUrl: text('storage_url').notNull(),
+    shareToken: text('share_token').unique(),
+    shareExpiresAt: timestamp('share_expires_at'),
+    generatedAt: timestamp('generated_at').defaultNow().notNull(),
+  },
+  (table) => [
+    index('idx_report_inspection_id').on(table.inspectionId),
+    index('idx_report_share_token').on(table.shareToken),
   ]
 );
