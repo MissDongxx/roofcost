@@ -1,5 +1,13 @@
-/// <reference types="@cloudflare/workers-types" />
 import { drizzle } from 'drizzle-orm/d1';
+
+// Minimal D1Database type to avoid pulling in @cloudflare/workers-types globally,
+// which overrides built-in types like Response.json() and breaks non-Workers code.
+type D1Database = {
+  prepare(query: string): any;
+  batch(statements: any[]): Promise<any[]>;
+  exec(query: string): Promise<any>;
+  dump(): Promise<ArrayBuffer>;
+};
 
 // D1 singleton instance (reused across requests in the same isolate)
 let d1DbInstance: ReturnType<typeof drizzle> | null = null;
