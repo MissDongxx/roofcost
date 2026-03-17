@@ -65,7 +65,7 @@ export default function ReviewClient({ inspectionId, translations }: ReviewClien
     }
   };
 
-  const handleAction = async (scopeItemId: string, action: 'confirm' | 'delete', description?: string) => {
+  const handleAction = async (scopeItemId: string, action: 'confirm' | 'delete' | 'edit', description?: string) => {
     try {
       setSubmitting(true);
       const response = await fetch(`/api/inspections/${inspectionId}/review`, {
@@ -108,8 +108,26 @@ export default function ReviewClient({ inspectionId, translations }: ReviewClien
     setEditDescription('');
   };
 
-  const handleGenerateReport = () => {
-    router.push(`/inspections/${inspectionId}/report`);
+  const handleGenerateReport = async () => {
+    // Check user credits before generating report
+    try {
+      const response = await fetch('/api/user/get-user-credits');
+      if (!response.ok) {
+        throw new Error('Failed to check credits');
+      }
+      const { credits } = await response.json();
+
+      if (credits <= 0) {
+        // Redirect to payment page
+        router.push(`/payment/checkout?product=report&inspectionId=${inspectionId}`);
+        return;
+      }
+
+      // User has credits, proceed to report generation page
+      router.push(`/inspections/${inspectionId}/report`);
+    } catch (err) {
+      alert('Failed to check credits. Please try again.');
+    }
   };
 
   if (loading) {
