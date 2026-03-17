@@ -1,6 +1,6 @@
 import { headers } from 'next/headers';
 import { redirect } from 'next/navigation';
-import { Plus } from 'lucide-react';
+import { Home } from 'lucide-react';
 
 import { getAuth } from '@/core/auth';
 import { getUserInspections } from '@/shared/models/inspection';
@@ -12,6 +12,15 @@ import {
   CardHeader,
   CardTitle,
 } from '@/shared/components/ui/card';
+import {
+  Breadcrumb,
+  BreadcrumbItem,
+  BreadcrumbLink,
+  BreadcrumbList,
+  BreadcrumbPage,
+  BreadcrumbSeparator,
+} from '@/shared/components/ui/breadcrumb';
+import { Link } from '@/core/i18n/navigation';
 
 export default async function InspectionsListPage() {
   const auth = await getAuth();
@@ -27,6 +36,22 @@ export default async function InspectionsListPage() {
 
   return (
     <div className="container mx-auto py-10 max-w-6xl px-4">
+      {/* Breadcrumb */}
+      <Breadcrumb className="mb-6">
+        <BreadcrumbList>
+          <BreadcrumbItem>
+            <BreadcrumbLink href="/" className="flex items-center gap-1">
+              <Home className="w-4 h-4" />
+              Home
+            </BreadcrumbLink>
+          </BreadcrumbItem>
+          <BreadcrumbSeparator />
+          <BreadcrumbItem>
+            <BreadcrumbPage>My Inspections</BreadcrumbPage>
+          </BreadcrumbItem>
+        </BreadcrumbList>
+      </Breadcrumb>
+
       <div className="flex items-center justify-between mb-8">
         <div>
           <h1 className="text-3xl font-bold mb-2">Roof Inspections</h1>

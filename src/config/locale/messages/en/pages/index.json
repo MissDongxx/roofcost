@@ -28,7 +28,7 @@
           {
             "title": "Start Free Inspection",
             "icon": "Camera",
-            "url": "/activity",
+            "url": "/inspections",
             "target": "_self",
             "variant": "default"
           },

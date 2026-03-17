@@ -63,7 +63,7 @@
       "items": [
         {
           "title": "我的检测",
-          "url": "/activity",
+          "url": "/inspections",
           "icon": "Activity"
         },
         {

@@ -2,7 +2,7 @@ import Image from 'next/image';
 import { ArrowRight } from 'lucide-react';
 
 import { Link } from '@/core/i18n/navigation';
-import { SmartIcon } from '@/shared/blocks/common';
+import { SmartIcon, ProtectedButton } from '@/shared/blocks/common';
 import { Button } from '@/shared/components/ui/button';
 import { Highlighter } from '@/shared/components/ui/highlighter';
 import { cn } from '@/shared/lib/utils';
@@ -78,20 +78,40 @@ export function Hero({
 
         {section.buttons && (
           <div className="flex items-center justify-center gap-4">
-            {section.buttons.map((button, idx) => (
-              <Button
-                asChild
-                size={button.size || 'default'}
-                variant={button.variant || 'default'}
-                className="px-4 text-sm"
-                key={idx}
-              >
-                <Link href={button.url ?? ''} target={button.target ?? '_self'}>
-                  {button.icon && <SmartIcon name={button.icon as string} />}
-                  <span>{button.title}</span>
-                </Link>
-              </Button>
-            ))}
+            {section.buttons.map((button, idx) => {
+              // Use ProtectedButton for auth-required pages (like /inspections)
+              const needsAuth = button.url === '/inspections';
+
+              if (needsAuth) {
+                return (
+                  <ProtectedButton
+                    key={idx}
+                    url={button.url}
+                    icon={button.icon}
+                    title={button.title}
+                    size={button.size || 'default'}
+                    variant={button.variant || 'default'}
+                    className="px-4 text-sm"
+                    target={button.target || '_self'}
+                  />
+                );
+              }
+
+              return (
+                <Button
+                  asChild
+                  size={button.size || 'default'}
+                  variant={button.variant || 'default'}
+                  className="px-4 text-sm"
+                  key={idx}
+                >
+                  <Link href={button.url ?? ''} target={button.target ?? '_self'}>
+                    {button.icon && <SmartIcon name={button.icon as string} />}
+                    <span>{button.title}</span>
+                  </Link>
+                </Button>
+              );
+            })}
           </div>
         )}
 

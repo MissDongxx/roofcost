@@ -2,11 +2,21 @@
 
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
+import { Home } from 'lucide-react';
 import { toast } from 'sonner';
 
 import { Button } from '@/shared/components/ui/button';
 import { Input } from '@/shared/components/ui/input';
 import { Label } from '@/shared/components/ui/label';
+import {
+  Breadcrumb,
+  BreadcrumbItem,
+  BreadcrumbLink,
+  BreadcrumbList,
+  BreadcrumbPage,
+  BreadcrumbSeparator,
+} from '@/shared/components/ui/breadcrumb';
+import { Link } from '@/core/i18n/navigation';
 
 const ROOF_TYPES = [
   'Asphalt Shingle',
@@ -70,6 +80,26 @@ export default function NewInspectionPage() {
 
   return (
     <div className="container mx-auto py-10 max-w-2xl px-4">
+      {/* Breadcrumb */}
+      <Breadcrumb className="mb-6">
+        <BreadcrumbList>
+          <BreadcrumbItem>
+            <BreadcrumbLink href="/" className="flex items-center gap-1">
+              <Home className="w-4 h-4" />
+              Home
+            </BreadcrumbLink>
+          </BreadcrumbItem>
+          <BreadcrumbSeparator />
+          <BreadcrumbItem>
+            <BreadcrumbLink href="/inspections">My Inspections</BreadcrumbLink>
+          </BreadcrumbItem>
+          <BreadcrumbSeparator />
+          <BreadcrumbItem>
+            <BreadcrumbPage>New Inspection</BreadcrumbPage>
+          </BreadcrumbItem>
+        </BreadcrumbList>
+      </Breadcrumb>
+
       <h1 className="text-3xl font-bold mb-2">New Roof Inspection</h1>
       <p className="text-muted-foreground mb-6">
         Enter property details to start a new roof inspection

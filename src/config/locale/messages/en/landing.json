@@ -63,7 +63,7 @@
       "items": [
         {
           "title": "My Inspections",
-          "url": "/activity",
+          "url": "/inspections",
           "icon": "Activity"
         },
         {

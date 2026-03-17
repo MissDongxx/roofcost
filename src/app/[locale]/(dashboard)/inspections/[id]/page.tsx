@@ -1,6 +1,6 @@
 import { headers } from 'next/headers';
 import { notFound } from 'next/navigation';
-import { ArrowLeft, Camera, FileText } from 'lucide-react';
+import { ArrowLeft, Camera, FileText, Home } from 'lucide-react';
 
 import { getAuth } from '@/core/auth';
 import { findInspectionById } from '@/shared/models/inspection';
@@ -13,6 +13,15 @@ import {
   CardHeader,
   CardTitle,
 } from '@/shared/components/ui/card';
+import {
+  Breadcrumb,
+  BreadcrumbItem,
+  BreadcrumbLink,
+  BreadcrumbList,
+  BreadcrumbPage,
+  BreadcrumbSeparator,
+} from '@/shared/components/ui/breadcrumb';
+import { Link } from '@/core/i18n/navigation';
 
 export default async function InspectionDetailPage({
   params,
@@ -47,6 +56,28 @@ export default async function InspectionDetailPage({
 
   return (
     <div className="container mx-auto py-10 max-w-6xl px-4">
+      {/* Breadcrumb */}
+      <Breadcrumb className="mb-4">
+        <BreadcrumbList>
+          <BreadcrumbItem>
+            <BreadcrumbLink href="/" className="flex items-center gap-1">
+              <Home className="w-4 h-4" />
+              Home
+            </BreadcrumbLink>
+          </BreadcrumbItem>
+          <BreadcrumbSeparator />
+          <BreadcrumbItem>
+            <BreadcrumbLink href="/inspections">My Inspections</BreadcrumbLink>
+          </BreadcrumbItem>
+          <BreadcrumbSeparator />
+          <BreadcrumbItem>
+            <BreadcrumbPage className="truncate max-w-[200px]">
+              {inspection.address}
+            </BreadcrumbPage>
+          </BreadcrumbItem>
+        </BreadcrumbList>
+      </Breadcrumb>
+
       {/* Header */}
       <div className="mb-8">
         <Button variant="ghost" asChild className="mb-4">

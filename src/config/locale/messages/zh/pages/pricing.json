@@ -46,7 +46,7 @@
             "tip": "完美体验 RoofCost AI",
             "button": {
               "title": "开始免费检测",
-              "url": "/activity",
+              "url": "/inspections",
               "icon": "RiFlashlightFill"
             },
             "product_id": "free-report",

@@ -46,7 +46,7 @@
             "tip": "Perfect for trying out RoofCost AI",
             "button": {
               "title": "Start Free Report",
-              "url": "/activity",
+              "url": "/inspections",
               "icon": "RiFlashlightFill"
             },
             "product_id": "free-report",
