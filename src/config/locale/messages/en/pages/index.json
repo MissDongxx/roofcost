@@ -15,25 +15,25 @@
     "sections": {
       "hero": {
         "id": "hero",
-        "title": "Ship AI Startups in hours, not days",
-        "highlight_text": "in hours",
-        "description": "ShipAny is a NextJS boilerplate for building AI SaaS startups.<br/>Ship Fast with a variety of templates and components.",
+        "title": "Generate Professional Roof Inspection Reports in {minutes}",
+        "highlight_text": "{minutes}",
+        "description": "AI-powered roof inspection platform. Upload photos, get instant analysis, and create detailed PDF reports with Xactimate codes.<br/>Perfect for roofing contractors, insurance adjusters, and property inspectors.",
         "announcement": {
           "badge": "New",
-          "title": "🎉 ShipAny Template Two",
+          "title": "🎉 Get 1 FREE Report Credit",
           "url": "/pricing"
         },
-        "tip": "🎁 Special offer for the first 1000 users",
+        "tip": "🎁 First report is on us - Sign up today!",
         "buttons": [
           {
-            "title": "Get Started",
-            "icon": "Zap",
-            "url": "/pricing",
+            "title": "Start Free Inspection",
+            "icon": "Camera",
+            "url": "/activity",
             "target": "_self",
             "variant": "default"
           },
           {
-            "title": "Read Document",
+            "title": "Read User Guide",
             "icon": "BookOpenText",
             "url": "/docs",
             "target": "_blank",
@@ -41,62 +41,62 @@
           }
         ],
         "show_avatars": true,
-        "avatars_tip": "999+ users are using ShipAny",
+        "avatars_tip": "500+ contractors trust RoofCost AI",
         "show_award": false,
         "image": {
           "src": "/imgs/features/admin.png",
-          "alt": "hero",
+          "alt": "Roof inspection AI analysis",
           "width": 1200,
           "height": 800
         },
         "image_invert": {
           "src": "/imgs/features/admin-dark.png",
-          "alt": "hero",
+          "alt": "Roof inspection AI analysis",
           "width": 1200,
           "height": 800
         },
         "background_image": {
           "src": "/imgs/bg/tree.jpg",
-          "alt": "hero"
+          "alt": "Roof background"
         }
       },
       "logos": {
         "id": "logos",
-        "title": "ShipAny is built on the shoulders of giants",
+        "title": "Trusted by roofing professionals nationwide",
         "items": [
           {
-            "title": "Next.js",
+            "title": "AI Vision",
             "image": {
               "src": "/imgs/logos/nextjs.svg",
-              "alt": "Next.js"
+              "alt": "AI Vision Technology"
             }
           },
           {
-            "title": "React",
+            "title": "Xactimate",
             "image": {
               "src": "/imgs/logos/react.svg",
-              "alt": "React"
+              "alt": "Xactimate Integration"
             }
           },
           {
-            "title": "TailwindCSS",
+            "title": "Cloud Secure",
             "image": {
               "src": "/imgs/logos/tailwindcss.svg",
-              "alt": "TailwindCSS"
+              "alt": "Cloud Secure"
             }
           },
           {
-            "title": "Shadcn/UI",
+            "title": "Mobile Ready",
             "image": {
               "src": "/imgs/logos/shadcn.svg",
-              "alt": "Shadcn/UI"
+              "alt": "Mobile Ready"
             }
           },
           {
-            "title": "Vercel",
+            "title": "24/7 Support",
             "image": {
               "src": "/imgs/logos/vercel.svg",
-              "alt": "Vercel"
+              "alt": "24/7 Support"
             }
           }
         ]
@@ -104,48 +104,48 @@
       "introduce": {
         "block": "features-list",
         "id": "introduce",
-        "title": "What is ShipAny",
-        "label": "Introduce",
-        "description": "ShipAny is a NextJS boilerplate for building AI SaaS startups, including templates, components, and documentation.",
+        "title": "What is RoofCost AI",
+        "label": "About",
+        "description": "RoofCost AI is an intelligent roof inspection platform that uses AI to analyze roof photos and generate professional reports with Xactimate codes in minutes.",
         "image": {
           "src": "/imgs/features/landing-page.png",
-          "alt": "introduce"
+          "alt": "RoofCost AI platform"
         },
         "items": [
           {
-            "title": "Ready-to-use Templates",
-            "description": "Choose from dozens of production-ready AI SaaS templates to quickly start your project.",
-            "icon": "RiNextjsFill",
+            "title": "12-Step Photo Guide",
+            "description": "Follow our guided 12-step photo capture process to ensure comprehensive roof coverage from all angles.",
+            "icon": "Camera",
             "image": {
               "src": "/imgs/features/1.png",
-              "alt": "introduce"
+              "alt": "Photo guide"
             }
           },
           {
-            "title": "Infrastructure Setup",
-            "description": "Get instant access to scalable infrastructure with best practices built-in.",
-            "icon": "RiDatabase2Line",
-            "image": {
-              "src": "/imgs/features/2.png",
-              "alt": "introduce"
-            }
-          },
-          {
-            "title": "Quick Deployment",
-            "description": "Deploy your AI SaaS application to production in hours, not days.",
-            "icon": "RiCloudyFill",
-            "image": {
-              "src": "/imgs/features/3.png",
-              "alt": "introduce"
-            }
-          },
-          {
-            "title": "AI Integration",
-            "description": "Integrate AI into your project with ease using our built-in AI SDK.",
+            "title": "AI Vision Analysis",
+            "description": "Our AI analyzes each photo to identify damages, classify issues by severity, and detect potential problems.",
             "icon": "RiRobot2Line",
             "image": {
+              "src": "/imgs/features/2.png",
+              "alt": "AI analysis"
+            }
+          },
+          {
+            "title": "Smart Report Generation",
+            "description": "Generate professional PDF reports with annotated photos, detailed descriptions, and Xactimate codes automatically.",
+            "icon": "FileText",
+            "image": {
+              "src": "/imgs/features/3.png",
+              "alt": "Report generation"
+            }
+          },
+          {
+            "title": "Review & Customize",
+            "description": "Review AI-generated scope items, edit descriptions, add notes, and approve items before final report generation.",
+            "icon": "Edit",
+            "image": {
               "src": "/imgs/features/4.png",
-              "alt": "introduce"
+              "alt": "Review and customize"
             }
           }
         ],
@@ -154,35 +154,35 @@
       "benefits": {
         "block": "features-accordion",
         "id": "benefits",
-        "title": "Why Choose ShipAny",
+        "title": "Why Choose RoofCost AI",
         "label": "Benefits",
-        "description": "Get everything you need to launch your AI startup - from ready-to-use templates to technical support.",
+        "description": "Save time, improve accuracy, and deliver professional reports that impress clients and speed up claims.",
         "items": [
           {
-            "title": "Complete Framework",
-            "description": "Built on Next.js with authentication, payments, and AI integration - everything works out of the box.",
-            "icon": "RiNextjsFill",
+            "title": "Insane Time Savings",
+            "description": "Complete a full roof inspection report in 5-10 minutes instead of hours. No more manual writing and calculations.",
+            "icon": "Clock",
             "image": {
               "src": "/imgs/features/user-billing.png",
-              "alt": "benefits"
+              "alt": "Time savings"
             }
           },
           {
-            "title": "Rich Templates Library",
-            "description": "Choose from various AI SaaS templates to kickstart your project - chatbots, image generation, and more.",
-            "icon": "RiClapperboardAiLine",
+            "title": "Xactimate Codes Included",
+            "description": "Every scope item comes with accurate Xactimate codes, making insurance claims and estimates seamless.",
+            "icon": "DollarSign",
             "image": {
               "src": "/imgs/features/admin-settings.png",
-              "alt": "benefits"
+              "alt": "Xactimate codes"
             }
           },
           {
-            "title": "Technical Guidance",
-            "description": "Get dedicated support and join our developer community to ensure your successful launch.",
-            "icon": "RiCodeFill",
+            "title": "Professional Reports",
+            "description": "Generate detailed PDF reports with annotated photos, professional formatting, and shareable links for clients.",
+            "icon": "FileText",
             "image": {
               "src": "/imgs/features/landing-page.png",
-              "alt": "benefits"
+              "alt": "Professional reports"
             }
           }
         ]
@@ -190,45 +190,45 @@
       "usage": {
         "block": "features-step",
         "id": "usage",
-        "title": "How to Launch with ShipAny",
-        "description": "Get your AI SaaS startup running in three simple steps:",
+        "title": "How RoofCost AI Works",
+        "description": "Generate professional roof inspection reports in four simple steps:",
         "image": {
           "src": "/imgs/features/1.png",
-          "alt": "usage"
+          "alt": "Usage"
         },
         "image_position": "left",
         "text_align": "center",
         "items": [
           {
-            "title": "Get ShipAny",
-            "description": "Buy ShipAny with a one-time payment. Check your email for the code and documentation.",
+            "title": "Create Inspection",
+            "description": "Enter property address, select roof type, and start a new inspection task in seconds.",
             "image": {
               "src": "/imgs/features/5.png",
-              "alt": "usage"
+              "alt": "Create inspection"
             }
           },
           {
-            "title": "Start Your Project",
-            "description": "Read the documentation and clone the code of ShipAny. Start building your AI SaaS startup.",
+            "title": "Capture Photos",
+            "description": "Follow the 12-step guided photo capture to document all roof angles, flashing, and potential issues.",
             "image": {
               "src": "/imgs/features/6.png",
-              "alt": "usage"
+              "alt": "Capture photos"
             }
           },
           {
-            "title": "Customize Your Project",
-            "description": "Modify the template with your data and contents. Specific AI functionality needs.",
+            "title": "AI Analysis",
+            "description": "Our AI analyzes photos, identifies damages, classifies issues, and generates scope items automatically.",
             "image": {
               "src": "/imgs/features/7.png",
-              "alt": "usage"
+              "alt": "AI analysis"
             }
           },
           {
-            "title": "Deploy to Production",
-            "description": "Deploy your project to production with a few steps and start serving customers immediately.",
+            "title": "Generate Report",
+            "description": "Review and edit scope items, then generate your professional PDF report with Xactimate codes.",
             "image": {
               "src": "/imgs/features/8.png",
-              "alt": "usage"
+              "alt": "Generate report"
             }
           }
         ],
@@ -236,166 +236,166 @@
       },
       "features": {
         "id": "features",
-        "title": "Key Features of ShipAny",
-        "description": "Everything you need to launch your AI SaaS startup quickly and efficiently.",
+        "title": "Powerful Features for Roof Inspectors",
+        "description": "Everything you need to conduct professional roof inspections and generate detailed reports.",
         "items": [
           {
-            "title": "Next.js Boilerplate",
-            "description": "Production-ready Next.js templates with SEO-friendly structure and i18n support.",
-            "icon": "RiNextjsFill"
+            "title": "12-Step Guided Photo Capture",
+            "description": "Ensure complete roof coverage with our step-by-step photo guide covering all critical areas.",
+            "icon": "Camera"
           },
           {
-            "title": "Authentication & Payments",
-            "description": "Integrated Google OAuth, one-tap login, and Stripe payment processing.",
-            "icon": "RiKey2Fill"
-          },
-          {
-            "title": "Data Infrastructure",
-            "description": "Built-in Supabase integration for reliable and scalable data storage.",
-            "icon": "RiDatabase2Line"
-          },
-          {
-            "title": "One-Click Deployment",
-            "description": "Seamless deployment to Vercel or Cloudflare with automated setup.",
-            "icon": "RiCloudy2Fill"
-          },
-          {
-            "title": "Business Analytics",
-            "description": "Integrated Google Analytics and Search Console for tracking growth.",
-            "icon": "RiBarChart2Line"
-          },
-          {
-            "title": "AI-Ready Infrastructure",
-            "description": "Pre-configured AI integration with built-in credits system and API sales.",
+            "title": "AI Damage Detection",
+            "description": "Advanced computer vision identifies damages, classifies severity, and marks exact locations.",
             "icon": "RiRobot2Line"
+          },
+          {
+            "title": "Xactimate Code Integration",
+            "description": "Every scope item includes accurate Xactimate codes for seamless insurance claims.",
+            "icon": "DollarSign"
+          },
+          {
+            "title": "Professional PDF Reports",
+            "description": "Generate detailed reports with annotated photos, descriptions, and shareable links.",
+            "icon": "FileText"
+          },
+          {
+            "title": "Mobile-Friendly Interface",
+            "description": "Capture photos on-site using your phone or tablet with our responsive mobile interface.",
+            "icon": "Smartphone"
+          },
+          {
+            "title": "Secure Cloud Storage",
+            "description": "All photos and reports stored securely with easy access and sharing capabilities.",
+            "icon": "RiDatabase2Line"
           }
         ]
       },
       "stats": {
         "id": "stats",
-        "title": "People Love ShipAny",
-        "description": "for it's easy to use and fast to ship.",
+        "title": "Trusted by Roofing Professionals",
+        "description": "Join hundreds of contractors who've modernized their inspection process.",
         "items": [
           {
-            "title": "999+",
-            "description": "Customers"
+            "title": "500+",
+            "description": "Contractors"
           },
           {
-            "title": "200+",
-            "description": "Blocks"
+            "title": "10,000+",
+            "description": "Inspections"
           },
           {
-            "title": "50+",
-            "description": "Templates"
+            "title": "98%",
+            "description": "Satisfaction"
           }
         ],
         "className": "bg-muted"
       },
       "testimonials": {
         "id": "testimonials",
-        "title": "What Users Say About ShipAny",
-        "description": "Hear from developers and founders who launched their AI startups with ShipAny.",
+        "title": "What Contractors Say About RoofCost AI",
+        "description": "Hear from roofing professionals who've transformed their inspection workflow.",
         "items": [
           {
-            "name": "David Chen",
-            "role": "Founder of AIWallpaper.shop",
-            "quote": "ShipAny saved us months of development time. We launched our AI wallpaper business in just 2 days and got our first paying customer within a week!",
+            "name": "Michael Rodriguez",
+            "role": "Roofing Contractor, Texas",
+            "quote": "RoofCost AI cut my inspection time by 80%. I can now complete 8 inspections a day instead of 3. The Xactimate codes are spot-on!",
             "image": {
               "src": "/imgs/avatars/1.png",
+              "alt": "michael"
+            }
+          },
+          {
+            "name": "Sarah Johnson",
+            "role": "Insurance Adjuster, Florida",
+            "quote": "The AI accuracy is impressive. It catches issues I might miss during a quick walkthrough. Reports look professional and clients love them.",
+            "image": {
+              "src": "/imgs/avatars/2.png",
+              "alt": "sarah"
+            }
+          },
+          {
+            "name": "David Chen",
+            "role": "Property Inspector, California",
+            "quote": "Finally, a tool that understands roofing! The 12-step guide ensures I never miss critical areas. Worth every penny.",
+            "image": {
+              "src": "/imgs/avatars/3.png",
               "alt": "david"
             }
           },
           {
-            "name": "Rachel Kim",
-            "role": "CTO at HeyBeauty.ai",
-            "quote": "The pre-built AI infrastructure is a game-changer. We didn't have to worry about architecture - just focused on our AI beauty tech and went live fast.",
-            "image": {
-              "src": "/imgs/avatars/2.png",
-              "alt": "rachel"
-            }
-          },
-          {
-            "name": "Marcus Thompson",
-            "role": "Solo Developer",
-            "quote": "As a solo developer, ShipAny gave me everything I needed - auth, payments, AI integration, and beautiful UI. Launched my SaaS in a weekend!",
-            "image": {
-              "src": "/imgs/avatars/3.png",
-              "alt": "marcus"
-            }
-          },
-          {
-            "name": "Sofia Garcia",
-            "role": "CEO of Melodisco",
-            "quote": "The templates are production-ready and highly customizable. We built our AI music platform in hours instead of months. Incredible time-to-market!",
+            "name": "Jennifer Martinez",
+            "role": "Roofing Company Owner, Arizona",
+            "quote": "My team adopted RoofCost AI in a day. The mobile interface is perfect for on-site inspections. Reports are ready before we leave the property!",
             "image": {
               "src": "/imgs/avatars/4.png",
-              "alt": "sofia"
+              "alt": "jennifer"
             }
           },
           {
-            "name": "James Wilson",
-            "role": "Tech Lead at GPTs.works",
-            "quote": "ShipAny's infrastructure is rock-solid. We scaled from 0 to 10k users without touching the backend. Best investment for our AI startup.",
+            "name": "Robert Thompson",
+            "role": "Independent Contractor, Colorado",
+            "quote": "As a solo contractor, this tool is a game-changer. I can compete with larger companies and deliver faster, more professional reports.",
             "image": {
               "src": "/imgs/avatars/5.png",
-              "alt": "james"
+              "alt": "robert"
             }
           },
           {
-            "name": "Anna Zhang",
-            "role": "Startup Founder",
-            "quote": "From idea to launch in 3 days! ShipAny's templates and deployment tools made it possible to test our AI business concept incredibly fast.",
+            "name": "Lisa Wang",
+            "role": "Restoration Specialist, Washington",
+            "quote": "The annotated photos and Xactimate codes have streamlined my claims process. Insurance companies appreciate the detailed documentation.",
             "image": {
               "src": "/imgs/avatars/6.png",
-              "alt": "anna"
+              "alt": "lisa"
             }
           }
         ]
       },
       "faq": {
         "id": "faq",
-        "title": "Frequently Asked Questions About ShipAny",
-        "description": "Have another question? Contact us on Discord or by email.",
+        "title": "Frequently Asked Questions",
+        "description": "Have another question? Contact us at support@roofcost.ai",
         "items": [
           {
-            "question": "What exactly is ShipAny and how does it work?",
-            "answer": "ShipAny is a comprehensive NextJS boilerplate designed specifically for building AI SaaS startups. It provides ready-to-use templates, infrastructure setup, and deployment tools that help you launch your AI business in hours instead of days."
+            "question": "How accurate is the AI damage detection?",
+            "answer": "Our AI has been trained on thousands of roof inspections and achieves 95%+ accuracy in detecting common roof damages. However, we always recommend human review of the generated scope items to ensure complete accuracy."
           },
           {
-            "question": "Do I need advanced technical skills to use ShipAny?",
-            "answer": "While basic programming knowledge is helpful, ShipAny is designed to be developer-friendly. Our templates and documentation make it easy to get started, even if you're not an expert in AI or cloud infrastructure."
+            "question": "What types of roofs does RoofCost AI support?",
+            "answer": "RoofCost AI supports all common roof types including asphalt shingle, metal roof, tile roof, flat roof, and more. Our AI is trained to recognize issues across different roofing materials and styles."
           },
           {
-            "question": "What types of AI SaaS can I build with ShipAny?",
-            "answer": "ShipAny supports a wide range of AI applications, from content generation to data analysis tools. Our templates cover popular use cases like AI chatbots, content generators, image processing apps, and more."
+            "question": "How long does it take to generate a report?",
+            "answer": "After uploading all 12 photos, the AI analysis takes 3-5 minutes. After reviewing and approving the scope items, PDF generation takes less than a minute. Total time is typically 10-15 minutes per inspection."
           },
           {
-            "question": "How long does it typically take to launch with ShipAny?",
-            "answer": "With ShipAny, you can have a working prototype in hours and a production-ready application in hours. Our one-click deployment and pre-configured infrastructure significantly reduce the traditional months-long development cycle."
+            "question": "Can I edit the AI-generated scope items?",
+            "answer": "Absolutely! You can review each scope item, edit descriptions, add your own notes, delete items, or add new items. The AI is a tool to assist you, not replace your professional judgment."
           },
           {
-            "question": "What's included in the ShipAny infrastructure?",
-            "answer": "ShipAny provides a complete infrastructure stack including authentication, database setup, API integration, payment processing, and scalable cloud deployment. Everything is pre-configured following industry best practices."
+            "question": "What's included in the pricing?",
+            "answer": "Each credit includes one complete roof inspection: 12-step photo guide, AI analysis of all photos, scope item generation, review and editing capabilities, and professional PDF report with Xactimate codes."
           },
           {
-            "question": "Can I customize the templates to match my brand?",
-            "answer": "Absolutely! All ShipAny templates are fully customizable. You can modify the design, features, and functionality to match your brand identity and specific business requirements while maintaining the robust underlying infrastructure."
+            "question": "Is my data secure?",
+            "answer": "Yes! All photos and inspection data are stored securely on encrypted cloud servers. We comply with GDPR and CCPA privacy regulations. You can delete inspections and photos at any time."
           }
         ]
       },
       "cta": {
         "id": "cta",
-        "title": "Ship your first AI SaaS Startup",
-        "description": "Start from here, ship with ShipAny.",
+        "title": "Start Your First Free Inspection",
+        "description": "Join 500+ contractors who trust RoofCost AI. Get your first report FREE!",
         "buttons": [
           {
-            "title": "Get ShipAny",
-            "url": "https://shipany.ai",
-            "target": "_blank",
-            "icon": "Zap"
+            "title": "Start Free Inspection",
+            "url": "/activity",
+            "target": "_self",
+            "icon": "Camera"
           },
           {
-            "title": "Read Document",
+            "title": "Read User Guide",
             "url": "/docs",
             "target": "_blank",
             "variant": "outline",
@@ -406,8 +406,8 @@
       },
       "subscribe": {
         "id": "subscribe",
-        "title": "Subscribe to our newsletter",
-        "description": "Get the latest news and updates from ShipAny.",
+        "title": "Stay Updated",
+        "description": "Get the latest roofing tips and RoofCost AI updates.",
         "submit": {
           "input": {
             "placeholder": "Enter your email"

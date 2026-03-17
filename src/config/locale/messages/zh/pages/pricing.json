@@ -1,358 +1,185 @@
 {
   "metadata": {
     "title": "价格",
-    "description": "选择方案，立即开始"
+    "description": "为屋顶检测报告提供简单透明的价格"
   },
   "page": {
-    "title": "ShipAny 价格表",
+    "title": "RoofCost AI 价格表",
     "sections": {
       "pricing": {
         "id": "pricing",
-        "title": "价格",
-        "description": "获取 ShipAny 的全部功能，极速交付你的 AI SaaS 创业项目。",
+        "title": "简单透明的价格",
+        "description": "选择适合您检测需求的方案。无隐藏费用，无需订阅。",
         "groups": [
           {
-            "name": "one-time",
+            "name": "per-report",
             "title": "按次付费"
           },
           {
-            "name": "monthly",
-            "title": "包月",
+            "name": "packs",
+            "title": "报告套餐",
             "is_featured": true,
-            "label": "立省15%"
-          },
-          {
-            "name": "yearly",
-            "title": "包年"
+            "label": "超值选择"
           }
         ],
         "items": [
           {
-            "title": "入门版",
-            "description": "开启你的第一个 SaaS 创业项目。",
+            "title": "首次报告免费",
+            "description": "零风险试用 RoofCost AI。体验 AI 驱动的屋顶检测的全部功能。",
             "features_title": "包含",
             "features": [
-              "100 积分，有效期 1 个月",
-              "NextJS 项目模板",
-              "SEO 友好结构",
-              "支持 Stripe 支付",
-              "Supabase 数据存储",
-              "Google Oauth & 一键登录",
-              "多语言（i18n）支持"
+              "1 份免费检测报告",
+              "12 步拍照引导",
+              "AI 视觉分析",
+              "损坏检测和分类",
+              "Xactimate 检测编码",
+              "专业 PDF 导出",
+              "可分享的报告链接",
+              "有效期 30 天"
             ],
             "interval": "one-time",
-            "amount": 9900,
+            "amount": 0,
             "currency": "USD",
-            "price": "$99",
-            "original_price": "$199",
-            "currencies": [
-              {
-                "currency": "CNY",
-                "amount": 69900,
-                "price": "¥699",
-                "original_price": "¥1399",
-                "payment_providers": ["stripe"]
-              }
-            ],
-            "unit": "",
-            "is_featured": false,
-            "tip": "一次付费，畅享无限项目部署！",
-            "button": {
-              "title": "获取 ShipAny",
-              "url": "/#pricing",
-              "icon": "RiFlashlightFill"
-            },
-            "product_id": "starter",
-            "product_name": "ShipAny 模板入门版",
-            "credits": 100,
-            "valid_days": 30,
-            "group": "one-time"
-          },
-          {
-            "title": "标准版",
-            "description": "快速交付你的 SaaS 创业项目。",
-            "label": "热门",
-            "features_title": "包含入门版功能，此外",
-            "features": [
-              "200 积分，有效期 3 个月",
-              "支持 Vercel 或 Cloudflare 部署",
-              "自动生成隐私政策&服务条款",
-              "集成 Google Analytics",
-              "集成 Google Search Console",
-              "Discord 技术社区",
-              "首个上线项目技术支持",
-              "终身免费更新"
-            ],
-            "interval": "one-time",
-            "amount": 19900,
-            "currency": "USD",
-            "price": "$199",
-            "original_price": "$299",
-            "currencies": [
-              {
-                "currency": "CNY",
-                "amount": 139900,
-                "price": "¥1399",
-                "original_price": "¥1999",
-                "payment_providers": ["stripe"]
-              }
-            ],
+            "price": "免费",
             "unit": "",
             "is_featured": true,
-            "tip": "一次付费，畅享无限项目部署！",
+            "tip": "完美体验 RoofCost AI",
             "button": {
-              "title": "获取 ShipAny",
-              "url": "/#pricing",
+              "title": "开始免费检测",
+              "url": "/activity",
               "icon": "RiFlashlightFill"
             },
-            "product_id": "standard",
-            "product_name": "ShipAny 模板标准版",
-            "credits": 200,
-            "valid_days": 90,
-            "group": "one-time"
+            "product_id": "free-report",
+            "product_name": "免费屋顶检测报告",
+            "credits": 1,
+            "valid_days": 30,
+            "group": "per-report"
           },
           {
-            "title": "高级版",
-            "description": "交付任意 AI SaaS 创业项目。",
-            "features_title": "包含标准版功能，此外",
-            "features": [
-              "300 积分，有效期 1 年",
-              "内置 AI 业务功能",
-              "用户中心",
-              "积分系统",
-              "为你的 SaaS 售卖 API",
-              "后台管理系统",
-              "优先技术支持"
-            ],
-            "interval": "one-time",
-            "amount": 29900,
-            "currency": "USD",
-            "price": "$299",
-            "original_price": "$399",
-            "currencies": [
-              {
-                "currency": "CNY",
-                "amount": 199900,
-                "price": "¥1999",
-                "original_price": "¥2799",
-                "payment_providers": ["stripe", "creem"]
-              }
-            ],
-            "unit": "",
-            "is_featured": false,
-            "tip": "一次付费，畅享无限项目部署！",
-            "button": {
-              "title": "获取 ShipAny",
-              "url": "/#pricing",
-              "icon": "RiFlashlightFill"
-            },
-            "product_id": "premium",
-            "product_name": "ShipAny 模板高级版",
-            "credits": 300,
-            "valid_days": 365,
-            "group": "one-time"
-          },
-          {
-            "title": "入门版",
-            "description": "开启你的第一个 SaaS 创业项目。",
+            "title": "单次报告",
+            "description": "只需要一次检测？按需付费，无需承诺。",
             "features_title": "包含",
             "features": [
-              "100 积分，有效期 1 个月",
-              "NextJS 项目模板",
-              "SEO 友好结构",
-              "支持 Stripe 支付",
-              "Supabase 数据存储",
-              "Google Oauth & 一键登录",
-              "多语言（i18n）支持"
+              "1 份 AI 生成的检测报告",
+              "12 步拍照引导",
+              "基于视觉的损坏检测",
+              "Xactimate 检测项目化",
+              "照片标注",
+              "专业 PDF 导出",
+              "可分享的报告链接",
+              "有效期 1 年"
             ],
-            "interval": "month",
-            "amount": 8900,
+            "interval": "one-time",
+            "amount": 3900,
             "currency": "USD",
-            "price": "$89",
-            "original_price": "$99",
-            "unit": "/ 月",
+            "price": "$39",
+            "unit": "/ 报告",
             "is_featured": false,
-            "tip": "按月付费，畅享无限项目部署！",
+            "tip": "无需订阅。仅在需要时付费。",
             "button": {
-              "title": "获取 ShipAny",
-              "url": "/#pricing",
+              "title": "购买报告积分",
+              "url": "/settings/billing",
               "icon": "RiFlashlightFill"
             },
-            "product_id": "starter-monthly",
-            "product_name": "ShipAny 模板入门版包月",
-            "credits": 100,
-            "valid_days": 30,
-            "group": "monthly",
-            "plan_name": "入门版"
+            "product_id": "single-report",
+            "product_name": "单次屋顶检测报告",
+            "credits": 1,
+            "valid_days": 365,
+            "group": "per-report"
           },
           {
-            "title": "标准版",
-            "description": "快速交付你的 SaaS 创业项目。",
-            "label": "热门",
-            "features_title": "包含入门版功能，此外",
+            "title": "5 报告套餐",
+            "description": "使用我们受欢迎的报告套餐节省 15%。适合繁忙的承包商。",
+            "label": "热销",
+            "features_title": "包含单次报告功能，此外",
             "features": [
-              "200 积分，有效期 1 个月",
-              "支持 Vercel 或 Cloudflare 部署",
-              "自动生成隐私政策&服务条款",
-              "集成 Google Analytics",
-              "集成 Google Search Console",
-              "Discord 技术社区",
-              "首个上线项目技术支持",
-              "终身免费更新"
+              "5 份 AI 生成的检测报告",
+              "比单次购买节省 15%",
+              "积分永不过期",
+              "优先支持",
+              "包含所有功能",
+              "有效期 1 年"
             ],
-            "interval": "month",
-            "amount": 16900,
+            "interval": "one-time",
+            "amount": 16500,
             "currency": "USD",
-            "price": "$169",
-            "original_price": "$199",
-            "unit": "/ 月",
+            "price": "$165",
+            "original_price": "$195",
+            "unit": "/ 套餐",
             "is_featured": true,
-            "tip": "按月付费，极速上线你的 SaaS 项目。",
+            "tip": "每份报告 $33。节省 15%！",
             "button": {
-              "title": "获取 ShipAny",
-              "url": "/#pricing",
+              "title": "购买 5 报告套餐",
+              "url": "/settings/billing",
               "icon": "RiFlashlightFill"
             },
-            "product_id": "standard-monthly",
-            "product_name": "ShipAny 模板标准版包月",
-            "credits": 200,
-            "valid_days": 30,
-            "group": "monthly",
-            "plan_name": "标准版"
+            "product_id": "pack-5",
+            "product_name": "5 报告套餐",
+            "credits": 5,
+            "valid_days": 365,
+            "group": "packs"
           },
           {
-            "title": "高级版",
-            "description": "交付任意 AI SaaS 创业项目。",
-            "features_title": "包含标准版功能，此外",
+            "title": "10 报告套餐",
+            "description": "为高频承包商提供最大节省。定期检测的最佳价值。",
+            "features_title": "包含 5 报告套餐功能，此外",
             "features": [
-              "300 积分，有效期 1 个月",
-              "内置 AI 业务功能",
-              "用户中心",
-              "积分系统",
-              "为你的 SaaS 售卖 API",
-              "后台管理系统",
-              "优先技术支持"
+              "10 份 AI 生成的检测报告",
+              "比单次购买节省 25%",
+              "积分永不过期",
+              "优先支持",
+              "批量定价优势",
+              "有效期 1 年"
             ],
-            "interval": "month",
-            "amount": 24900,
+            "interval": "one-time",
+            "amount": 29000,
             "currency": "USD",
-            "price": "$249",
-            "original_price": "$299",
-            "unit": "/ 月",
+            "price": "$290",
+            "original_price": "$390",
+            "unit": "/ 套餐",
             "is_featured": false,
-            "tip": "按月付费，助你交付任何 AI SaaS 项目。",
+            "tip": "每份报告 $29。节省 25%！",
             "button": {
-              "title": "获取 ShipAny",
-              "url": "/#pricing",
+              "title": "购买 10 报告套餐",
+              "url": "/settings/billing",
               "icon": "RiFlashlightFill"
             },
-            "product_id": "premium-monthly",
-            "product_name": "ShipAny 模板高级版包月",
-            "credits": 300,
-            "valid_days": 30,
-            "group": "monthly",
-            "plan_name": "高级版"
+            "product_id": "pack-10",
+            "product_name": "10 报告套餐",
+            "credits": 10,
+            "valid_days": 365,
+            "group": "packs"
           },
           {
-            "title": "入门版",
-            "description": "开启你的第一个 SaaS 创业项目。",
+            "title": "企业方案",
+            "description": "为屋顶公司和检测机构提供定制解决方案。",
             "features_title": "包含",
             "features": [
-              "100 积分，有效期 1 年",
-              "NextJS 项目模板",
-              "SEO 友好结构",
-              "支持 Stripe 支付",
-              "Supabase 数据存储",
-              "Google Oauth & 一键登录",
-              "多语言（i18n）支持"
+              "定制报告数量",
+              "白标报告",
+              "团队管理",
+              "API 访问",
+              "专属客户经理",
+              "培训和入职",
+              "定制集成"
             ],
-            "interval": "year",
-            "amount": 82800,
+            "interval": "one-time",
+            "amount": 0,
             "currency": "USD",
-            "price": "$69",
-            "original_price": "$89",
-            "unit": "/ 月",
+            "price": "定制",
+            "unit": "",
             "is_featured": false,
-            "tip": "按年付费，畅享无限项目部署！",
+            "tip": "联系销售获取定制价格",
             "button": {
-              "title": "获取 ShipAny",
-              "url": "/#pricing",
-              "icon": "RiFlashlightFill"
+              "title": "联系销售",
+              "url": "mailto:sales@roofcost.ai",
+              "icon": "Mail"
             },
-            "product_id": "starter-yearly",
-            "product_name": "ShipAny 模板入门版包年",
-            "credits": 1200,
+            "product_id": "enterprise",
+            "product_name": "企业方案",
+            "credits": 0,
             "valid_days": 365,
-            "group": "yearly",
-            "plan_name": "入门版"
-          },
-          {
-            "title": "标准版",
-            "description": "快速交付你的 SaaS 创业项目。",
-            "label": "热门",
-            "features_title": "包含入门版功能，此外",
-            "features": [
-              "200 积分，有效期 1 年",
-              "支持 Vercel 或 Cloudflare 部署",
-              "自动生成隐私政策&服务条款",
-              "集成 Google Analytics",
-              "集成 Google Search Console",
-              "Discord 技术社区",
-              "首个上线项目技术支持",
-              "终身免费更新"
-            ],
-            "interval": "year",
-            "amount": 154800,
-            "currency": "USD",
-            "price": "$129",
-            "original_price": "$169",
-            "unit": "/ 月",
-            "is_featured": true,
-            "tip": "按年付费，极速上线你的 SaaS 项目。",
-            "button": {
-              "title": "获取 ShipAny",
-              "url": "/#pricing",
-              "icon": "RiFlashlightFill"
-            },
-            "product_id": "standard-yearly",
-            "product_name": "ShipAny 模板标准版包年",
-            "credits": 2400,
-            "valid_days": 365,
-            "group": "yearly",
-            "plan_name": "标准版"
-          },
-          {
-            "title": "高级版",
-            "description": "交付任意 AI SaaS 创业项目。",
-            "features_title": "包含标准版功能，此外",
-            "features": [
-              "300 积分，有效期 1 年",
-              "内置 AI 业务功能",
-              "用户中心",
-              "积分系统",
-              "为你的 SaaS 售卖 API",
-              "后台管理系统",
-              "优先技术支持"
-            ],
-            "interval": "year",
-            "amount": 226800,
-            "currency": "USD",
-            "price": "$189",
-            "original_price": "$249",
-            "unit": "/ 月",
-            "is_featured": false,
-            "tip": "按年付费，助你交付任何 AI SaaS 项目。",
-            "button": {
-              "title": "获取 ShipAny",
-              "url": "/#pricing",
-              "icon": "RiFlashlightFill"
-            },
-            "product_id": "premium-yearly",
-            "product_name": "ShipAny 模板高级版包年",
-            "credits": 3600,
-            "valid_days": 365,
-            "group": "yearly",
-            "plan_name": "高级版"
+            "group": "packs"
           }
         ]
       }

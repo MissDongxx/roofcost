@@ -1,8 +1,8 @@
 {
   "metadata": {
-    "title": "ShipAny Template Two",
-    "description": "ShipAny is a NextJS boilerplate for building AI SaaS startups. Ship Fast with a variety of templates and components.",
-    "keywords": "shipany, shipany-boilerplate, shipany-template-two-demo"
+    "title": "RoofCost AI - AI-Powered Roof Inspection Reports",
+    "description": "Generate professional roof inspection reports with AI. Upload photos, get instant analysis, and create detailed PDF reports with Xactimate codes.",
+    "keywords": "roofcost, roof inspection, AI roof analysis, roof report, roofing estimates, property inspection"
   },
   "sign": {
     "sign_in_title": "Sign In",
@@ -37,7 +37,7 @@
     "verify_email_page_title": "Check your email",
     "verify_email_page_description": "To continue, click the link sent to",
     "verify_email_continue": "Continue",
-    "verify_email_tip": "After verifying, click “Continue”.",
+    "verify_email_tip": "After verifying, click \"Continue\".",
     "verify_email_not_verified_yet": "Not verified yet. Please click the link in your email first.",
     "verify_email_account_mismatch": "Signed in as {current}. This page is waiting for {expected}.",
     "resend_verification_countdown": "Resend verification email ({seconds}s)",

@@ -26,7 +26,7 @@
 
 ### 首次使用
 
-1. 访问 [RoofCost AI](https://roofcost.ai)
+1. 访问 [RoofCost AI](https://roofcostai.com)
 2. 使用邮箱注册或登录
 3. 首次登录将获得 **1 个免费额度** 用于测试
 

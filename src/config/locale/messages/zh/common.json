@@ -1,8 +1,8 @@
 {
   "metadata": {
-    "title": "ShipAny 模板二",
-    "description": "ShipAny 是用于构建 AI SaaS 创业项目的 NextJS 脚手架。提供丰富模板和组件，助您快速上线产品。",
-    "keywords": "shipany, shipany-boilerplate, shipany-template-two-demo"
+    "title": "RoofCost AI - AI驱动的屋顶检测报告",
+    "description": "使用 AI 生成专业的屋顶检测报告。上传照片，获取即时分析，创建带有 Xactimate 编码的详细 PDF 报告。",
+    "keywords": "roofcost, 屋顶检测, AI屋顶分析, 屋顶报告, 屋顶估算, 房产检测"
   },
   "sign": {
     "sign_in_title": "登录",
