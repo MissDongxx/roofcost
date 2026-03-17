@@ -1,4 +1,3 @@
-import { getCloudflareContext } from '@opennextjs/cloudflare';
 import { drizzle } from 'drizzle-orm/d1';
 
 // Minimal D1Database type to avoid pulling in @cloudflare/workers-types globally,
@@ -21,12 +20,8 @@ let d1DbInstance: ReturnType<typeof drizzle> | null = null;
  * handle the error gracefully (e.g. config.ts already catches it).
  */
 function getD1Binding(): D1Database {
-  const { env }: { env: any } = getCloudflareContext();
-
-  if (env?.DB) return env.DB;
-
   throw new Error(
-    'D1 database binding "DB" not found. Make sure [[d1_databases]] is configured in wrangler.toml with binding = "DB".'
+    'D1 database not supported in non-CloudflareWorkers environment.'
   );
 }
 
