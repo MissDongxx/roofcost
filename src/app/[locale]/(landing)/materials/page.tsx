@@ -48,7 +48,7 @@ export default async function MaterialsOverviewPage({
                       <span className="text-[var(--ink-3)] font-medium">Lifespan:</span>
                       <span className="text-[var(--ink)]">{material.lifespan_years} Years</span>
                     </div>
-                    {material.description && (
+                    {'description' in material && material.description && (
                       <p className="text-sm text-[var(--ink-3)] line-clamp-2 italic">
                         "{material.description}"
                       </p>
