@@ -112,7 +112,7 @@ export default async function CityLandingPage({ params }: PageProps) {
   const otherStateCities = citiesData.filter(c => c.state !== state).slice(0, 5);
 
   return (
-    <div className="container mx-auto px-4 pt-32 pb-16">
+    <div className="container mx-auto px-4 pt-12 pb-16">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
 

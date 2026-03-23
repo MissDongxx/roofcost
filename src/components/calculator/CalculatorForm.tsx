@@ -19,9 +19,10 @@ const materials = materialsRaw as Record<string, any>;
 interface CalculatorFormProps {
   onCalculate?: (result: any, input: CalculatorInput) => void;
   defaultZip?: string;
+  defaultMaterial?: string;
 }
 
-export function CalculatorForm({ onCalculate, defaultZip }: CalculatorFormProps) {
+export function CalculatorForm({ onCalculate, defaultZip, defaultMaterial }: CalculatorFormProps) {
   const t = useTranslations('Calculator');
   const searchParams = useSearchParams();
   const urlZip = searchParams?.get('zip');
@@ -33,7 +34,7 @@ export function CalculatorForm({ onCalculate, defaultZip }: CalculatorFormProps)
   const [formData, setFormData] = useState<CalculatorInput>({
     zipCode: defaultZip || '',
     areaSqft: 2000,
-    materialType: 'asphalt_architectural',
+    materialType: defaultMaterial || 'asphalt_architectural',
     pitchFactor: 1.1, // Default to Low (4/12)
     complexity: 'simple',
     includeTearoff: true

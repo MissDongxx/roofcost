@@ -1,8 +1,8 @@
 {
   "metadata": {
-    "title": "ShipAny Template Two",
-    "description": "ShipAny is a NextJS boilerplate for building AI SaaS startups. Ship Fast with a variety of templates and components.",
-    "keywords": "shipany, shipany-boilerplate, shipany-template-two-demo"
+    "title": "RoofCostAI",
+    "description": "RoofCostAI — Free Roof Replacement Cost Calculator. Get accurate, localized roofing estimates in seconds.",
+    "keywords": "roof cost, roofing calculator, roof replacement estimate, RoofCostAI"
   },
   "sign": {
     "sign_in_title": "Sign In",

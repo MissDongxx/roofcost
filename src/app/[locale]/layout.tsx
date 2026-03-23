@@ -8,7 +8,12 @@ import { Toaster } from '@/shared/components/ui/sonner';
 import { AppContextProvider } from '@/shared/contexts/app';
 import { getMetadata } from '@/shared/lib/seo';
 
-export const generateMetadata = getMetadata();
+export const generateMetadata = async () => {
+  return {
+    title: 'RoofCostAI — Free Roof Replacement Cost Calculator',
+    description: 'Get an instant, math-based roof replacement cost estimate for your home. No signup, no sales calls, just your number.',
+  };
+};
 
 export default async function LocaleLayout({
   children,

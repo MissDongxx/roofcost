@@ -3,7 +3,7 @@ import { Metadata } from 'next';
 import { QuoteClient } from './QuoteClient';
 
 export const metadata: Metadata = {
-  title: 'Get Free Local Roofing Quotes | RoofCostCalc',
+  title: 'Get Free Local Roofing Quotes | RoofCostAI',
   robots: { index: false, follow: false },
 };
 

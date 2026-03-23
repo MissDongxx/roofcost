@@ -44,7 +44,7 @@ export function QuoteClient({ affiliateId }: QuoteClientProps) {
     // Redirect to HomeAdvisor
     const targetUrl = new URL('https://www.homeadvisor.com/task.html');
     if (zip) targetUrl.searchParams.set('zip', zip);
-    targetUrl.searchParams.set('utm_source', 'roofcostcalc');
+    targetUrl.searchParams.set('utm_source', 'roofcostai');
     targetUrl.searchParams.set('utm_medium', 'quote_page');
     targetUrl.searchParams.set('utm_campaign', 'local_quotes');
     if (affiliateId) targetUrl.searchParams.set('ref', affiliateId);
@@ -115,7 +115,7 @@ export function QuoteClient({ affiliateId }: QuoteClientProps) {
         </p>
 
         <p className="text-xs text-muted-foreground max-w-xl">
-          RoofCostCalc may receive compensation when you connect with contractors. This does not affect our estimates.
+          RoofCostAI may receive compensation when you connect with contractors. This does not affect our estimates.
         </p>
       </div>
     </div>

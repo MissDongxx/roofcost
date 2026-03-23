@@ -1,116 +1,78 @@
 import { Link } from '@/core/i18n/navigation';
-import {
-  BrandLogo,
-  BuiltWith,
-  Copyright,
-  LocaleSelector,
-  ThemeToggler,
-} from '@/shared/blocks/common';
 import { SmartIcon } from '@/shared/blocks/common/smart-icon';
-import { NavItem } from '@/shared/types/blocks/common';
 import { Footer as FooterType } from '@/shared/types/blocks/landing';
 
-export function Footer({ footer }: { footer: FooterType }) {
+export function Footer({ footer = {} as FooterType }: { footer: FooterType }) {
   return (
-    <footer
-      id={footer.id}
-      className={`py-8 sm:py-8 ${footer.className || ''} overflow-x-hidden`}
-      // overflow-x-hidden防止-footer-撑出水平滚动条
-    >
-      <div className="container space-y-8 overflow-x-hidden">
-        <div className="grid min-w-0 gap-12 md:grid-cols-5">
-          <div className="min-w-0 space-y-4 break-words md:col-span-2 md:space-y-6">
-            {footer.brand ? <BrandLogo brand={footer.brand} /> : null}
-
-            {footer.brand?.description ? (
-              <p
-                className="text-muted-foreground text-sm text-balance break-words"
-                dangerouslySetInnerHTML={{ __html: footer.brand.description }}
-              />
-            ) : null}
-          </div>
-
-          <div className="col-span-3 grid min-w-0 gap-6 sm:grid-cols-3">
-            {footer.nav?.items.map((item, idx) => (
-              <div key={idx} className="min-w-0 space-y-4 text-sm break-words">
-                <span className="block font-medium break-words">
-                  {item.title}
-                </span>
-
-                <div className="flex min-w-0 flex-wrap gap-4 sm:flex-col">
-                  {item.children?.map((subItem, iidx) => (
-                    <Link
-                      key={iidx}
-                      href={subItem.url || ''}
-                      target={subItem.target || ''}
-                      className="text-muted-foreground hover:text-primary block break-words duration-150"
-                    >
-                      <span className="break-words">{subItem.title || ''}</span>
-                    </Link>
-                  ))}
-                </div>
+    <footer className="bg-[var(--ink)] py-16 px-6 md:px-12 border-t border-white/5">
+      <div className="max-w-7xl mx-auto">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-12 pb-12 border-b border-white/10 mb-8">
+          {/* Brand Column */}
+          <div className="col-span-2 md:col-span-1">
+            <Link href="/" className="flex items-center gap-2 no-underline mb-4 group">
+              <div className="bg-white/5 p-2 rounded-lg group-hover:bg-white/10 transition-colors">
+                <svg width="24" height="24" viewBox="0 0 36 36" fill="none">
+                  <path d="M6 20 L18 8 L30 20" stroke="var(--rust)" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" fill="none"/>
+                  <rect x="10" y="20" width="16" height="10" rx="1" fill="rgba(255,255,255,.2)"/>
+                  <text x="14" y="28" fontFamily="var(--font-serif)" fontSize="12" fill="white" fontStyle="italic">$</text>
+                </svg>
               </div>
-            ))}
+              <span className="font-serif text-lg text-white font-medium tracking-tight">RoofCostAI</span>
+            </Link>
+            <p className="text-sm text-white/40 leading-relaxed max-w-xs mb-6">
+              Providing transparent, math-based roofing estimates for American homeowners. Simple, accurate, and free.
+            </p>
+            <div className="flex items-center gap-3">
+              <Link href="mailto:info@roofcostai.com" className="bg-white/5 p-2 rounded-full hover:bg-[var(--rust)] transition-all hover:scale-110 flex items-center justify-center">
+                <SmartIcon name="Mail" size={16} color="white" />
+              </Link>
+              <span className="text-[13px] text-white/40 italic">info@roofcostai.com</span>
+            </div>
+          </div>
+
+          {/* Calculator Column */}
+          <div className="flex flex-col gap-3">
+            <h4 className="font-mono text-[11px] text-white/30 uppercase tracking-widest font-bold mb-2">Calculator</h4>
+            <Link href="/calculator" className="text-[14px] text-white/50 hover:text-white transition-colors">Get Estimate</Link>
+            <Link href="/roof-cost" className="text-[14px] text-white/50 hover:text-white transition-colors">Price Guide</Link>
+            <Link href="/materials" className="text-[14px] text-white/50 hover:text-white transition-colors">Materials</Link>
+          </div>
+
+          {/* Cities Column */}
+          <div className="flex flex-col gap-3">
+            <h4 className="font-mono text-[11px] text-white/30 uppercase tracking-widest font-bold mb-2">Top Cities</h4>
+            <Link href="/roof-cost/texas/houston" className="text-[14px] text-white/50 hover:text-white transition-colors">Houston, TX</Link>
+            <Link href="/roof-cost/california/los-angeles" className="text-[14px] text-white/50 hover:text-white transition-colors">Los Angeles, CA</Link>
+            <Link href="/roof-cost/florida/miami" className="text-[14px] text-white/50 hover:text-white transition-colors">Miami, FL</Link>
+            <Link href="/roof-cost/illinois/chicago" className="text-[14px] text-white/50 hover:text-white transition-colors">Chicago, IL</Link>
+            <Link href="/roof-cost/arizona/phoenix" className="text-[14px] text-white/50 hover:text-white transition-colors">Phoenix, AZ</Link>
+          </div>
+
+          {/* Company & Support Column */}
+          <div className="flex flex-col gap-3">
+            <h4 className="font-mono text-[11px] text-white/30 uppercase tracking-widest font-bold mb-2">Company</h4>
+            <Link href="/about" className="text-[14px] text-white/50 hover:text-white transition-colors">About Us</Link>
+            <Link href="/methodology" className="text-[14px] text-white/50 hover:text-white transition-colors">Our Methodology</Link>
+            <Link href="/privacy" className="text-[14px] text-white/50 hover:text-white transition-colors font-medium">Privacy Policy</Link>
+            <Link href="/terms" className="text-[14px] text-white/50 hover:text-white transition-colors font-medium">Terms of Service</Link>
+            <Link href="/contact" className="text-[14px] text-white/50 hover:text-white transition-colors">Contact Us</Link>
           </div>
         </div>
 
-        <div className="flex min-w-0 flex-wrap items-center gap-4 sm:gap-8">
-          {footer.show_built_with !== false ? <BuiltWith /> : null}
-          <div className="min-w-0 flex-1" />
-          {footer.show_theme !== false ? <ThemeToggler type="toggle" /> : null}
-          {footer.show_locale !== false ? (
-            <LocaleSelector type="button" />
-          ) : null}
-        </div>
+        {/* Bottom Bar */}
+        <div className="flex flex-col md:flex-row justify-between items-center gap-6">
+          <div className="flex flex-col gap-1 text-center md:text-left">
+            <span className="text-[13px] text-white/40">© 2026 RoofCostAI. All rights reserved.</span>
+            <p className="text-[11px] text-white/20">Data sourced from BLS, RSMeans, and 1build market data APIs.</p>
+          </div>
 
-        <div
-          aria-hidden
-          className="h-px min-w-0 [background-image:linear-gradient(90deg,var(--color-foreground)_1px,transparent_1px)] bg-[length:6px_1px] bg-repeat-x opacity-25"
-        />
-        <div className="flex min-w-0 flex-wrap justify-between gap-8">
-          {footer.copyright ? (
-            <p
-              className="text-muted-foreground text-sm text-balance break-words"
-              dangerouslySetInnerHTML={{ __html: footer.copyright }}
-            />
-          ) : footer.brand ? (
-            <Copyright brand={footer.brand} />
-          ) : null}
-
-          <div className="min-w-0 flex-1"></div>
-
-          {footer.agreement ? (
-            <div className="flex min-w-0 flex-wrap items-center gap-4">
-              {footer.agreement?.items.map((item: NavItem, index: number) => (
-                <Link
-                  key={index}
-                  href={item.url || ''}
-                  target={item.target || ''}
-                  className="text-muted-foreground hover:text-primary block text-xs break-words underline duration-150"
-                >
-                  {item.title || ''}
-                </Link>
-              ))}
-            </div>
-          ) : null}
-
-          {footer.social ? (
-            <div className="flex min-w-0 flex-wrap items-center gap-2">
-              {footer.social?.items.map((item: NavItem, index) => (
-                <Link
-                  key={index}
-                  href={item.url || ''}
-                  target={item.target || ''}
-                  className="text-muted-foreground hover:text-primary bg-background block cursor-pointer rounded-full p-2 duration-150"
-                  aria-label={item.title || 'Social media link'}
-                >
-                  {item.icon && (
-                    <SmartIcon name={item.icon as string} size={20} />
-                  )}
-                </Link>
-              ))}
-            </div>
-          ) : null}
+          <Link href="/" className="flex items-center gap-2 no-underline opacity-50 hover:opacity-100 transition-opacity">
+            <svg width="20" height="20" viewBox="0 0 36 36" fill="none">
+              <path d="M6 20 L18 8 L30 20" stroke="var(--rust)" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" fill="none"/>
+              <rect x="10" y="20" width="16" height="10" rx="1" fill="rgba(255,255,255,.2)"/>
+            </svg>
+            <span className="font-serif text-sm text-white tracking-tight italic">RoofCostAI</span>
+          </Link>
         </div>
       </div>
     </footer>

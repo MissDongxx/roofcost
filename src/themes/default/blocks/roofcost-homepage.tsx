@@ -4,96 +4,6 @@ import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { Link } from '@/core/i18n/navigation';
 
-// Navigation Component
-function Navigation() {
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-
-  const popularCities = [
-    { name: 'Houston', href: '/roof-cost/texas/houston' },
-    { name: 'Los Angeles', href: '/roof-cost/california/los-angeles' },
-    { name: 'Miami', href: '/roof-cost/florida/miami' },
-    { name: 'Chicago', href: '/roof-cost/illinois/chicago' },
-    { name: 'Phoenix', href: '/roof-cost/arizona/phoenix' },
-    { name: 'Atlanta', href: '/roof-cost/georgia/atlanta' },
-  ];
-
-  return (
-    <>
-      <nav className="sticky top-0 z-50 bg-[var(--slate)] h-[var(--nav-height)] flex items-center px-4 md:px-12 gap-8 shadow-sm">
-        <Link href="/" className="flex items-center gap-2.5 shrink-0 no-underline">
-          <div className="w-9 h-9 relative">
-            <svg className="block" width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <rect width="36" height="36" rx="8" fill="rgba(255,255,255,.1)"/>
-              <path d="M6 20 L18 8 L30 20" stroke="var(--rust)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" fill="none"/>
-              <rect x="10" y="20" width="16" height="10" rx="1" fill="rgba(255,255,255,.15)"/>
-              <text x="14" y="28" fontFamily="var(--font-serif)" fontSize="12" fill="rgba(255,255,255,.9)" fontStyle="italic">$</text>
-            </svg>
-          </div>
-          <div className="flex flex-col leading-none">
-            <span className="font-serif text-lg text-white -tracking-[0.2px]">RoofCostCalc</span>
-            <span className="font-mono text-[9px] text-white/70 tracking-[0.12em] uppercase mt-0.5">Honest Estimates</span>
-          </div>
-        </Link>
-
-        <div className="hidden md:flex gap-1 ml-auto">
-          <Link href="/calculator" className="text-white/65 text-sm no-underline px-3 py-1.5 rounded-md transition-all hover:text-white hover:bg-white/8">
-            Calculator
-          </Link>
-          <Link href="/roof-cost" className="text-white/65 text-sm no-underline px-3 py-1.5 rounded-md transition-all hover:text-white hover:bg-white/8">
-            Price Guide
-          </Link>
-          <Link href="/materials" className="text-white/65 text-sm no-underline px-3 py-1.5 rounded-md transition-all hover:text-white hover:bg-white/8">
-            Materials
-          </Link>
-          <Link href="/blog" className="text-white/65 text-sm no-underline px-3 py-1.5 rounded-md transition-all hover:text-white hover:bg-white/8">
-            Learn
-          </Link>
-        </div>
-
-        <Link href="/calculator" className="hidden md:block bg-[var(--rust)] text-white text-sm font-medium px-4.5 py-2 rounded-lg no-underline transition-colors hover:bg-[var(--rust-2)] whitespace-nowrap ml-2">
-          Get Estimate →
-        </Link>
-
-        <button
-          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          className="md:hidden relative z-20 -m-2.5 -mr-3 block cursor-pointer p-2.5"
-          aria-label={isMobileMenuOpen ? 'Close Menu' : 'Open Menu'}
-        >
-          <svg className={`w-5 h-5 transition-transform duration-200 ${isMobileMenuOpen ? 'scale-0 rotate-180 opacity-0' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-          </svg>
-          <svg className={`absolute inset-0 m-auto w-5 h-5 transition-transform duration-200 ${isMobileMenuOpen ? 'scale-100 rotate-0 opacity-100' : 'scale-0 -rotate-180 opacity-0'}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-          </svg>
-        </button>
-      </nav>
-
-      {/* Mobile Menu */}
-      {isMobileMenuOpen && (
-        <div className="fixed inset-0 top-[var(--nav-height)] z-40 bg-[var(--slate)] md:hidden">
-          <div className="flex flex-col p-4 gap-2">
-            <Link href="/calculator" onClick={() => setIsMobileMenuOpen(false)} className="text-white text-base py-3 no-underline border-b border-white/10">
-              Calculator
-            </Link>
-            <Link href="/roof-cost" onClick={() => setIsMobileMenuOpen(false)} className="text-white text-base py-3 no-underline border-b border-white/10">
-              Price Guide
-            </Link>
-            <Link href="/materials" onClick={() => setIsMobileMenuOpen(false)} className="text-white text-base py-3 no-underline border-b border-white/10">
-              Materials
-            </Link>
-            <Link href="/blog" onClick={() => setIsMobileMenuOpen(false)} className="text-white text-base py-3 no-underline border-b border-white/10">
-              Learn
-            </Link>
-            <Link href="/calculator" onClick={() => setIsMobileMenuOpen(false)} className="bg-[var(--rust)] text-white text-center text-sm font-medium py-3 rounded-lg no-underline mt-4">
-              Get Estimate →
-            </Link>
-          </div>
-        </div>
-      )}
-    </>
-  );
-}
-
 // Hero Section Component
 function HeroSection() {
   const router = useRouter();
@@ -550,65 +460,7 @@ function CTABand() {
   );
 }
 
-// Footer Component
-function Footer() {
-  return (
-    <footer className="bg-[var(--ink)] py-12 px-4 md:px-12">
-      <div className="max-w-[1200px] mx-auto">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-10 pb-10 border-b border-white/8 mb-7">
-          {/* Brand */}
-          <div className="col-span-2 md:col-span-1">
-            <Link href="/" className="flex items-center gap-2 no-underline mb-3">
-              <svg width="30" height="30" viewBox="0 0 36 36" fill="none">
-                <rect width="36" height="36" rx="8" fill="rgba(255,255,255,.1)"/>
-                <path d="M6 20 L18 8 L30 20" stroke="var(--rust)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" fill="none"/>
-                <rect x="10" y="20" width="16" height="10" rx="1" fill="rgba(255,255,255,.12)"/>
-                <text x="14" y="28" fontFamily="var(--font-serif)" fontSize="12" fill="rgba(255,255,255,.85)" fontStyle="italic">$</text>
-              </svg>
-              <span className="font-serif text-[16px] text-white">RoofCostCalc</span>
-            </Link>
-            <p className="text-[13px] text-white/40 leading-[1.7] max-w-[260px]">
-              Transparent, math-based roofing cost estimates for American homeowners. No signup. No sales calls. Just your number.
-            </p>
-          </div>
 
-          {/* Calculator */}
-          <div>
-            <h4 className="font-mono text-[11px] text-white/35 uppercase tracking-[0.1em] mb-3.5">Calculator</h4>
-            <Link href="/calculator" className="block text-[13px] text-white/55 no-underline mb-2 hover:text-white transition-colors">Get Estimate</Link>
-            <Link href="/roof-cost" className="block text-[13px] text-white/55 no-underline mb-2 hover:text-white transition-colors">Price Guide</Link>
-            <Link href="/materials" className="block text-[13px] text-white/55 no-underline hover:text-white transition-colors">Materials</Link>
-          </div>
-
-          {/* Top Cities */}
-          <div>
-            <h4 className="font-mono text-[11px] text-white/35 uppercase tracking-[0.1em] mb-3.5">Top Cities</h4>
-            <Link href="/roof-cost/texas/houston" className="block text-[13px] text-white/55 no-underline mb-2 hover:text-white transition-colors">Houston</Link>
-            <Link href="/roof-cost/california/los-angeles" className="block text-[13px] text-white/55 no-underline mb-2 hover:text-white transition-colors">Los Angeles</Link>
-            <Link href="/roof-cost/florida/miami" className="block text-[13px] text-white/55 no-underline mb-2 hover:text-white transition-colors">Miami</Link>
-            <Link href="/roof-cost/illinois/chicago" className="block text-[13px] text-white/55 no-underline mb-2 hover:text-white transition-colors">Chicago</Link>
-            <Link href="/roof-cost/arizona/phoenix" className="block text-[13px] text-white/55 no-underline hover:text-white transition-colors">Phoenix</Link>
-          </div>
-
-          {/* Company */}
-          <div>
-            <h4 className="font-mono text-[11px] text-white/35 uppercase tracking-[0.1em] mb-3.5">Company</h4>
-            <Link href="/about" className="block text-[13px] text-white/55 no-underline mb-2 hover:text-white transition-colors">About</Link>
-            <Link href="/methodology" className="block text-[13px] text-white/55 no-underline mb-2 hover:text-white transition-colors">Methodology</Link>
-            <Link href="/privacy" className="block text-[13px] text-white/55 no-underline mb-2 hover:text-white transition-colors">Privacy</Link>
-            <Link href="/terms" className="block text-[13px] text-white/55 no-underline mb-2 hover:text-white transition-colors">Terms</Link>
-            <Link href="/contact" className="block text-[13px] text-white/55 no-underline hover:text-white transition-colors">Contact</Link>
-          </div>
-        </div>
-
-        <div className="flex justify-between items-center text-[12px] text-white/30 flex-col md:flex-row gap-4">
-          <span>© 2026 RoofCostCalc. All rights reserved.</span>
-          <span>Data sources: BLS · RSMeans · 1build API</span>
-        </div>
-      </div>
-    </footer>
-  );
-}
 
 // Main Homepage Component
 export function RoofcostHomepage({
@@ -618,14 +470,12 @@ export function RoofcostHomepage({
 }) {
   return (
     <>
-      <Navigation />
       <HeroSection />
       <StatsBar />
       <HowItWorks />
       <Materials />
       <SocialProof />
       <CTABand />
-      <Footer />
     </>
   );
 }

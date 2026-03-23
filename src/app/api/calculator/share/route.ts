@@ -34,7 +34,7 @@ export async function POST(req: Request) {
     // Only send if we have a real key, otherwise just mock success for local dev
     if (process.env.RESEND_API_KEY) {
       await resend.emails.send({
-        from: 'RoofCost Calculator <estimates@roofcost.ai>',
+        from: 'RoofCost Calculator <info@roofcostai.com>',
         to: email,
         subject: `Your Roof Estimate: $${result.mid.toLocaleString()}`,
         html: htmlContent,

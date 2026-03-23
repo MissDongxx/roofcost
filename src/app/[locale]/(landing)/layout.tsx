@@ -1,5 +1,5 @@
 import { ReactNode, Suspense, Children } from 'react';
-
+import { getTranslations } from 'next-intl/server';
 import { getThemeBlock } from '@/core/theme';
 import {
   Footer as FooterType,
@@ -8,38 +8,50 @@ import {
 
 export default async function LandingLayout({
   children,
-  header,
-  footer,
 }: {
   children: ReactNode;
-  header: HeaderType;
-  footer: FooterType;
 }) {
   // Check if we're rendering the custom homepage
-  // The custom homepage is rendered when the component has isCustomHomepage prop
   let isCustomHomepage = false;
+
+  const findCustomHomepageProp = (node: any): boolean => {
+    if (!node) return false;
+    if (node.props?.isCustomHomepage === true) return true;
+    if (node.props?.children) {
+      if (Array.isArray(node.props.children)) {
+        return node.props.children.some(findCustomHomepageProp);
+      }
+      return findCustomHomepageProp(node.props.children);
+    }
+    return false;
+  };
+
   Children.forEach(children, (child) => {
-    if ((child as any)?.props?.isCustomHomepage === true) {
+    if (findCustomHomepageProp(child)) {
       isCustomHomepage = true;
     }
   });
+
+  // Fetch header/footer data from translations
+  // Since this is a layout, we must fetch data here as Next.js doesn't pass it as props
+  const t = await getTranslations('landing');
+  const header = t.raw('header') as HeaderType;
+  const footer = t.raw('footer') as FooterType;
 
   const Header = await getThemeBlock('header');
   const Footer = await getThemeBlock('footer');
 
   return (
-    <div className="h-screen w-screen">
-      {!isCustomHomepage && (
-        <Suspense fallback={null}>
-          <Header header={header} />
-        </Suspense>
-      )}
-      {children}
-      {!isCustomHomepage && (
-        <Suspense fallback={null}>
-          <Footer footer={footer} />
-        </Suspense>
-      )}
+    <div className="flex min-h-screen flex-col">
+      <Suspense fallback={null}>
+        <Header header={header} />
+      </Suspense>
+      <main className="flex-1">
+        {children}
+      </main>
+      <Suspense fallback={null}>
+        <Footer footer={footer} />
+      </Suspense>
     </div>
   );
 }
