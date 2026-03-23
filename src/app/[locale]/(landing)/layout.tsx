@@ -1,8 +1,6 @@
-import { ReactNode } from 'react';
-import { getTranslations } from 'next-intl/server';
+import { ReactNode, Suspense, Children } from 'react';
 
-import { getThemeLayout } from '@/core/theme';
-import { LocaleDetector, TopBanner } from '@/shared/blocks/common';
+import { getThemeBlock } from '@/core/theme';
 import {
   Footer as FooterType,
   Header as HeaderType,
@@ -10,35 +8,38 @@ import {
 
 export default async function LandingLayout({
   children,
+  header,
+  footer,
 }: {
   children: ReactNode;
+  header: HeaderType;
+  footer: FooterType;
 }) {
-  // load page data
-  const t = await getTranslations('landing');
+  // Check if we're rendering the custom homepage
+  // The custom homepage is rendered when the component has isCustomHomepage prop
+  let isCustomHomepage = false;
+  Children.forEach(children, (child) => {
+    if ((child as any)?.props?.isCustomHomepage === true) {
+      isCustomHomepage = true;
+    }
+  });
 
-  // load layout component
-  const Layout = await getThemeLayout('landing');
-
-  // header and footer to display
-  const header: HeaderType = t.raw('header');
-  const footer: FooterType = t.raw('footer');
+  const Header = await getThemeBlock('header');
+  const Footer = await getThemeBlock('footer');
 
   return (
-    <Layout header={header} footer={footer}>
-      <LocaleDetector />
-      {header.topbanner && header.topbanner.text && (
-        <TopBanner
-          id="topbanner"
-          text={header.topbanner?.text}
-          buttonText={header.topbanner?.buttonText}
-          href={header.topbanner?.href}
-          target={header.topbanner?.target}
-          closable
-          rememberDismiss
-          dismissedExpiryDays={header.topbanner?.dismissedExpiryDays ?? 1}
-        />
+    <div className="h-screen w-screen">
+      {!isCustomHomepage && (
+        <Suspense fallback={null}>
+          <Header header={header} />
+        </Suspense>
       )}
       {children}
-    </Layout>
+      {!isCustomHomepage && (
+        <Suspense fallback={null}>
+          <Footer footer={footer} />
+        </Suspense>
+      )}
+    </div>
   );
 }

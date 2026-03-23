@@ -14,7 +14,6 @@ export async function POST(req: Request) {
       return NextResponse.json({ error: 'Missing required fields' }, { status: 400 });
     }
 
-    // @ts-expect-error type incompatibility between internal components
     const stream = await renderToStream(
       React.createElement(RoofEstimatePDF, { result, input })
     );

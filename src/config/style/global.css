@@ -101,6 +101,15 @@ pre {
       transform: translateY(calc(-100% - var(--gap)));
     }
   }
+  --animate-slideRight: slideRight 0.6s cubic-bezier(.22,1,.36,1) both;
+  @keyframes slideRight {
+    from {
+      transform: scaleX(0);
+    }
+    to {
+      transform: scaleX(1);
+    }
+  }
 }
 
 ::view-transition-old(root),

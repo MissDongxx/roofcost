@@ -4,6 +4,8 @@ export * from './footer';
 
 export * from './hero';
 
+export * from './roofcost-homepage';
+
 export * from './features';
 export * from './features-list';
 export * from './features-accordion';
