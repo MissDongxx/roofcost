@@ -142,7 +142,7 @@ export function CalculatorForm({ onCalculate, defaultZip, defaultMaterial }: Cal
               }`}>
                 {step > s.num ? <CheckCircle2 className="w-5 h-5" /> : s.num}
               </div>
-              <span className={`text-xs font-semibold ${step >= s.num ? 'text-primary' : 'text-muted-foreground'}`}>
+              <span className={`text-[10px] sm:text-xs font-semibold mt-1 text-center leading-tight max-w-[60px] sm:max-w-none ${step >= s.num ? 'text-primary' : 'text-muted-foreground'}`}>
                 {s.label}
               </span>
             </div>
@@ -171,22 +171,27 @@ export function CalculatorForm({ onCalculate, defaultZip, defaultMaterial }: Cal
                     onChange={(e) => handleChange('zipCode', e.target.value)}
                     required
                     maxLength={5}
-                    className="w-full text-lg py-6 pr-32"
+                    className="w-full text-lg py-6 pr-10 sm:pr-32"
                   />
                   {fetchingGeo ? (
-                    <div className="absolute right-4 top-1/2 -translate-y-1/2">
-                      <Loader2 className="h-5 w-5 animate-spin text-muted-foreground" />
+                    <div className="absolute right-3 top-1/2 -translate-y-1/2">
+                      <Loader2 className="h-4 w-4 animate-spin text-muted-foreground" />
                     </div>
                   ) : locationStr ? (
-                    <div className="absolute right-4 top-1/2 -translate-y-1/2 text-sm font-medium text-green-600 truncate max-w-[120px]">
+                    <div className="absolute right-3 top-1/2 -translate-y-1/2 text-[10px] sm:text-sm font-medium text-green-600 truncate max-w-[60px] sm:max-w-[120px]">
                       ✓ {locationStr}
                     </div>
                   ) : formData.zipCode.length === 5 ? (
-                    <div className="absolute right-4 top-1/2 -translate-y-1/2 text-sm font-medium text-muted-foreground truncate max-w-[120px]">
+                    <div className="absolute right-3 top-1/2 -translate-y-1/2 text-[10px] sm:text-sm font-medium text-muted-foreground truncate max-w-[60px] sm:max-w-[120px]">
                       Not Found
                     </div>
                   ) : null}
                 </div>
+                {locationStr && (
+                  <p className="sm:hidden text-xs font-medium text-green-600 mt-1">
+                    ✓ Found: {locationStr}
+                  </p>
+                )}
               </div>
               
               <div className="space-y-2">
@@ -330,23 +335,25 @@ export function CalculatorForm({ onCalculate, defaultZip, defaultMaterial }: Cal
           )}
         </div>
 
-        <div className="flex gap-4 mt-8 pt-6 border-t border-border">
+        <div className="flex flex-row gap-2 sm:gap-4 mt-8 pt-6 border-t border-border">
           {step > 1 && (
-            <Button variant="outline" onClick={prevStep} className="w-full sm:w-1/3 py-6" type="button">
-              <ArrowLeft className="mr-2 w-4 h-4" /> {t('backBtn') || 'Back'}
+            <Button variant="outline" onClick={prevStep} className="px-3 sm:px-8 py-6" type="button">
+              <ArrowLeft className="sm:mr-2 w-4 h-4" /> <span className="hidden sm:inline">{t('backBtn') || 'Back'}</span>
             </Button>
           )}
           
-          {step < 4 ? (
-            <Button onClick={nextStep} className="w-full py-6 flex-1" type="button">
-              {t('nextBtn') || 'Next'} <ArrowRight className="ml-2 w-4 h-4" />
-            </Button>
-          ) : (
-            <Button onClick={handleSubmit} className="w-full py-6 text-lg flex-1" disabled={loading} type="button">
-              {loading ? <Loader2 className="mr-2 h-5 w-5 animate-spin" /> : null}
-              {t('calculateBtn') || 'Calculate My Cost'}
-            </Button>
-          )}
+          <div className="flex-1">
+            {step < 4 ? (
+              <Button onClick={nextStep} className="w-full py-6" type="button">
+                {t('nextBtn') || 'Next'} <ArrowRight className="ml-2 w-4 h-4" />
+              </Button>
+            ) : (
+              <Button onClick={handleSubmit} className="w-full py-6 text-sm sm:text-lg" disabled={loading} type="button">
+                {loading ? <Loader2 className="mr-2 h-4 w-4 animate-spin" /> : null}
+                {t('calculateBtn') || 'Calculate My Cost'}
+              </Button>
+            )}
+          </div>
         </div>
       </CardContent>
     </Card>

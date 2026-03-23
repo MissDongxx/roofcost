@@ -10,8 +10,9 @@ import { PriceResult, CalculatorInput } from '@/lib/calculator/pricing-engine';
 import { Button } from '@/shared/components/ui/button';
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from '@/shared/components/ui/dialog';
 import { Input } from '@/shared/components/ui/input';
-import { Collapsible, CollapsibleContent, CollapsibleTrigger } from '@/shared/components/ui/collapsible';
-import { Loader2, FileText, Mail, ChevronDown } from 'lucide-react';
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/shared/components/ui/accordion';
+import { Card, CardContent } from '@/shared/components/ui/card';
+import { Loader2, FileText, Mail } from 'lucide-react';
 import { toast } from 'sonner';
 import materialsRaw from '@/data/materials.json';
 
@@ -23,7 +24,6 @@ export default function ResultPage() {
   const [result, setResult] = useState<PriceResult | null>(null);
   const [inputData, setInputData] = useState<CalculatorInput | null>(null);
   const [loading, setLoading] = useState(true);
-  const [isQuoteOpen, setIsQuoteOpen] = useState(false);
 
   // PDF email states
   const [email, setEmail] = useState('');
@@ -177,21 +177,22 @@ export default function ResultPage() {
             high={result.high}
           />
 
-          <div className="mt-12 pt-12 border-t">
-            <Collapsible open={isQuoteOpen} onOpenChange={setIsQuoteOpen} className="w-full">
-              <div className="flex flex-col items-center">
-                <CollapsibleTrigger asChild>
-                  <Button variant="ghost" className="gap-2 font-semibold">
-                    Share your actual contractor quote
-                    <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${isQuoteOpen ? 'rotate-180' : ''}`} />
-                  </Button>
-                </CollapsibleTrigger>
-              </div>
-              <CollapsibleContent className="mt-6 animate-in slide-in-from-top-4 fade-in duration-300">
-                <QuoteSubmitForm initialData={inputData} />
-              </CollapsibleContent>
-            </Collapsible>
-          </div>
+          <Card className="w-full max-w-2xl mx-auto shadow-md border-primary/5 mt-12">
+            <CardContent className="p-0">
+              <Accordion type="single" collapsible defaultValue="quote" className="w-full">
+                <AccordionItem value="quote" className="border-none">
+                  <AccordionTrigger className="px-6 py-4 hover:no-underline hover:bg-muted/10">
+                    <span className="font-bold text-lg text-primary">
+                      Share your actual contractor quote
+                    </span>
+                  </AccordionTrigger>
+                  <AccordionContent className="px-6 pb-6 pt-2">
+                    <QuoteSubmitForm initialData={inputData} standalone={false} />
+                  </AccordionContent>
+                </AccordionItem>
+              </Accordion>
+            </CardContent>
+          </Card>
 
           <div className="flex justify-center mt-8 pt-8 border-t">
             <Button

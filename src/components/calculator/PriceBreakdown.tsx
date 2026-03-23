@@ -32,7 +32,7 @@ export function PriceBreakdown({ result }: { result: PriceResult }) {
   return (
     <Card className="w-full max-w-2xl mx-auto shadow-md border-primary/5 mt-6">
       <CardContent className="p-0">
-        <Accordion type="single" collapsible className="w-full">
+        <Accordion type="single" collapsible defaultValue="breakdown" className="w-full">
           <AccordionItem value="breakdown" className="border-none">
             <AccordionTrigger className="px-6 py-4 hover:no-underline hover:bg-muted/10">
               <span className="font-bold text-lg text-primary">
