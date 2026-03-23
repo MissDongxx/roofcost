@@ -4,17 +4,39 @@ import { useTranslations } from 'next-intl';
 import { Button } from '@/shared/components/ui/button';
 import { Card, CardContent } from '@/shared/components/ui/card';
 import { ArrowRight, CheckCircle2 } from 'lucide-react';
-import Link from 'next/link';
+import { useRouter } from '@/core/i18n/navigation';
 // import { usePostHog } from 'posthog-js/react';
 
-export function LeadCTA({ zipCode }: { zipCode?: string }) {
+export function LeadCTA({ 
+  zipCode,
+  materialType,
+  mid,
+  low,
+  high
+}: { 
+  zipCode?: string;
+  materialType?: string;
+  mid?: number;
+  low?: number;
+  high?: number;
+}) {
   const t = useTranslations('Calculator');
+  const router = useRouter();
   // const posthog = usePostHog();
 
   const handleCTAClick = () => {
     // if (posthog) {
     //   posthog.capture('calculator_cta_clicked', { zipCode });
     // }
+
+    const params = new URLSearchParams();
+    if (zipCode) params.set('zip', zipCode);
+    if (materialType) params.set('material', materialType);
+    if (mid) params.set('mid', String(mid));
+    if (low) params.set('low', String(low));
+    if (high) params.set('high', String(high));
+
+    router.push(`/calculator/quote?${params.toString()}`);
   };
 
   return (
@@ -38,12 +60,10 @@ export function LeadCTA({ zipCode }: { zipCode?: string }) {
           </li>
         </ul>
 
-        <Link href={`/calculator/quote${zipCode ? `?zip=${zipCode}` : ''}`} className="w-full sm:w-auto" onClick={handleCTAClick}>
-          <Button size="lg" className="w-full sm:w-auto text-lg group">
-            {t('ctaButton') || 'Get Real Local Quotes'}
-            <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
-          </Button>
-        </Link>
+        <Button size="lg" className="w-full sm:w-auto text-lg group" onClick={handleCTAClick}>
+          {t('ctaButton') || 'Get Real Local Quotes'}
+          <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+        </Button>
       </CardContent>
     </Card>
   );

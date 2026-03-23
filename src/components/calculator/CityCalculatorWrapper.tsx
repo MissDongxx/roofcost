@@ -20,7 +20,12 @@ export function CityCalculatorWrapper({ defaultZip }: { defaultZip: string }) {
         <div className="space-y-6 animate-in fade-in slide-in-from-bottom-8 duration-700">
           <ResultCard result={result} />
           <PriceBreakdown result={result} />
-          <LeadCTA zipCode={defaultZip} />
+          <LeadCTA 
+            zipCode={defaultZip} 
+            mid={result?.mid}
+            low={result?.low}
+            high={result?.high}
+          />
         </div>
       )}
     </div>

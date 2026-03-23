@@ -121,7 +121,13 @@ export default function CalculatorPage() {
               </Dialog>
             </div>
 
-            <LeadCTA zipCode={inputData?.zipCode} />
+            <LeadCTA 
+              zipCode={inputData?.zipCode} 
+              materialType={inputData?.materialType}
+              mid={result?.mid}
+              low={result?.low}
+              high={result?.high}
+            />
 
             <div className="mt-12 pt-12 border-t">
               <Collapsible open={isQuoteOpen} onOpenChange={setIsQuoteOpen} className="w-full">

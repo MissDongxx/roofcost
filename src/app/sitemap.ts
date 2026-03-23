@@ -2,7 +2,7 @@ import { MetadataRoute } from 'next';
 import citiesData from '@/data/cities.json';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const base = process.env.NEXT_PUBLIC_SITE_URL || 'https://roofcost.us';
+  const base = process.env.NEXT_PUBLIC_SITE_URL || 'https://roofcostai.com';
 
   const staticRoutes: MetadataRoute.Sitemap = ['/', '/calculator'].map(path => ({
     url: `${base}${path}`,

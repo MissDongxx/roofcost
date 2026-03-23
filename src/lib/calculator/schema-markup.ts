@@ -51,7 +51,7 @@ export function generateWebAppSchema() {
     "@context": "https://schema.org",
     "@type": "WebApplication",
     "name": "RoofCost Calculator",
-    "url": process.env.NEXT_PUBLIC_SITE_URL || "https://roofcost.us",
+    "url": process.env.NEXT_PUBLIC_SITE_URL || "https://roofcostai.com",
     "description": "Free instant roof replacement cost calculator.",
     "applicationCategory": "BusinessApplication",
     "operatingSystem": "All",
