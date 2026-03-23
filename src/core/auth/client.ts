@@ -64,7 +64,13 @@ function createGetSessionThrottledFetch({
         await new Promise((r) => setTimeout(r, waitMs));
       }
       lastStartedAt = Date.now();
-      return fetch(input, init);
+      try {
+        return await fetch(input, init);
+      } catch (error) {
+        // Log fetch errors for debugging (e.g., browser extension interference)
+        console.warn('Fetch failed in auth client:', error);
+        throw error;
+      }
     })().finally(() => {
       inFlight.delete(key);
     });

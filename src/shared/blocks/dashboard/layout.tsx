@@ -1,3 +1,6 @@
+'use client';
+
+import { useEffect, useState } from 'react';
 import { ReactNode } from 'react';
 
 import { SidebarInset, SidebarProvider } from '@/shared/components/ui/sidebar';
@@ -12,6 +15,12 @@ export function DashboardLayout({
   children: ReactNode;
   sidebar: SidebarType;
 }) {
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
   return (
     <SidebarProvider
       style={
@@ -21,7 +30,7 @@ export function DashboardLayout({
         } as React.CSSProperties
       }
     >
-      {sidebar && (
+      {mounted && sidebar && (
         <Sidebar variant={sidebar.variant || 'inset'} sidebar={sidebar} />
       )}
       <SidebarInset>{children}</SidebarInset>
