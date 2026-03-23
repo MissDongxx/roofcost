@@ -1,0 +1,48 @@
+{
+  "asphalt_3tab": {
+    "display_name": "Asphalt 3-Tab Shingles",
+    "price_low_sqft": 3.50,
+    "price_mid_sqft": 4.50,
+    "price_high_sqft": 5.50,
+    "lifespan_years": 20,
+    "description": "Budget-friendly option, widely available",
+    "icon": "asphalt"
+  },
+  "asphalt_architectural": {
+    "display_name": "Architectural Shingles",
+    "price_low_sqft": 4.50,
+    "price_mid_sqft": 6.00,
+    "price_high_sqft": 7.50,
+    "lifespan_years": 30,
+    "description": "Most popular choice, durable and attractive"
+  },
+  "metal_standing_seam": {
+    "display_name": "Metal (Standing Seam)",
+    "price_low_sqft": 10.00,
+    "price_mid_sqft": 14.00,
+    "price_high_sqft": 18.00,
+    "lifespan_years": 50,
+    "description": "Premium longevity, energy efficient"
+  },
+  "metal_corrugated": {
+    "display_name": "Metal (Corrugated / R-Panel)",
+    "price_low_sqft": 7.00,
+    "price_mid_sqft": 9.50,
+    "price_high_sqft": 12.00,
+    "lifespan_years": 40
+  },
+  "tile_concrete": {
+    "display_name": "Concrete Tile",
+    "price_low_sqft": 9.00,
+    "price_mid_sqft": 13.00,
+    "price_high_sqft": 18.00,
+    "lifespan_years": 50
+  },
+  "slate": {
+    "display_name": "Natural Slate",
+    "price_low_sqft": 15.00,
+    "price_mid_sqft": 22.00,
+    "price_high_sqft": 30.00,
+    "lifespan_years": 100
+  }
+}

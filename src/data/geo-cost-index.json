@@ -1,0 +1,1518 @@
+{
+  "10001": {
+    "state_code": "NY",
+    "metro_area": "New York City",
+    "labor_cost_index": 1.42,
+    "material_index": 1.18
+  },
+  "10501": {
+    "state_code": "AL",
+    "metro_area": "Alabama City 2",
+    "labor_cost_index": 0.83,
+    "material_index": 0.936
+  },
+  "11001": {
+    "state_code": "AL",
+    "metro_area": "Alabama City 3",
+    "labor_cost_index": 0.831,
+    "material_index": 0.946
+  },
+  "11501": {
+    "state_code": "AL",
+    "metro_area": "Alabama City 4",
+    "labor_cost_index": 0.866,
+    "material_index": 0.941
+  },
+  "12001": {
+    "state_code": "AL",
+    "metro_area": "Alabama City 5",
+    "labor_cost_index": 0.863,
+    "material_index": 0.949
+  },
+  "12501": {
+    "state_code": "AK",
+    "metro_area": "Alaska City 1",
+    "labor_cost_index": 1.3,
+    "material_index": 1.243
+  },
+  "13001": {
+    "state_code": "AK",
+    "metro_area": "Alaska City 2",
+    "labor_cost_index": 1.266,
+    "material_index": 1.255
+  },
+  "13501": {
+    "state_code": "AK",
+    "metro_area": "Alaska City 3",
+    "labor_cost_index": 1.273,
+    "material_index": 1.235
+  },
+  "14001": {
+    "state_code": "AK",
+    "metro_area": "Alaska City 4",
+    "labor_cost_index": 1.252,
+    "material_index": 1.266
+  },
+  "14501": {
+    "state_code": "AK",
+    "metro_area": "Alaska City 5",
+    "labor_cost_index": 1.333,
+    "material_index": 1.271
+  },
+  "15001": {
+    "state_code": "AZ",
+    "metro_area": "Arizona City 1",
+    "labor_cost_index": 0.945,
+    "material_index": 1.049
+  },
+  "15501": {
+    "state_code": "AZ",
+    "metro_area": "Arizona City 2",
+    "labor_cost_index": 0.998,
+    "material_index": 1.037
+  },
+  "16001": {
+    "state_code": "AZ",
+    "metro_area": "Arizona City 3",
+    "labor_cost_index": 0.997,
+    "material_index": 1.066
+  },
+  "16501": {
+    "state_code": "AZ",
+    "metro_area": "Arizona City 4",
+    "labor_cost_index": 1.023,
+    "material_index": 1.051
+  },
+  "17001": {
+    "state_code": "AZ",
+    "metro_area": "Arizona City 5",
+    "labor_cost_index": 0.947,
+    "material_index": 1.041
+  },
+  "17501": {
+    "state_code": "AR",
+    "metro_area": "Arkansas City 1",
+    "labor_cost_index": 0.817,
+    "material_index": 0.906
+  },
+  "18001": {
+    "state_code": "AR",
+    "metro_area": "Arkansas City 2",
+    "labor_cost_index": 0.848,
+    "material_index": 0.885
+  },
+  "18501": {
+    "state_code": "AR",
+    "metro_area": "Arkansas City 3",
+    "labor_cost_index": 0.843,
+    "material_index": 0.899
+  },
+  "19001": {
+    "state_code": "AR",
+    "metro_area": "Arkansas City 4",
+    "labor_cost_index": 0.846,
+    "material_index": 0.894
+  },
+  "19501": {
+    "state_code": "AR",
+    "metro_area": "Arkansas City 5",
+    "labor_cost_index": 0.784,
+    "material_index": 0.885
+  },
+  "20001": {
+    "state_code": "CA",
+    "metro_area": "California City 1",
+    "labor_cost_index": 1.377,
+    "material_index": 1.138
+  },
+  "20501": {
+    "state_code": "CA",
+    "metro_area": "California City 2",
+    "labor_cost_index": 1.369,
+    "material_index": 1.13
+  },
+  "21001": {
+    "state_code": "CA",
+    "metro_area": "California City 3",
+    "labor_cost_index": 1.313,
+    "material_index": 1.157
+  },
+  "21501": {
+    "state_code": "CA",
+    "metro_area": "California City 4",
+    "labor_cost_index": 1.319,
+    "material_index": 1.173
+  },
+  "22001": {
+    "state_code": "CA",
+    "metro_area": "California City 5",
+    "labor_cost_index": 1.296,
+    "material_index": 1.134
+  },
+  "22501": {
+    "state_code": "CO",
+    "metro_area": "Colorado City 1",
+    "labor_cost_index": 1.102,
+    "material_index": 1.059
+  },
+  "23001": {
+    "state_code": "CO",
+    "metro_area": "Colorado City 2",
+    "labor_cost_index": 1.091,
+    "material_index": 1.069
+  },
+  "23501": {
+    "state_code": "CO",
+    "metro_area": "Colorado City 3",
+    "labor_cost_index": 1.125,
+    "material_index": 1.064
+  },
+  "24001": {
+    "state_code": "CO",
+    "metro_area": "Colorado City 4",
+    "labor_cost_index": 1.079,
+    "material_index": 1.089
+  },
+  "24501": {
+    "state_code": "CO",
+    "metro_area": "Colorado City 5",
+    "labor_cost_index": 1.094,
+    "material_index": 1.065
+  },
+  "25001": {
+    "state_code": "CT",
+    "metro_area": "Connecticut City 1",
+    "labor_cost_index": 1.157,
+    "material_index": 1.105
+  },
+  "25501": {
+    "state_code": "CT",
+    "metro_area": "Connecticut City 2",
+    "labor_cost_index": 1.173,
+    "material_index": 1.087
+  },
+  "26001": {
+    "state_code": "CT",
+    "metro_area": "Connecticut City 3",
+    "labor_cost_index": 1.242,
+    "material_index": 1.083
+  },
+  "26501": {
+    "state_code": "CT",
+    "metro_area": "Connecticut City 4",
+    "labor_cost_index": 1.161,
+    "material_index": 1.087
+  },
+  "27001": {
+    "state_code": "CT",
+    "metro_area": "Connecticut City 5",
+    "labor_cost_index": 1.155,
+    "material_index": 1.084
+  },
+  "27501": {
+    "state_code": "DE",
+    "metro_area": "Delaware City 1",
+    "labor_cost_index": 1.053,
+    "material_index": 0.984
+  },
+  "28001": {
+    "state_code": "DE",
+    "metro_area": "Delaware City 2",
+    "labor_cost_index": 1,
+    "material_index": 0.993
+  },
+  "28501": {
+    "state_code": "DE",
+    "metro_area": "Delaware City 3",
+    "labor_cost_index": 1.074,
+    "material_index": 0.986
+  },
+  "29001": {
+    "state_code": "DE",
+    "metro_area": "Delaware City 4",
+    "labor_cost_index": 1.053,
+    "material_index": 1.001
+  },
+  "29501": {
+    "state_code": "DE",
+    "metro_area": "Delaware City 5",
+    "labor_cost_index": 1.089,
+    "material_index": 1.007
+  },
+  "30001": {
+    "state_code": "FL",
+    "metro_area": "Florida City 1",
+    "labor_cost_index": 1.005,
+    "material_index": 1.015
+  },
+  "30501": {
+    "state_code": "FL",
+    "metro_area": "Florida City 2",
+    "labor_cost_index": 0.997,
+    "material_index": 1.033
+  },
+  "31001": {
+    "state_code": "FL",
+    "metro_area": "Florida City 3",
+    "labor_cost_index": 0.961,
+    "material_index": 1.021
+  },
+  "31501": {
+    "state_code": "FL",
+    "metro_area": "Florida City 4",
+    "labor_cost_index": 0.945,
+    "material_index": 1.012
+  },
+  "32001": {
+    "state_code": "FL",
+    "metro_area": "Florida City 5",
+    "labor_cost_index": 0.999,
+    "material_index": 1.027
+  },
+  "32501": {
+    "state_code": "GA",
+    "metro_area": "Georgia City 1",
+    "labor_cost_index": 0.912,
+    "material_index": 0.988
+  },
+  "33001": {
+    "state_code": "GA",
+    "metro_area": "Georgia City 2",
+    "labor_cost_index": 0.923,
+    "material_index": 0.987
+  },
+  "33101": {
+    "state_code": "FL",
+    "metro_area": "Miami",
+    "labor_cost_index": 0.98,
+    "material_index": 1.02
+  },
+  "33501": {
+    "state_code": "GA",
+    "metro_area": "Georgia City 3",
+    "labor_cost_index": 0.969,
+    "material_index": 0.971
+  },
+  "34001": {
+    "state_code": "GA",
+    "metro_area": "Georgia City 4",
+    "labor_cost_index": 0.958,
+    "material_index": 0.972
+  },
+  "34501": {
+    "state_code": "GA",
+    "metro_area": "Georgia City 5",
+    "labor_cost_index": 0.979,
+    "material_index": 0.966
+  },
+  "35001": {
+    "state_code": "HI",
+    "metro_area": "Hawaii City 1",
+    "labor_cost_index": 1.388,
+    "material_index": 1.326
+  },
+  "35501": {
+    "state_code": "HI",
+    "metro_area": "Hawaii City 2",
+    "labor_cost_index": 1.441,
+    "material_index": 1.307
+  },
+  "36001": {
+    "state_code": "HI",
+    "metro_area": "Hawaii City 3",
+    "labor_cost_index": 1.409,
+    "material_index": 1.289
+  },
+  "36501": {
+    "state_code": "HI",
+    "metro_area": "Hawaii City 4",
+    "labor_cost_index": 1.449,
+    "material_index": 1.291
+  },
+  "37001": {
+    "state_code": "HI",
+    "metro_area": "Hawaii City 5",
+    "labor_cost_index": 1.334,
+    "material_index": 1.294
+  },
+  "37501": {
+    "state_code": "ID",
+    "metro_area": "Idaho City 1",
+    "labor_cost_index": 0.92,
+    "material_index": 0.948
+  },
+  "38001": {
+    "state_code": "ID",
+    "metro_area": "Idaho City 2",
+    "labor_cost_index": 0.927,
+    "material_index": 0.938
+  },
+  "38501": {
+    "state_code": "ID",
+    "metro_area": "Idaho City 3",
+    "labor_cost_index": 0.879,
+    "material_index": 0.959
+  },
+  "39001": {
+    "state_code": "ID",
+    "metro_area": "Idaho City 4",
+    "labor_cost_index": 0.918,
+    "material_index": 0.957
+  },
+  "39501": {
+    "state_code": "ID",
+    "metro_area": "Idaho City 5",
+    "labor_cost_index": 0.942,
+    "material_index": 0.947
+  },
+  "40001": {
+    "state_code": "IL",
+    "metro_area": "Illinois City 1",
+    "labor_cost_index": 1.237,
+    "material_index": 1.07
+  },
+  "40501": {
+    "state_code": "IL",
+    "metro_area": "Illinois City 2",
+    "labor_cost_index": 1.175,
+    "material_index": 1.065
+  },
+  "41001": {
+    "state_code": "IL",
+    "metro_area": "Illinois City 3",
+    "labor_cost_index": 1.194,
+    "material_index": 1.056
+  },
+  "41501": {
+    "state_code": "IL",
+    "metro_area": "Illinois City 4",
+    "labor_cost_index": 1.16,
+    "material_index": 1.052
+  },
+  "42001": {
+    "state_code": "IL",
+    "metro_area": "Illinois City 5",
+    "labor_cost_index": 1.18,
+    "material_index": 1.071
+  },
+  "42501": {
+    "state_code": "IN",
+    "metro_area": "Indiana City 1",
+    "labor_cost_index": 0.925,
+    "material_index": 0.941
+  },
+  "43001": {
+    "state_code": "IN",
+    "metro_area": "Indiana City 2",
+    "labor_cost_index": 0.915,
+    "material_index": 0.939
+  },
+  "43501": {
+    "state_code": "IN",
+    "metro_area": "Indiana City 3",
+    "labor_cost_index": 0.948,
+    "material_index": 0.938
+  },
+  "44001": {
+    "state_code": "IN",
+    "metro_area": "Indiana City 4",
+    "labor_cost_index": 0.936,
+    "material_index": 0.941
+  },
+  "44501": {
+    "state_code": "IN",
+    "metro_area": "Indiana City 5",
+    "labor_cost_index": 0.993,
+    "material_index": 0.963
+  },
+  "45001": {
+    "state_code": "IA",
+    "metro_area": "Iowa City 1",
+    "labor_cost_index": 0.895,
+    "material_index": 0.942
+  },
+  "45501": {
+    "state_code": "IA",
+    "metro_area": "Iowa City 2",
+    "labor_cost_index": 0.888,
+    "material_index": 0.937
+  },
+  "46001": {
+    "state_code": "IA",
+    "metro_area": "Iowa City 3",
+    "labor_cost_index": 0.866,
+    "material_index": 0.957
+  },
+  "46501": {
+    "state_code": "IA",
+    "metro_area": "Iowa City 4",
+    "labor_cost_index": 0.878,
+    "material_index": 0.955
+  },
+  "47001": {
+    "state_code": "IA",
+    "metro_area": "Iowa City 5",
+    "labor_cost_index": 0.894,
+    "material_index": 0.931
+  },
+  "47501": {
+    "state_code": "KS",
+    "metro_area": "Kansas City 1",
+    "labor_cost_index": 0.906,
+    "material_index": 0.96
+  },
+  "48001": {
+    "state_code": "KS",
+    "metro_area": "Kansas City 2",
+    "labor_cost_index": 0.843,
+    "material_index": 0.965
+  },
+  "48501": {
+    "state_code": "KS",
+    "metro_area": "Kansas City 3",
+    "labor_cost_index": 0.897,
+    "material_index": 0.96
+  },
+  "49001": {
+    "state_code": "KS",
+    "metro_area": "Kansas City 4",
+    "labor_cost_index": 0.908,
+    "material_index": 0.957
+  },
+  "49501": {
+    "state_code": "KS",
+    "metro_area": "Kansas City 5",
+    "labor_cost_index": 0.87,
+    "material_index": 0.964
+  },
+  "50001": {
+    "state_code": "KY",
+    "metro_area": "Kentucky City 1",
+    "labor_cost_index": 0.839,
+    "material_index": 0.923
+  },
+  "50501": {
+    "state_code": "KY",
+    "metro_area": "Kentucky City 2",
+    "labor_cost_index": 0.832,
+    "material_index": 0.905
+  },
+  "51001": {
+    "state_code": "KY",
+    "metro_area": "Kentucky City 3",
+    "labor_cost_index": 0.881,
+    "material_index": 0.93
+  },
+  "51501": {
+    "state_code": "KY",
+    "metro_area": "Kentucky City 4",
+    "labor_cost_index": 0.829,
+    "material_index": 0.912
+  },
+  "52001": {
+    "state_code": "KY",
+    "metro_area": "Kentucky City 5",
+    "labor_cost_index": 0.88,
+    "material_index": 0.906
+  },
+  "52501": {
+    "state_code": "LA",
+    "metro_area": "Louisiana City 1",
+    "labor_cost_index": 0.856,
+    "material_index": 0.941
+  },
+  "53001": {
+    "state_code": "LA",
+    "metro_area": "Louisiana City 2",
+    "labor_cost_index": 0.881,
+    "material_index": 0.945
+  },
+  "53501": {
+    "state_code": "LA",
+    "metro_area": "Louisiana City 3",
+    "labor_cost_index": 0.918,
+    "material_index": 0.956
+  },
+  "54001": {
+    "state_code": "LA",
+    "metro_area": "Louisiana City 4",
+    "labor_cost_index": 0.897,
+    "material_index": 0.956
+  },
+  "54501": {
+    "state_code": "LA",
+    "metro_area": "Louisiana City 5",
+    "labor_cost_index": 0.917,
+    "material_index": 0.936
+  },
+  "55001": {
+    "state_code": "ME",
+    "metro_area": "Maine City 1",
+    "labor_cost_index": 0.907,
+    "material_index": 1.003
+  },
+  "55501": {
+    "state_code": "ME",
+    "metro_area": "Maine City 2",
+    "labor_cost_index": 0.976,
+    "material_index": 0.981
+  },
+  "56001": {
+    "state_code": "ME",
+    "metro_area": "Maine City 3",
+    "labor_cost_index": 0.936,
+    "material_index": 0.993
+  },
+  "56501": {
+    "state_code": "ME",
+    "metro_area": "Maine City 4",
+    "labor_cost_index": 0.903,
+    "material_index": 0.984
+  },
+  "57001": {
+    "state_code": "ME",
+    "metro_area": "Maine City 5",
+    "labor_cost_index": 0.988,
+    "material_index": 1.017
+  },
+  "57501": {
+    "state_code": "MD",
+    "metro_area": "Maryland City 1",
+    "labor_cost_index": 1.113,
+    "material_index": 1.057
+  },
+  "58001": {
+    "state_code": "MD",
+    "metro_area": "Maryland City 2",
+    "labor_cost_index": 1.123,
+    "material_index": 1.059
+  },
+  "58501": {
+    "state_code": "MD",
+    "metro_area": "Maryland City 3",
+    "labor_cost_index": 1.183,
+    "material_index": 1.062
+  },
+  "59001": {
+    "state_code": "MD",
+    "metro_area": "Maryland City 4",
+    "labor_cost_index": 1.203,
+    "material_index": 1.062
+  },
+  "59501": {
+    "state_code": "MD",
+    "metro_area": "Maryland City 5",
+    "labor_cost_index": 1.19,
+    "material_index": 1.031
+  },
+  "60001": {
+    "state_code": "MA",
+    "metro_area": "Massachusetts City 1",
+    "labor_cost_index": 1.241,
+    "material_index": 1.091
+  },
+  "60501": {
+    "state_code": "MA",
+    "metro_area": "Massachusetts City 2",
+    "labor_cost_index": 1.242,
+    "material_index": 1.101
+  },
+  "60601": {
+    "state_code": "IL",
+    "metro_area": "Chicago",
+    "labor_cost_index": 1.18,
+    "material_index": 1.05
+  },
+  "61001": {
+    "state_code": "MA",
+    "metro_area": "Massachusetts City 3",
+    "labor_cost_index": 1.295,
+    "material_index": 1.089
+  },
+  "61501": {
+    "state_code": "MA",
+    "metro_area": "Massachusetts City 4",
+    "labor_cost_index": 1.253,
+    "material_index": 1.108
+  },
+  "62001": {
+    "state_code": "MA",
+    "metro_area": "Massachusetts City 5",
+    "labor_cost_index": 1.227,
+    "material_index": 1.083
+  },
+  "62501": {
+    "state_code": "MI",
+    "metro_area": "Michigan City 1",
+    "labor_cost_index": 1.025,
+    "material_index": 0.969
+  },
+  "63001": {
+    "state_code": "MI",
+    "metro_area": "Michigan City 2",
+    "labor_cost_index": 1.041,
+    "material_index": 0.998
+  },
+  "63501": {
+    "state_code": "MI",
+    "metro_area": "Michigan City 3",
+    "labor_cost_index": 0.986,
+    "material_index": 0.976
+  },
+  "64001": {
+    "state_code": "MI",
+    "metro_area": "Michigan City 4",
+    "labor_cost_index": 0.966,
+    "material_index": 0.98
+  },
+  "64501": {
+    "state_code": "MI",
+    "metro_area": "Michigan City 5",
+    "labor_cost_index": 0.951,
+    "material_index": 0.961
+  },
+  "65001": {
+    "state_code": "MN",
+    "metro_area": "Minnesota City 1",
+    "labor_cost_index": 1.118,
+    "material_index": 1
+  },
+  "65501": {
+    "state_code": "MN",
+    "metro_area": "Minnesota City 2",
+    "labor_cost_index": 1.117,
+    "material_index": 1.031
+  },
+  "66001": {
+    "state_code": "MN",
+    "metro_area": "Minnesota City 3",
+    "labor_cost_index": 1.128,
+    "material_index": 1.02
+  },
+  "66501": {
+    "state_code": "MN",
+    "metro_area": "Minnesota City 4",
+    "labor_cost_index": 1.109,
+    "material_index": 1.026
+  },
+  "67001": {
+    "state_code": "MN",
+    "metro_area": "Minnesota City 5",
+    "labor_cost_index": 1.097,
+    "material_index": 1.018
+  },
+  "67501": {
+    "state_code": "MS",
+    "metro_area": "Mississippi City 1",
+    "labor_cost_index": 0.8,
+    "material_index": 0.903
+  },
+  "68001": {
+    "state_code": "MS",
+    "metro_area": "Mississippi City 2",
+    "labor_cost_index": 0.776,
+    "material_index": 0.893
+  },
+  "68501": {
+    "state_code": "MS",
+    "metro_area": "Mississippi City 3",
+    "labor_cost_index": 0.789,
+    "material_index": 0.89
+  },
+  "69001": {
+    "state_code": "MS",
+    "metro_area": "Mississippi City 4",
+    "labor_cost_index": 0.818,
+    "material_index": 0.91
+  },
+  "69501": {
+    "state_code": "MS",
+    "metro_area": "Mississippi City 5",
+    "labor_cost_index": 0.769,
+    "material_index": 0.908
+  },
+  "70001": {
+    "state_code": "MO",
+    "metro_area": "Missouri City 1",
+    "labor_cost_index": 0.956,
+    "material_index": 0.933
+  },
+  "70501": {
+    "state_code": "MO",
+    "metro_area": "Missouri City 2",
+    "labor_cost_index": 0.914,
+    "material_index": 0.948
+  },
+  "71001": {
+    "state_code": "MO",
+    "metro_area": "Missouri City 3",
+    "labor_cost_index": 0.934,
+    "material_index": 0.937
+  },
+  "71501": {
+    "state_code": "MO",
+    "metro_area": "Missouri City 4",
+    "labor_cost_index": 0.891,
+    "material_index": 0.934
+  },
+  "72001": {
+    "state_code": "MO",
+    "metro_area": "Missouri City 5",
+    "labor_cost_index": 0.931,
+    "material_index": 0.941
+  },
+  "72501": {
+    "state_code": "MT",
+    "metro_area": "Montana City 1",
+    "labor_cost_index": 0.844,
+    "material_index": 0.948
+  },
+  "73001": {
+    "state_code": "MT",
+    "metro_area": "Montana City 2",
+    "labor_cost_index": 0.846,
+    "material_index": 0.949
+  },
+  "73501": {
+    "state_code": "MT",
+    "metro_area": "Montana City 3",
+    "labor_cost_index": 0.891,
+    "material_index": 0.968
+  },
+  "74001": {
+    "state_code": "MT",
+    "metro_area": "Montana City 4",
+    "labor_cost_index": 0.842,
+    "material_index": 0.935
+  },
+  "74501": {
+    "state_code": "MT",
+    "metro_area": "Montana City 5",
+    "labor_cost_index": 0.871,
+    "material_index": 0.962
+  },
+  "75001": {
+    "state_code": "NE",
+    "metro_area": "Nebraska City 1",
+    "labor_cost_index": 0.892,
+    "material_index": 0.937
+  },
+  "75501": {
+    "state_code": "NE",
+    "metro_area": "Nebraska City 2",
+    "labor_cost_index": 0.865,
+    "material_index": 0.952
+  },
+  "76001": {
+    "state_code": "NE",
+    "metro_area": "Nebraska City 3",
+    "labor_cost_index": 0.896,
+    "material_index": 0.954
+  },
+  "76501": {
+    "state_code": "NE",
+    "metro_area": "Nebraska City 4",
+    "labor_cost_index": 0.843,
+    "material_index": 0.965
+  },
+  "77001": {
+    "state_code": "TX",
+    "metro_area": "Houston",
+    "labor_cost_index": 0.92,
+    "material_index": 0.95
+  },
+  "77501": {
+    "state_code": "NV",
+    "metro_area": "Nevada City 1",
+    "labor_cost_index": 1.081,
+    "material_index": 1.032
+  },
+  "78001": {
+    "state_code": "NV",
+    "metro_area": "Nevada City 2",
+    "labor_cost_index": 1.062,
+    "material_index": 1.054
+  },
+  "78501": {
+    "state_code": "NV",
+    "metro_area": "Nevada City 3",
+    "labor_cost_index": 1.068,
+    "material_index": 1.032
+  },
+  "79001": {
+    "state_code": "NV",
+    "metro_area": "Nevada City 4",
+    "labor_cost_index": 1.052,
+    "material_index": 1.059
+  },
+  "79501": {
+    "state_code": "NV",
+    "metro_area": "Nevada City 5",
+    "labor_cost_index": 1.046,
+    "material_index": 1.051
+  },
+  "80001": {
+    "state_code": "NH",
+    "metro_area": "New Hampshire City 1",
+    "labor_cost_index": 1.011,
+    "material_index": 1.032
+  },
+  "80501": {
+    "state_code": "NH",
+    "metro_area": "New Hampshire City 2",
+    "labor_cost_index": 1.036,
+    "material_index": 1.007
+  },
+  "81001": {
+    "state_code": "NH",
+    "metro_area": "New Hampshire City 3",
+    "labor_cost_index": 1.016,
+    "material_index": 1.015
+  },
+  "81501": {
+    "state_code": "NH",
+    "metro_area": "New Hampshire City 4",
+    "labor_cost_index": 1.072,
+    "material_index": 1.009
+  },
+  "82001": {
+    "state_code": "NH",
+    "metro_area": "New Hampshire City 5",
+    "labor_cost_index": 1.046,
+    "material_index": 1.024
+  },
+  "82501": {
+    "state_code": "NJ",
+    "metro_area": "New Jersey City 1",
+    "labor_cost_index": 1.265,
+    "material_index": 1.084
+  },
+  "83001": {
+    "state_code": "NJ",
+    "metro_area": "New Jersey City 2",
+    "labor_cost_index": 1.302,
+    "material_index": 1.112
+  },
+  "83501": {
+    "state_code": "NJ",
+    "metro_area": "New Jersey City 3",
+    "labor_cost_index": 1.232,
+    "material_index": 1.113
+  },
+  "84001": {
+    "state_code": "NJ",
+    "metro_area": "New Jersey City 4",
+    "labor_cost_index": 1.27,
+    "material_index": 1.093
+  },
+  "84501": {
+    "state_code": "NJ",
+    "metro_area": "New Jersey City 5",
+    "labor_cost_index": 1.298,
+    "material_index": 1.102
+  },
+  "85001": {
+    "state_code": "NM",
+    "metro_area": "New Mexico City 1",
+    "labor_cost_index": 0.908,
+    "material_index": 0.993
+  },
+  "85501": {
+    "state_code": "NM",
+    "metro_area": "New Mexico City 2",
+    "labor_cost_index": 0.859,
+    "material_index": 0.976
+  },
+  "86001": {
+    "state_code": "NM",
+    "metro_area": "New Mexico City 3",
+    "labor_cost_index": 0.896,
+    "material_index": 0.969
+  },
+  "86501": {
+    "state_code": "NM",
+    "metro_area": "New Mexico City 4",
+    "labor_cost_index": 0.934,
+    "material_index": 0.992
+  },
+  "87001": {
+    "state_code": "NM",
+    "metro_area": "New Mexico City 5",
+    "labor_cost_index": 0.88,
+    "material_index": 0.998
+  },
+  "87501": {
+    "state_code": "NY",
+    "metro_area": "New York City 1",
+    "labor_cost_index": 1.43,
+    "material_index": 1.182
+  },
+  "88001": {
+    "state_code": "NY",
+    "metro_area": "New York City 2",
+    "labor_cost_index": 1.436,
+    "material_index": 1.192
+  },
+  "88501": {
+    "state_code": "NY",
+    "metro_area": "New York City 3",
+    "labor_cost_index": 1.418,
+    "material_index": 1.184
+  },
+  "89001": {
+    "state_code": "NY",
+    "metro_area": "New York City 4",
+    "labor_cost_index": 1.351,
+    "material_index": 1.169
+  },
+  "89501": {
+    "state_code": "NY",
+    "metro_area": "New York City 5",
+    "labor_cost_index": 1.468,
+    "material_index": 1.173
+  },
+  "90001": {
+    "state_code": "CA",
+    "metro_area": "Los Angeles",
+    "labor_cost_index": 1.35,
+    "material_index": 1.15
+  },
+  "90501": {
+    "state_code": "NC",
+    "metro_area": "North Carolina City 2",
+    "labor_cost_index": 0.905,
+    "material_index": 0.994
+  },
+  "91001": {
+    "state_code": "NC",
+    "metro_area": "North Carolina City 3",
+    "labor_cost_index": 0.921,
+    "material_index": 0.972
+  },
+  "91501": {
+    "state_code": "NC",
+    "metro_area": "North Carolina City 4",
+    "labor_cost_index": 0.956,
+    "material_index": 0.974
+  },
+  "92001": {
+    "state_code": "NC",
+    "metro_area": "North Carolina City 5",
+    "labor_cost_index": 0.897,
+    "material_index": 0.983
+  },
+  "92501": {
+    "state_code": "ND",
+    "metro_area": "North Dakota City 1",
+    "labor_cost_index": 0.832,
+    "material_index": 0.965
+  },
+  "93001": {
+    "state_code": "ND",
+    "metro_area": "North Dakota City 2",
+    "labor_cost_index": 0.888,
+    "material_index": 0.936
+  },
+  "93501": {
+    "state_code": "ND",
+    "metro_area": "North Dakota City 3",
+    "labor_cost_index": 0.83,
+    "material_index": 0.948
+  },
+  "94001": {
+    "state_code": "ND",
+    "metro_area": "North Dakota City 4",
+    "labor_cost_index": 0.875,
+    "material_index": 0.947
+  },
+  "94501": {
+    "state_code": "ND",
+    "metro_area": "North Dakota City 5",
+    "labor_cost_index": 0.853,
+    "material_index": 0.967
+  },
+  "95001": {
+    "state_code": "OH",
+    "metro_area": "Ohio City 1",
+    "labor_cost_index": 0.938,
+    "material_index": 0.937
+  },
+  "95501": {
+    "state_code": "OH",
+    "metro_area": "Ohio City 2",
+    "labor_cost_index": 1.007,
+    "material_index": 0.968
+  },
+  "96001": {
+    "state_code": "OH",
+    "metro_area": "Ohio City 3",
+    "labor_cost_index": 0.999,
+    "material_index": 0.967
+  },
+  "96501": {
+    "state_code": "OH",
+    "metro_area": "Ohio City 4",
+    "labor_cost_index": 0.994,
+    "material_index": 0.936
+  },
+  "97001": {
+    "state_code": "OH",
+    "metro_area": "Ohio City 5",
+    "labor_cost_index": 0.981,
+    "material_index": 0.959
+  },
+  "97501": {
+    "state_code": "OK",
+    "metro_area": "Oklahoma City 1",
+    "labor_cost_index": 0.879,
+    "material_index": 0.914
+  },
+  "98001": {
+    "state_code": "OK",
+    "metro_area": "Oklahoma City 2",
+    "labor_cost_index": 0.877,
+    "material_index": 0.914
+  },
+  "98501": {
+    "state_code": "OK",
+    "metro_area": "Oklahoma City 3",
+    "labor_cost_index": 0.812,
+    "material_index": 0.905
+  },
+  "99001": {
+    "state_code": "OK",
+    "metro_area": "Oklahoma City 4",
+    "labor_cost_index": 0.856,
+    "material_index": 0.926
+  },
+  "99501": {
+    "state_code": "OK",
+    "metro_area": "Oklahoma City 5",
+    "labor_cost_index": 0.874,
+    "material_index": 0.912
+  },
+  "100001": {
+    "state_code": "OR",
+    "metro_area": "Oregon City 1",
+    "labor_cost_index": 1.123,
+    "material_index": 1.05
+  },
+  "100501": {
+    "state_code": "OR",
+    "metro_area": "Oregon City 2",
+    "labor_cost_index": 1.137,
+    "material_index": 1.052
+  },
+  "101001": {
+    "state_code": "OR",
+    "metro_area": "Oregon City 3",
+    "labor_cost_index": 1.152,
+    "material_index": 1.064
+  },
+  "101501": {
+    "state_code": "OR",
+    "metro_area": "Oregon City 4",
+    "labor_cost_index": 1.072,
+    "material_index": 1.055
+  },
+  "102001": {
+    "state_code": "OR",
+    "metro_area": "Oregon City 5",
+    "labor_cost_index": 1.111,
+    "material_index": 1.042
+  },
+  "102501": {
+    "state_code": "PA",
+    "metro_area": "Pennsylvania City 1",
+    "labor_cost_index": 1.108,
+    "material_index": 1.03
+  },
+  "103001": {
+    "state_code": "PA",
+    "metro_area": "Pennsylvania City 2",
+    "labor_cost_index": 1.114,
+    "material_index": 1.013
+  },
+  "103501": {
+    "state_code": "PA",
+    "metro_area": "Pennsylvania City 3",
+    "labor_cost_index": 1.103,
+    "material_index": 1.02
+  },
+  "104001": {
+    "state_code": "PA",
+    "metro_area": "Pennsylvania City 4",
+    "labor_cost_index": 1.081,
+    "material_index": 1.021
+  },
+  "104501": {
+    "state_code": "PA",
+    "metro_area": "Pennsylvania City 5",
+    "labor_cost_index": 1.077,
+    "material_index": 1.013
+  },
+  "105001": {
+    "state_code": "RI",
+    "metro_area": "Rhode Island City 1",
+    "labor_cost_index": 1.195,
+    "material_index": 1.037
+  },
+  "105501": {
+    "state_code": "RI",
+    "metro_area": "Rhode Island City 2",
+    "labor_cost_index": 1.11,
+    "material_index": 1.07
+  },
+  "106001": {
+    "state_code": "RI",
+    "metro_area": "Rhode Island City 3",
+    "labor_cost_index": 1.116,
+    "material_index": 1.063
+  },
+  "106501": {
+    "state_code": "RI",
+    "metro_area": "Rhode Island City 4",
+    "labor_cost_index": 1.147,
+    "material_index": 1.033
+  },
+  "107001": {
+    "state_code": "RI",
+    "metro_area": "Rhode Island City 5",
+    "labor_cost_index": 1.164,
+    "material_index": 1.054
+  },
+  "107501": {
+    "state_code": "SC",
+    "metro_area": "South Carolina City 1",
+    "labor_cost_index": 0.916,
+    "material_index": 0.952
+  },
+  "108001": {
+    "state_code": "SC",
+    "metro_area": "South Carolina City 2",
+    "labor_cost_index": 0.885,
+    "material_index": 0.939
+  },
+  "108501": {
+    "state_code": "SC",
+    "metro_area": "South Carolina City 3",
+    "labor_cost_index": 0.868,
+    "material_index": 0.942
+  },
+  "109001": {
+    "state_code": "SC",
+    "metro_area": "South Carolina City 4",
+    "labor_cost_index": 0.872,
+    "material_index": 0.962
+  },
+  "109501": {
+    "state_code": "SC",
+    "metro_area": "South Carolina City 5",
+    "labor_cost_index": 0.885,
+    "material_index": 0.931
+  },
+  "110001": {
+    "state_code": "SD",
+    "metro_area": "South Dakota City 1",
+    "labor_cost_index": 0.851,
+    "material_index": 0.929
+  },
+  "110501": {
+    "state_code": "SD",
+    "metro_area": "South Dakota City 2",
+    "labor_cost_index": 0.833,
+    "material_index": 0.902
+  },
+  "111001": {
+    "state_code": "SD",
+    "metro_area": "South Dakota City 3",
+    "labor_cost_index": 0.833,
+    "material_index": 0.936
+  },
+  "111501": {
+    "state_code": "SD",
+    "metro_area": "South Dakota City 4",
+    "labor_cost_index": 0.847,
+    "material_index": 0.931
+  },
+  "112001": {
+    "state_code": "SD",
+    "metro_area": "South Dakota City 5",
+    "labor_cost_index": 0.852,
+    "material_index": 0.929
+  },
+  "112501": {
+    "state_code": "TN",
+    "metro_area": "Tennessee City 1",
+    "labor_cost_index": 0.919,
+    "material_index": 0.95
+  },
+  "113001": {
+    "state_code": "TN",
+    "metro_area": "Tennessee City 2",
+    "labor_cost_index": 0.859,
+    "material_index": 0.968
+  },
+  "113501": {
+    "state_code": "TN",
+    "metro_area": "Tennessee City 3",
+    "labor_cost_index": 0.901,
+    "material_index": 0.964
+  },
+  "114001": {
+    "state_code": "TN",
+    "metro_area": "Tennessee City 4",
+    "labor_cost_index": 0.897,
+    "material_index": 0.94
+  },
+  "114501": {
+    "state_code": "TN",
+    "metro_area": "Tennessee City 5",
+    "labor_cost_index": 0.875,
+    "material_index": 0.947
+  },
+  "115001": {
+    "state_code": "TX",
+    "metro_area": "Texas City 1",
+    "labor_cost_index": 0.96,
+    "material_index": 0.966
+  },
+  "115501": {
+    "state_code": "TX",
+    "metro_area": "Texas City 2",
+    "labor_cost_index": 0.924,
+    "material_index": 0.956
+  },
+  "116001": {
+    "state_code": "TX",
+    "metro_area": "Texas City 3",
+    "labor_cost_index": 0.897,
+    "material_index": 0.94
+  },
+  "116501": {
+    "state_code": "TX",
+    "metro_area": "Texas City 4",
+    "labor_cost_index": 0.874,
+    "material_index": 0.963
+  },
+  "117001": {
+    "state_code": "TX",
+    "metro_area": "Texas City 5",
+    "labor_cost_index": 0.957,
+    "material_index": 0.966
+  },
+  "117501": {
+    "state_code": "UT",
+    "metro_area": "Utah City 1",
+    "labor_cost_index": 0.986,
+    "material_index": 0.994
+  },
+  "118001": {
+    "state_code": "UT",
+    "metro_area": "Utah City 2",
+    "labor_cost_index": 0.994,
+    "material_index": 0.991
+  },
+  "118501": {
+    "state_code": "UT",
+    "metro_area": "Utah City 3",
+    "labor_cost_index": 0.984,
+    "material_index": 0.997
+  },
+  "119001": {
+    "state_code": "UT",
+    "metro_area": "Utah City 4",
+    "labor_cost_index": 0.983,
+    "material_index": 0.986
+  },
+  "119501": {
+    "state_code": "UT",
+    "metro_area": "Utah City 5",
+    "labor_cost_index": 0.914,
+    "material_index": 0.981
+  },
+  "120001": {
+    "state_code": "VT",
+    "metro_area": "Vermont City 1",
+    "labor_cost_index": 0.956,
+    "material_index": 1.012
+  },
+  "120501": {
+    "state_code": "VT",
+    "metro_area": "Vermont City 2",
+    "labor_cost_index": 0.965,
+    "material_index": 0.989
+  },
+  "121001": {
+    "state_code": "VT",
+    "metro_area": "Vermont City 3",
+    "labor_cost_index": 0.975,
+    "material_index": 1.014
+  },
+  "121501": {
+    "state_code": "VT",
+    "metro_area": "Vermont City 4",
+    "labor_cost_index": 0.938,
+    "material_index": 1.01
+  },
+  "122001": {
+    "state_code": "VT",
+    "metro_area": "Vermont City 5",
+    "labor_cost_index": 0.985,
+    "material_index": 1.004
+  },
+  "122501": {
+    "state_code": "VA",
+    "metro_area": "Virginia City 1",
+    "labor_cost_index": 1.102,
+    "material_index": 1.02
+  },
+  "123001": {
+    "state_code": "VA",
+    "metro_area": "Virginia City 2",
+    "labor_cost_index": 1.02,
+    "material_index": 1.029
+  },
+  "123501": {
+    "state_code": "VA",
+    "metro_area": "Virginia City 3",
+    "labor_cost_index": 1.003,
+    "material_index": 1.026
+  },
+  "124001": {
+    "state_code": "VA",
+    "metro_area": "Virginia City 4",
+    "labor_cost_index": 1.025,
+    "material_index": 1.008
+  },
+  "124501": {
+    "state_code": "VA",
+    "metro_area": "Virginia City 5",
+    "labor_cost_index": 1.028,
+    "material_index": 1.031
+  },
+  "125001": {
+    "state_code": "WA",
+    "metro_area": "Washington City 1",
+    "labor_cost_index": 1.205,
+    "material_index": 1.069
+  },
+  "125501": {
+    "state_code": "WA",
+    "metro_area": "Washington City 2",
+    "labor_cost_index": 1.217,
+    "material_index": 1.095
+  },
+  "126001": {
+    "state_code": "WA",
+    "metro_area": "Washington City 3",
+    "labor_cost_index": 1.18,
+    "material_index": 1.091
+  },
+  "126501": {
+    "state_code": "WA",
+    "metro_area": "Washington City 4",
+    "labor_cost_index": 1.189,
+    "material_index": 1.061
+  },
+  "127001": {
+    "state_code": "WA",
+    "metro_area": "Washington City 5",
+    "labor_cost_index": 1.145,
+    "material_index": 1.095
+  },
+  "127501": {
+    "state_code": "WV",
+    "metro_area": "West Virginia City 1",
+    "labor_cost_index": 0.813,
+    "material_index": 0.909
+  },
+  "128001": {
+    "state_code": "WV",
+    "metro_area": "West Virginia City 2",
+    "labor_cost_index": 0.836,
+    "material_index": 0.938
+  },
+  "128501": {
+    "state_code": "WV",
+    "metro_area": "West Virginia City 3",
+    "labor_cost_index": 0.809,
+    "material_index": 0.911
+  },
+  "129001": {
+    "state_code": "WV",
+    "metro_area": "West Virginia City 4",
+    "labor_cost_index": 0.826,
+    "material_index": 0.92
+  },
+  "129501": {
+    "state_code": "WV",
+    "metro_area": "West Virginia City 5",
+    "labor_cost_index": 0.812,
+    "material_index": 0.913
+  },
+  "130001": {
+    "state_code": "WI",
+    "metro_area": "Wisconsin City 1",
+    "labor_cost_index": 1.003,
+    "material_index": 0.962
+  },
+  "130501": {
+    "state_code": "WI",
+    "metro_area": "Wisconsin City 2",
+    "labor_cost_index": 1.022,
+    "material_index": 0.981
+  },
+  "131001": {
+    "state_code": "WI",
+    "metro_area": "Wisconsin City 3",
+    "labor_cost_index": 0.988,
+    "material_index": 0.985
+  },
+  "131501": {
+    "state_code": "WI",
+    "metro_area": "Wisconsin City 4",
+    "labor_cost_index": 0.938,
+    "material_index": 0.963
+  },
+  "132001": {
+    "state_code": "WI",
+    "metro_area": "Wisconsin City 5",
+    "labor_cost_index": 0.94,
+    "material_index": 0.968
+  },
+  "132501": {
+    "state_code": "WY",
+    "metro_area": "Wyoming City 1",
+    "labor_cost_index": 0.881,
+    "material_index": 0.933
+  },
+  "133001": {
+    "state_code": "WY",
+    "metro_area": "Wyoming City 2",
+    "labor_cost_index": 0.852,
+    "material_index": 0.948
+  },
+  "133501": {
+    "state_code": "WY",
+    "metro_area": "Wyoming City 3",
+    "labor_cost_index": 0.858,
+    "material_index": 0.939
+  },
+  "134001": {
+    "state_code": "WY",
+    "metro_area": "Wyoming City 4",
+    "labor_cost_index": 0.808,
+    "material_index": 0.95
+  },
+  "134501": {
+    "state_code": "WY",
+    "metro_area": "Wyoming City 5",
+    "labor_cost_index": 0.857,
+    "material_index": 0.952
+  },
+  "__default__": {
+    "labor_cost_index": 1,
+    "material_index": 1
+  }
+}
