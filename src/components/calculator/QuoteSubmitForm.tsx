@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useTranslations } from 'next-intl';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/shared/components/ui/card';
 import { Button } from '@/shared/components/ui/button';
@@ -10,10 +10,15 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@
 import { toast } from 'sonner';
 import { Loader2 } from 'lucide-react';
 import materialsRaw from '@/data/materials.json';
+import { CalculatorInput } from '@/lib/calculator/pricing-engine';
 
 const materials = materialsRaw as Record<string, any>;
 
-export function QuoteSubmitForm() {
+interface QuoteSubmitFormProps {
+  initialData?: CalculatorInput | null;
+}
+
+export function QuoteSubmitForm({ initialData }: QuoteSubmitFormProps) {
   const t = useTranslations('Calculator');
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(false);
@@ -21,12 +26,30 @@ export function QuoteSubmitForm() {
   const [formData, setFormData] = useState({
     city: '',
     stateCode: '',
-    zipCode: '',
-    materialType: 'asphalt_architectural',
-    areaSqft: '',
+    zipCode: initialData?.zipCode || '',
+    materialType: initialData?.materialType || 'asphalt_architectural',
+    areaSqft: initialData?.areaSqft ? initialData.areaSqft.toString() : '',
     actualQuote: '',
     quoteDate: new Date().toISOString().split('T')[0],
   });
+
+  // Watch for zipCode changes to autofill state
+  useEffect(() => {
+    if (formData.zipCode.length === 5) {
+      fetch(`/api/calculator/geo?zip=${formData.zipCode}`)
+        .then(res => res.json())
+        .then(data => {
+          if (data.state_code) {
+            setFormData(prev => ({ 
+              ...prev, 
+              stateCode: data.state_code,
+              city: prev.city || data.metro_area || ''
+            }));
+          }
+        })
+        .catch(() => {});
+    }
+  }, [formData.zipCode]);
 
   const handleChange = (field: string, value: any) => {
     setFormData(prev => ({ ...prev, [field]: value }));
@@ -83,12 +106,12 @@ export function QuoteSubmitForm() {
         <form onSubmit={handleSubmit} className="space-y-4">
           <div className="grid grid-cols-2 gap-4">
             <div className="space-y-2">
-              <Label htmlFor="city">{t('city') || 'City'}</Label>
+              <Label htmlFor="zipCode">{t('zipCode') || 'ZIP Code (Optional)'}</Label>
               <Input
-                id="city"
-                value={formData.city}
-                onChange={(e) => handleChange('city', e.target.value)}
-                required
+                id="zipCode"
+                maxLength={5}
+                value={formData.zipCode}
+                onChange={(e) => handleChange('zipCode', e.target.value)}
               />
             </div>
             <div className="space-y-2">
@@ -102,15 +125,15 @@ export function QuoteSubmitForm() {
               />
             </div>
           </div>
-          
+
           <div className="grid grid-cols-2 gap-4">
             <div className="space-y-2">
-              <Label htmlFor="zipCode">{t('zipCode') || 'ZIP Code (Optional)'}</Label>
+              <Label htmlFor="city">{t('city') || 'City'}</Label>
               <Input
-                id="zipCode"
-                maxLength={5}
-                value={formData.zipCode}
-                onChange={(e) => handleChange('zipCode', e.target.value)}
+                id="city"
+                value={formData.city}
+                onChange={(e) => handleChange('city', e.target.value)}
+                required
               />
             </div>
             <div className="space-y-2">
@@ -135,15 +158,6 @@ export function QuoteSubmitForm() {
 
           <div className="grid grid-cols-2 gap-4">
             <div className="space-y-2">
-              <Label htmlFor="qAreaSqft">{t('areaSqft') || 'Roof Area (Optional)'}</Label>
-              <Input
-                id="qAreaSqft"
-                type="number"
-                value={formData.areaSqft}
-                onChange={(e) => handleChange('areaSqft', e.target.value)}
-              />
-            </div>
-            <div className="space-y-2">
               <Label htmlFor="actualQuote">{t('actualQuote') || 'Total Quote Price ($)'}</Label>
               <Input
                 id="actualQuote"
@@ -151,6 +165,16 @@ export function QuoteSubmitForm() {
                 min="1000"
                 value={formData.actualQuote}
                 onChange={(e) => handleChange('actualQuote', e.target.value)}
+                required
+              />
+            </div>
+            <div className="space-y-2">
+              <Label htmlFor="quoteDate">Quote Date</Label>
+              <Input
+                id="quoteDate"
+                type="date"
+                value={formData.quoteDate}
+                onChange={(e) => handleChange('quoteDate', e.target.value)}
                 required
               />
             </div>

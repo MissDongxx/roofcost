@@ -1,6 +1,7 @@
 import { NextResponse } from 'next/server';
 import { db } from '@/core/db';
 import { quoteSubmissions } from '@/config/db/schema';
+import { randomUUID } from 'crypto';
 
 export async function POST(req: Request) {
   try {
@@ -21,6 +22,7 @@ export async function POST(req: Request) {
     }
 
     await db().insert(quoteSubmissions).values({
+      id: randomUUID(),
       city,
       stateCode: stateCode.toUpperCase(),
       zipCode: zipCode || null,

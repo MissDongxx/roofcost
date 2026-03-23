@@ -28,21 +28,18 @@ export function ResultCard({ result }: { result: PriceResult }) {
       <CardContent className="pt-6">
         <div className="flex flex-col items-center justify-center space-y-4">
           <div className="text-sm tracking-widest text-muted-foreground uppercase font-bold">
-            {t('averageCost') || 'AVERAGE EXPECTED COST'}
+            {t('estimatedCostRange') || 'ESTIMATED COST RANGE'}
           </div>
-          <div className="text-6xl font-black text-primary drop-shadow-sm">
-            {formatCurrency(result.mid)}
+          <div className="text-4xl md:text-5xl font-black text-primary drop-shadow-sm flex items-center justify-center gap-2 md:gap-4 flex-wrap">
+            <span>{formatCurrency(result.low)}</span>
+            <span className="text-2xl md:text-3xl text-primary/50">-</span>
+            <span>{formatCurrency(result.high)}</span>
           </div>
-          <div className="flex items-center space-x-4 mt-6 p-4 rounded-xl bg-muted/30 w-full justify-between">
-            <div className="flex flex-col items-center">
-              <span className="text-sm text-muted-foreground uppercase">{t('lowRange') || 'Low Range'}</span>
-              <span className="text-xl font-bold">{formatCurrency(result.low)}</span>
-            </div>
-            <div className="h-12 w-px bg-border" />
-            <div className="flex flex-col items-center">
-              <span className="text-sm text-muted-foreground uppercase">{t('highRange') || 'High Range'}</span>
-              <span className="text-xl font-bold">{formatCurrency(result.high)}</span>
-            </div>
+          <div className="flex flex-col items-center mt-6 p-4 rounded-xl bg-muted/30 w-full">
+            <span className="text-sm text-muted-foreground uppercase font-semibold mb-1">
+              {t('averageCost') || 'AVG EXPECTED COST'}
+            </span>
+            <span className="text-3xl font-bold opacity-80">{formatCurrency(result.mid)}</span>
           </div>
           {result.isDefaultGeo && (
             <div className="text-xs text-amber-600 bg-amber-100/50 p-2 rounded w-full text-center mt-4">

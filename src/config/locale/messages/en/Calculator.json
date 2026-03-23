@@ -43,5 +43,17 @@
   "missingQuoteFields": "Please fill all required quote fields.",
   "quoteSubmitSuccess": "Thank you for sharing your quote data!",
   "thankYou": "Thank You!",
-  "quoteSubmitThanksDesc": "Your anonymous data helps keeping our calculator accurate for everyone."
+  "quoteSubmitThanksDesc": "Your anonymous data helps keeping our calculator accurate for everyone.",
+  "step1Label": "Property Details",
+  "step2Label": "Material",
+  "step3Label": "Complexity",
+  "step4Label": "Summary",
+  "step1Title": "Location & Size",
+  "step2Title": "Roofing Material",
+  "step3Title": "Complexity & Tear-off",
+  "step4Title": "Review Your Details",
+  "areaDesc": "Average US roof is approx 1,700 - 2,000 sq ft.",
+  "backBtn": "Back",
+  "nextBtn": "Next",
+  "estimatedCostRange": "ESTIMATED COST RANGE"
 }
