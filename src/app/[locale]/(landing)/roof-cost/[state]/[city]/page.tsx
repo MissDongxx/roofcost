@@ -1,5 +1,7 @@
 import { notFound } from 'next/navigation';
 import { Metadata } from 'next';
+import { setRequestLocale } from 'next-intl/server';
+import { routing } from '@/core/i18n/config';
 import citiesData from '@/data/cities.json';
 import materialsRaw from '@/data/materials.json';
 import { calculateRoofCost } from '@/lib/calculator/pricing-engine';
@@ -15,15 +17,21 @@ interface PageProps {
 }
 
 export function generateStaticParams() {
-  return citiesData.map((c) => ({
-    state: c.state,
-    city: c.slug,
-  }));
+  return routing.locales.flatMap((locale) => 
+    citiesData.map((c) => ({
+      locale,
+      state: c.state,
+      city: c.slug,
+    }))
+  );
 }
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { state, city } = await params;
-  const cityData = citiesData.find((c) => c.state === state && c.slug === city);
+  // Case-insensitive lookup
+  const cityData = citiesData.find(
+    (c) => c.state.toLowerCase() === state.toLowerCase() && c.slug.toLowerCase() === city.toLowerCase()
+  );
   
   if (!cityData) {
     return { title: 'Not Found' };
@@ -50,7 +58,12 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
 export default async function CityLandingPage({ params }: PageProps) {
   const { state, city, locale } = await params;
-  const cityData = citiesData.find((c) => c.state === state && c.slug === city);
+  setRequestLocale(locale);
+
+  // Case-insensitive lookup
+  const cityData = citiesData.find(
+    (c) => c.state.toLowerCase() === state.toLowerCase() && c.slug.toLowerCase() === city.toLowerCase()
+  );
   
   if (!cityData) {
     notFound();
@@ -103,13 +116,13 @@ export default async function CityLandingPage({ params }: PageProps) {
 
   const faqSchema = generateFAQSchema(faqs);
   const breadcrumbSchema = generateBreadcrumbSchema([
-    { name: "Home", url: `${process.env.NEXT_PUBLIC_SITE_URL || ''}/` },
-    { name: cityData.state, url: `${process.env.NEXT_PUBLIC_SITE_URL || ''}/roof-cost/${cityData.state}` },
-    { name: cityData.displayName, url: `${process.env.NEXT_PUBLIC_SITE_URL || ''}/roof-cost/${cityData.state}/${cityData.slug}` }
+    { name: "Home", url: `${process.env.NEXT_PUBLIC_SITE_URL || ''}/${locale}` },
+    { name: cityData.state.charAt(0).toUpperCase() + cityData.state.slice(1), url: `${process.env.NEXT_PUBLIC_SITE_URL || ''}/${locale}/roof-cost/${cityData.state}` },
+    { name: cityData.displayName, url: `${process.env.NEXT_PUBLIC_SITE_URL || ''}/${locale}/roof-cost/${cityData.state}/${cityData.slug}` }
   ]);
 
-  const sameStateCities = citiesData.filter(c => c.state === state && c.slug !== city).slice(0, 10);
-  const otherStateCities = citiesData.filter(c => c.state !== state).slice(0, 5);
+  const sameStateCities = citiesData.filter(c => c.state === cityData.state && c.slug !== cityData.slug).slice(0, 10);
+  const otherStateCities = citiesData.filter(c => c.state !== cityData.state).slice(0, 5);
 
   return (
     <div className="container mx-auto px-4 pt-12 pb-16">
@@ -142,7 +155,7 @@ export default async function CityLandingPage({ params }: PageProps) {
       </Card>
 
       <div className="prose max-w-4xl mx-auto mb-10">
-        <p className="text-lg leading-relaxed text-center">
+        <p className="text-lg leading-relaxed text-center text-muted-foreground">
           {cityData.displayName}'s labor costs are <strong>{percentDiff}% {diffWord}</strong> the national average, which <strong>{effectWord}</strong> your total roofing cost. The exact price you pay will depend on your roof's pitch, complexity, and the contractor you choose. 
         </p>
       </div>
@@ -201,7 +214,7 @@ export default async function CityLandingPage({ params }: PageProps) {
           {sameStateCities.length > 0 ? (
             <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
               {sameStateCities.map(c => (
-                <Link key={c.slug} href={`/${locale}/roof-cost/${c.state}/${c.slug}`} className="group block p-4 bg-card border border-border rounded-xl hover:border-primary hover:bg-primary/5 hover:shadow-md transition-all text-center">
+                <Link key={c.slug} href={`/${locale}/roof-cost/${c.state.toLowerCase()}/${c.slug}`} className="group block p-4 bg-card border border-border rounded-xl hover:border-primary hover:bg-primary/5 hover:shadow-md transition-all text-center">
                   <span className="font-medium group-hover:text-primary transition-colors">{c.displayName}</span>
                 </Link>
               ))}
@@ -218,8 +231,8 @@ export default async function CityLandingPage({ params }: PageProps) {
           </h3>
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
             {otherStateCities.map(c => (
-              <Link key={c.slug} href={`/${locale}/roof-cost/${c.state}/${c.slug}`} className="group block p-4 bg-card border border-border rounded-xl hover:border-primary hover:bg-primary/5 hover:shadow-md transition-all text-center">
-                <span className="font-medium group-hover:text-primary transition-colors capitalize">{c.displayName}</span>
+              <Link key={c.slug} href={`/${locale}/roof-cost/${c.state.toLowerCase()}/${c.slug}`} className="group block p-4 bg-card border border-border rounded-xl hover:border-primary hover:bg-primary/5 hover:shadow-md transition-all text-center">
+                <span className="font-medium group-hover:text-primary transition-colors capitalize">{c.state}</span>
               </Link>
             ))}
           </div>
