@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { useTranslations } from 'next-intl';
+import { useSearchParams } from 'next/navigation';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/shared/components/ui/card';
 import { Button } from '@/shared/components/ui/button';
 import { Input } from '@/shared/components/ui/input';
@@ -22,8 +23,12 @@ interface CalculatorFormProps {
 
 export function CalculatorForm({ onCalculate, defaultZip }: CalculatorFormProps) {
   const t = useTranslations('Calculator');
+  const searchParams = useSearchParams();
+  const urlZip = searchParams?.get('zip');
+
   const [loading, setLoading] = useState(false);
   const [step, setStep] = useState(1);
+  const [initialStepSet, setInitialStepSet] = useState(false);
 
   const [formData, setFormData] = useState<CalculatorInput>({
     zipCode: defaultZip || '',
@@ -40,6 +45,13 @@ export function CalculatorForm({ onCalculate, defaultZip }: CalculatorFormProps)
   const handleChange = (field: keyof CalculatorInput, value: any) => {
     setFormData(prev => ({ ...prev, [field]: value }));
   };
+
+  useEffect(() => {
+    // Initialize formData with URL zip parameter if provided
+    if (urlZip && /^\d{5}$/.test(urlZip)) {
+      setFormData(prev => ({ ...prev, zipCode: urlZip }));
+    }
+  }, [urlZip]);
 
   useEffect(() => {
     if (formData.zipCode.length === 5) {
@@ -59,6 +71,14 @@ export function CalculatorForm({ onCalculate, defaultZip }: CalculatorFormProps)
       setLocationStr('');
     }
   }, [formData.zipCode]);
+
+  // Auto-advance to Step 2 if URL has valid zip parameter
+  useEffect(() => {
+    if (!initialStepSet && urlZip && /^\d{5}$/.test(urlZip) && locationStr) {
+      setStep(2);
+      setInitialStepSet(true);
+    }
+  }, [urlZip, locationStr, initialStepSet]);
 
   const handleSubmit = async () => {
     if (!formData.zipCode || !formData.areaSqft || !formData.materialType) {

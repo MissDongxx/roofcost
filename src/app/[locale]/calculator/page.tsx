@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from 'react';
+import { useState, Suspense } from 'react';
 import { useTranslations } from 'next-intl';
 import { CalculatorForm } from '@/components/calculator/CalculatorForm';
 import { ResultCard } from '@/components/calculator/ResultCard';
@@ -15,7 +15,7 @@ import { Input } from '@/shared/components/ui/input';
 import { ChevronDown, FileText, Loader2, Mail } from 'lucide-react';
 import { toast } from 'sonner';
 
-export default function CalculatorPage() {
+function CalculatorContent() {
   const t = useTranslations('Calculator');
   const [result, setResult] = useState<PriceResult | null>(null);
   const [inputData, setInputData] = useState<CalculatorInput | null>(null);
@@ -148,5 +148,17 @@ export default function CalculatorPage() {
         )}
       </div>
     </div>
+  );
+}
+
+export default function CalculatorPage() {
+  return (
+    <Suspense fallback={
+      <div className="container mx-auto px-4 py-12 md:py-20 min-h-screen flex items-center justify-center">
+        <Loader2 className="h-8 w-8 animate-spin text-muted-foreground" />
+      </div>
+    }>
+      <CalculatorContent />
+    </Suspense>
   );
 }
