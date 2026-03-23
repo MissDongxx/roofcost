@@ -3,7 +3,7 @@ import { Metadata } from 'next';
 import citiesData from '@/data/cities.json';
 import materialsRaw from '@/data/materials.json';
 import { calculateRoofCost } from '@/lib/calculator/pricing-engine';
-import { CalculatorForm } from '@/components/calculator/CalculatorForm';
+import { CityCalculator } from './CityCalculator';
 import { generateFAQSchema, generateBreadcrumbSchema } from '@/lib/calculator/schema-markup';
 import { Card, CardContent, CardHeader, CardTitle } from '@/shared/components/ui/card';
 import Link from 'next/link';
@@ -187,7 +187,7 @@ export default async function CityLandingPage({ params }: PageProps) {
 
       <div className="max-w-4xl mx-auto mb-16 pt-8 border-t">
         <h2 className="text-2xl font-bold mb-6 text-center">Get Your Personalized Estimate</h2>
-        <CalculatorForm defaultZip={cityData.zip} />
+        <CityCalculator defaultZip={cityData.zip} />
       </div>
 
       <div className="max-w-4xl mx-auto border-t pt-16">
@@ -218,8 +218,8 @@ export default async function CityLandingPage({ params }: PageProps) {
           </h3>
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
             {otherStateCities.map(c => (
-              <Link key={c.state} href={`/${locale}/roof-cost/${c.state}/${c.slug}`} className="group block p-4 bg-card border border-border rounded-xl hover:border-primary hover:bg-primary/5 hover:shadow-md transition-all text-center">
-                <span className="font-medium group-hover:text-primary transition-colors capitalize">{c.state}</span>
+              <Link key={c.slug} href={`/${locale}/roof-cost/${c.state}/${c.slug}`} className="group block p-4 bg-card border border-border rounded-xl hover:border-primary hover:bg-primary/5 hover:shadow-md transition-all text-center">
+                <span className="font-medium group-hover:text-primary transition-colors capitalize">{c.displayName}</span>
               </Link>
             ))}
           </div>

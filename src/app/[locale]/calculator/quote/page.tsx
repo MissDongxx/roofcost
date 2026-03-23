@@ -4,7 +4,7 @@ import { QuoteClient } from './QuoteClient';
 
 export const metadata: Metadata = {
   title: 'Get Free Local Roofing Quotes | RoofCostCalc',
-  robots: { index: false },
+  robots: { index: false, follow: false },
 };
 
 export default function QuotePage() {
