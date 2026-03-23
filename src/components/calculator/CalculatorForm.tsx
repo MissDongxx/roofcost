@@ -16,7 +16,7 @@ import materialsRaw from '@/data/materials.json';
 const materials = materialsRaw as Record<string, any>;
 
 interface CalculatorFormProps {
-  onCalculate: (result: any, input: CalculatorInput) => void;
+  onCalculate?: (result: any, input: CalculatorInput) => void;
   defaultZip?: string;
 }
 
@@ -76,7 +76,9 @@ export function CalculatorForm({ onCalculate, defaultZip }: CalculatorFormProps)
       const data = await res.json();
       if (!res.ok) throw new Error(data.error || 'Failed to calculate');
       
-      onCalculate(data.data, formData);
+      if (onCalculate) {
+        onCalculate(data.data, formData);
+      }
       toast.success(t('calculationSuccess') || 'Estimated cost generated successfully!');
     } catch (error: any) {
       toast.error(error.message || 'Error occurred');
