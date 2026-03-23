@@ -26,9 +26,9 @@
         "tip": "🎁 Special offer for the first 1000 users",
         "buttons": [
           {
-            "title": "Get Started",
-            "icon": "Zap",
-            "url": "/pricing",
+            "title": "Calculate Roof Cost",
+            "icon": "Calculator",
+            "url": "/calculator",
             "target": "_self",
             "variant": "default"
           },

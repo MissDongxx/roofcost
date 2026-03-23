@@ -6,6 +6,8 @@ import {
   pgTable,
   text,
   timestamp,
+  numeric,
+  date,
 } from 'drizzle-orm/pg-core';
 
 import { envConfigs } from '@/config';
@@ -555,3 +557,68 @@ export const chatMessage = table(
     index('idx_chat_message_user_id').on(table.userId, table.status),
   ]
 );
+
+// --- Calculator specific tables ---
+
+export const materialPrices = table('material_prices', {
+  materialType: text('material_type').primaryKey(), // asphalt_3tab, etc.
+  displayName: text('display_name').notNull(),
+  priceLowSqft: numeric('price_low_sqft', { precision: 6, scale: 2 }).notNull(),
+  priceMidSqft: numeric('price_mid_sqft', { precision: 6, scale: 2 }).notNull(),
+  priceHighSqft: numeric('price_high_sqft', { precision: 6, scale: 2 }).notNull(),
+  lifespanYears: integer('lifespan_years'),
+  notes: text('notes'),
+  effectiveDate: date('effective_date').notNull().defaultNow(),
+  updatedAt: timestamp('updated_at').defaultNow(),
+});
+
+export const geoCostIndex = table(
+  'geo_cost_index',
+  {
+    zipCode: text('zip_code').primaryKey(),
+    stateCode: text('state_code').notNull(),
+    metroArea: text('metro_area'),
+    laborCostIndex: numeric('labor_cost_index', { precision: 4, scale: 3 }).notNull().default('1.000'),
+    materialIndex: numeric('material_index', { precision: 4, scale: 3 }).notNull().default('1.000'),
+    updatedAt: timestamp('updated_at').defaultNow(),
+  },
+  (table) => [
+    index('idx_geo_state').on(table.stateCode),
+  ]
+);
+
+export const calculations = table('calculations', {
+  id: text('id').primaryKey(), // generate crypto.randomUUID() on insert
+  zipCode: text('zip_code'),
+  stateCode: text('state_code'),
+  materialType: text('material_type'),
+  areaSqft: numeric('area_sqft', { precision: 8, scale: 1 }),
+  pitchFactor: numeric('pitch_factor', { precision: 4, scale: 3 }).default('1.0'),
+  complexity: text('complexity').default('simple'),
+  includeTearoff: boolean('include_tearoff').default(true),
+  resultLow: integer('result_low'),
+  resultMid: integer('result_mid'),
+  resultHigh: integer('result_high'),
+  createdAt: timestamp('created_at').defaultNow(),
+});
+
+export const quoteSubmissions = table(
+  'quote_submissions',
+  {
+    id: text('id').primaryKey(),
+    city: text('city').notNull(),
+    stateCode: text('state_code').notNull(),
+    zipCode: text('zip_code'),
+    materialType: text('material_type').notNull(),
+    areaSqft: numeric('area_sqft', { precision: 8, scale: 1 }),
+    actualQuote: integer('actual_quote').notNull(),
+    quoteDate: date('quote_date').notNull(),
+    dataSource: text('data_source').default('user_submit'),
+    isVerified: boolean('is_verified').default(false),
+    createdAt: timestamp('created_at').defaultNow(),
+  },
+  (table) => [
+    index('idx_qs_city_material').on(table.city, table.stateCode, table.materialType),
+  ]
+);
+

@@ -7,6 +7,8 @@ import {
   text,
   timestamp,
   varchar,
+  decimal,
+  date,
 } from 'drizzle-orm/mysql-core';
 
 // MySQL has no schema concept like Postgres. Keep a `table` alias to minimize diff with pg/sqlite schemas.
@@ -515,3 +517,68 @@ export const chatMessage = table(
     index('idx_chat_message_user_id').on(table.userId, table.status),
   ]
 );
+
+// --- Calculator specific tables ---
+
+export const materialPrices = table('material_prices', {
+  materialType: varchar191('material_type').primaryKey(),
+  displayName: varchar191('display_name').notNull(),
+  priceLowSqft: decimal('price_low_sqft', { precision: 6, scale: 2 }).notNull(),
+  priceMidSqft: decimal('price_mid_sqft', { precision: 6, scale: 2 }).notNull(),
+  priceHighSqft: decimal('price_high_sqft', { precision: 6, scale: 2 }).notNull(),
+  lifespanYears: int('lifespan_years'),
+  notes: text('notes'),
+  effectiveDate: date('effective_date').notNull(),
+  updatedAt: timestamp('updated_at').defaultNow().onUpdateNow(),
+});
+
+export const geoCostIndex = table(
+  'geo_cost_index',
+  {
+    zipCode: varchar191('zip_code').primaryKey(),
+    stateCode: varchar('state_code', { length: 50 }).notNull(),
+    metroArea: varchar191('metro_area'),
+    laborCostIndex: decimal('labor_cost_index', { precision: 4, scale: 3 }).notNull().default('1.000'),
+    materialIndex: decimal('material_index', { precision: 4, scale: 3 }).notNull().default('1.000'),
+    updatedAt: timestamp('updated_at').defaultNow().onUpdateNow(),
+  },
+  (table) => [
+    index('idx_geo_state').on(table.stateCode),
+  ]
+);
+
+export const calculations = table('calculations', {
+  id: varchar191('id').primaryKey(),
+  zipCode: varchar('zip_code', { length: 20 }),
+  stateCode: varchar('state_code', { length: 50 }),
+  materialType: varchar('material_type', { length: 50 }),
+  areaSqft: decimal('area_sqft', { precision: 8, scale: 1 }),
+  pitchFactor: decimal('pitch_factor', { precision: 4, scale: 3 }).default('1.0'),
+  complexity: varchar('complexity', { length: 50 }).default('simple'),
+  includeTearoff: boolean('include_tearoff').default(true),
+  resultLow: int('result_low'),
+  resultMid: int('result_mid'),
+  resultHigh: int('result_high'),
+  createdAt: timestamp('created_at').defaultNow(),
+});
+
+export const quoteSubmissions = table(
+  'quote_submissions',
+  {
+    id: varchar191('id').primaryKey(),
+    city: varchar191('city').notNull(),
+    stateCode: varchar('state_code', { length: 50 }).notNull(),
+    zipCode: varchar('zip_code', { length: 20 }),
+    materialType: varchar('material_type', { length: 50 }).notNull(),
+    areaSqft: decimal('area_sqft', { precision: 8, scale: 1 }),
+    actualQuote: int('actual_quote').notNull(),
+    quoteDate: date('quote_date').notNull(),
+    dataSource: varchar('data_source', { length: 50 }).default('user_submit'),
+    isVerified: boolean('is_verified').default(false),
+    createdAt: timestamp('created_at').defaultNow(),
+  },
+  (table) => [
+    index('idx_qs_city_material').on(table.city, table.stateCode, table.materialType),
+  ]
+);
+

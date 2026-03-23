@@ -1,5 +1,5 @@
 import { sql } from 'drizzle-orm';
-import { index, integer, sqliteTable, text } from 'drizzle-orm/sqlite-core';
+import { index, integer, sqliteTable, text, real } from 'drizzle-orm/sqlite-core';
 
 // SQLite has no schema concept like Postgres. Keep a `table` alias to minimize diff with pg schema.
 const table = sqliteTable;
@@ -600,3 +600,68 @@ export const chatMessage = table(
     index('idx_chat_message_user_id').on(table.userId, table.status),
   ]
 );
+
+// --- Calculator specific tables ---
+
+export const materialPrices = table('material_prices', {
+  materialType: text('material_type').primaryKey(),
+  displayName: text('display_name').notNull(),
+  priceLowSqft: real('price_low_sqft').notNull(),
+  priceMidSqft: real('price_mid_sqft').notNull(),
+  priceHighSqft: real('price_high_sqft').notNull(),
+  lifespanYears: integer('lifespan_years'),
+  notes: text('notes'),
+  effectiveDate: integer('effective_date', { mode: 'timestamp_ms' }).default(sqliteNowMs).notNull(),
+  updatedAt: integer('updated_at', { mode: 'timestamp_ms' }).default(sqliteNowMs).notNull(),
+});
+
+export const geoCostIndex = table(
+  'geo_cost_index',
+  {
+    zipCode: text('zip_code').primaryKey(),
+    stateCode: text('state_code').notNull(),
+    metroArea: text('metro_area'),
+    laborCostIndex: real('labor_cost_index').notNull().default(1.000),
+    materialIndex: real('material_index').notNull().default(1.000),
+    updatedAt: integer('updated_at', { mode: 'timestamp_ms' }).default(sqliteNowMs).notNull(),
+  },
+  (table) => [
+    index('idx_geo_state').on(table.stateCode),
+  ]
+);
+
+export const calculations = table('calculations', {
+  id: text('id').primaryKey(),
+  zipCode: text('zip_code'),
+  stateCode: text('state_code'),
+  materialType: text('material_type'),
+  areaSqft: real('area_sqft'),
+  pitchFactor: real('pitch_factor').default(1.0),
+  complexity: text('complexity').default('simple'),
+  includeTearoff: integer('include_tearoff', { mode: 'boolean' }).default(true),
+  resultLow: integer('result_low'),
+  resultMid: integer('result_mid'),
+  resultHigh: integer('result_high'),
+  createdAt: integer('created_at', { mode: 'timestamp_ms' }).default(sqliteNowMs).notNull(),
+});
+
+export const quoteSubmissions = table(
+  'quote_submissions',
+  {
+    id: text('id').primaryKey(),
+    city: text('city').notNull(),
+    stateCode: text('state_code').notNull(),
+    zipCode: text('zip_code'),
+    materialType: text('material_type').notNull(),
+    areaSqft: real('area_sqft'),
+    actualQuote: integer('actual_quote').notNull(),
+    quoteDate: integer('quote_date', { mode: 'timestamp_ms' }).notNull(),
+    dataSource: text('data_source').default('user_submit'),
+    isVerified: integer('is_verified', { mode: 'boolean' }).default(false),
+    createdAt: integer('created_at', { mode: 'timestamp_ms' }).default(sqliteNowMs).notNull(),
+  },
+  (table) => [
+    index('idx_qs_city_material').on(table.city, table.stateCode, table.materialType),
+  ]
+);
+
