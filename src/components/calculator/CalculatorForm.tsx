@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { useTranslations } from 'next-intl';
-import { useSearchParams } from 'next/navigation';
+import { useSearchParams, useRouter, useParams } from 'next/navigation';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/shared/components/ui/card';
 import { Button } from '@/shared/components/ui/button';
 import { Input } from '@/shared/components/ui/input';
@@ -25,6 +25,9 @@ interface CalculatorFormProps {
 export function CalculatorForm({ onCalculate, defaultZip, defaultMaterial }: CalculatorFormProps) {
   const t = useTranslations('Calculator');
   const searchParams = useSearchParams();
+  const router = useRouter();
+  const params = useParams();
+  const locale = (params?.locale as string) || 'en';
   const urlZip = searchParams?.get('zip');
 
   const [loading, setLoading] = useState(false);
@@ -97,10 +100,33 @@ export function CalculatorForm({ onCalculate, defaultZip, defaultMaterial }: Cal
       const data = await res.json();
       if (!res.ok) throw new Error(data.error || 'Failed to calculate');
       
+      const result = data.data;
+      
       if (onCalculate) {
-        onCalculate(data.data, formData);
+        onCalculate(result, formData);
       }
+      
       toast.success(t('calculationSuccess') || 'Estimated cost generated successfully!');
+
+      // Redirect to result page with params
+      const query = new URLSearchParams({
+        zip: formData.zipCode,
+        material: formData.materialType,
+        areaSqft: formData.areaSqft.toString(),
+        mid: result.mid.toString(),
+        low: result.low.toString(),
+        high: result.high.toString(),
+        materialCost: (result.breakdown?.materialCost || 0).toString(),
+        laborCost: (result.breakdown?.laborCost || 0).toString(),
+        tearoffCost: (result.breakdown?.tearoffCost || 0).toString(),
+        disposalCost: (result.breakdown?.disposalCost || 0).toString(),
+        permitCost: (result.breakdown?.permitCost || 0).toString(),
+        geoIndex: (result.geoIndex || 1).toString(),
+        isDefaultGeo: (result.isDefaultGeo || false).toString(),
+        materialName: result.materialName || ''
+      });
+
+      router.push(`/${locale}/calculator/result?${query.toString()}`);
     } catch (error: any) {
       toast.error(error.message || 'Error occurred');
     } finally {
