@@ -6,7 +6,6 @@ import { routing } from '@/core/i18n/config';
 import { ThemeProvider } from '@/core/theme/provider';
 import { Toaster } from '@/shared/components/ui/sonner';
 import { AppContextProvider } from '@/shared/contexts/app';
-import { getMetadata } from '@/shared/lib/seo';
 
 import { envConfigs } from '@/config';
 
@@ -16,6 +15,10 @@ export const generateMetadata = async () => {
     description: 'Get an instant, math-based roof replacement cost estimate for your home. No signup, no sales calls, just your number.',
     icons: {
       icon: envConfigs.app_favicon,
+    },
+    other: {
+      'dns-prefetch': 'https://www.googletagmanager.com',
+      'preconnect': 'https://www.google-analytics.com',
     },
   };
 };

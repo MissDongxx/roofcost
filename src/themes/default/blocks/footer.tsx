@@ -52,9 +52,8 @@ export function Footer({ footer = {} as FooterType }: { footer: FooterType }) {
           <div className="flex flex-col gap-3">
             <h4 className="font-mono text-[11px] text-white/30 uppercase tracking-widest font-bold mb-2">Company</h4>
             <Link href="/about" className="text-[14px] text-white/50 hover:text-white transition-colors">About Us</Link>
-            <Link href="/methodology" className="text-[14px] text-white/50 hover:text-white transition-colors">Our Methodology</Link>
-            <Link href="/privacy" className="text-[14px] text-white/50 hover:text-white transition-colors font-medium">Privacy Policy</Link>
-            <Link href="/terms" className="text-[14px] text-white/50 hover:text-white transition-colors font-medium">Terms of Service</Link>
+            <Link href="/privacy-policy" className="text-[14px] text-white/50 hover:text-white transition-colors font-medium">Privacy Policy</Link>
+            <Link href="/terms-of-service" className="text-[14px] text-white/50 hover:text-white transition-colors font-medium">Terms of Service</Link>
             <Link href="/contact" className="text-[14px] text-white/50 hover:text-white transition-colors">Contact Us</Link>
           </div>
         </div>

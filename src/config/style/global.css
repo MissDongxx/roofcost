@@ -11,6 +11,19 @@
   }
   body {
     @apply bg-background text-foreground font-sans;
+    /* Performance optimizations for mobile */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+  /* Improve layout stability by reducing layout shifts */
+  img, video {
+    max-width: 100%;
+    height: auto;
+  }
+  /* CSS containment for better performance */
+  main, section, article {
+    contain: layout style;
   }
 }
 

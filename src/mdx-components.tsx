@@ -9,6 +9,7 @@ import {
   AccordionTrigger,
 } from '@/shared/components/ui/accordion';
 import { cn } from '@/shared/lib/utils';
+import { ContactForm } from '@/shared/blocks/common/contact-form';
 
 // Custom link component with nofollow for external links
 const CustomLink = ({
@@ -112,6 +113,7 @@ export function getMDXComponents(components?: MDXComponents): MDXComponents {
     AccordionItem,
     AccordionTrigger,
     AccordionContent,
+    ContactForm,
     ...components,
   };
 

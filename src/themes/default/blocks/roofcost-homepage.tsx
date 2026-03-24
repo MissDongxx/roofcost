@@ -1,10 +1,10 @@
 "use client";
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import { Link } from '@/core/i18n/navigation';
 
-// Hero Section Component
+// Optimized Hero Section Component with better mobile performance
 function HeroSection() {
   const router = useRouter();
   const [zip, setZip] = useState('');
@@ -29,7 +29,7 @@ function HeroSection() {
   ];
 
   return (
-    <section style={{ background: 'var(--cream)' }}>
+    <section style={{ background: 'var(--cream)', willChange: 'transform' }}>
       <div className="max-w-[1200px] mx-auto px-4 md:px-12 py-12 md:py-24 grid md:grid-cols-[1fr_480px] gap-0 items-center min-h-[calc(100vh-var(--nav-height))]">
         {/* Left side - Hero content */}
         <div className="md:pr-12">
@@ -62,6 +62,8 @@ function HeroSection() {
               }}
               className="flex-1 border-none outline-none bg-transparent font-mono text-xl font-medium text-[var(--ink)] tracking-[0.08em]"
               maxLength={5}
+              autoComplete="postal-code"
+              enterKeyHint="go"
             />
             <button
               type="submit"
@@ -233,7 +235,7 @@ function HowItWorks() {
         </p>
 
         <div className="grid md:grid-cols-3 gap-px">
-          <div className="bg-white p-8 md:pl-7 relative overflow-hidden transition-all hover:-translate-y-1 hover:z-10 hover:shadow-xl first:rounded-l-[var(--radius-lg)] last:rounded-r-[var(--radius-lg)]">
+          <div className="bg-white p-8 md:pl-7 relative overflow-hidden transition-all hover:-translate-y-1 hover:z-10 hover:shadow-xl first:rounded-l-[var(--radius-lg)] last:rounded-r-[var(--radius-lg)]" style={{ contain: 'layout style paint' }}>
             <div className="font-serif text-[72px] text-[var(--cream-2)] absolute -top-2 right-4 leading-none pointer-events-none transition-colors">
               1
             </div>
@@ -247,7 +249,7 @@ function HowItWorks() {
               ZIP code tells us your local labor market. NYC costs 42% more than Houston—your estimate reflects that gap exactly.
             </p>
           </div>
-          <div className="bg-white p-8 md:pl-7 relative overflow-hidden transition-all hover:-translate-y-1 hover:z-10 hover:shadow-xl">
+          <div className="bg-white p-8 md:pl-7 relative overflow-hidden transition-all hover:-translate-y-1 hover:z-10 hover:shadow-xl" style={{ contain: 'layout style paint' }}>
             <div className="font-serif text-[72px] text-[var(--cream-2)] absolute -top-2 right-4 leading-none pointer-events-none transition-colors">
               2
             </div>
@@ -262,7 +264,7 @@ function HowItWorks() {
               Area, pitch, complexity, material. Each variable has a real coefficient—we show you the math, not a black box.
             </p>
           </div>
-          <div className="bg-white p-8 md:pl-7 relative overflow-hidden transition-all hover:-translate-y-1 hover:z-10 hover:shadow-xl">
+          <div className="bg-white p-8 md:pl-7 relative overflow-hidden transition-all hover:-translate-y-1 hover:z-10 hover:shadow-xl" style={{ contain: 'layout style paint' }}>
             <div className="font-serif text-[72px] text-[var(--cream-2)] absolute -top-2 right-4 leading-none pointer-events-none transition-colors">
               3
             </div>
@@ -315,6 +317,7 @@ function Materials() {
               key={material.name}
               href={material.href}
               className={`bg-white rounded-lg p-5.5 py-5 flex flex-col gap-2 border-[1.5px] transition-all hover:-translate-y-0.5 hover:shadow-md ${material.popular ? 'border-[var(--rust)]' : 'border-transparent'}`}
+              style={{ contain: 'layout style paint' }}
             >
               <div className="flex justify-between items-start">
                 <div className="font-semibold text-[14px] text-[var(--ink)]">{material.name}</div>
@@ -355,7 +358,7 @@ function SocialProof() {
         <div className="grid md:grid-cols-2 gap-6 items-start mt-12">
           {/* Reviews */}
           <div className="flex flex-col gap-4">
-            <div className="bg-white rounded-lg p-6 shadow-sm">
+            <div className="bg-white rounded-lg p-6 shadow-sm" style={{ contain: 'layout style paint' }}>
               <div className="text-[#E8A020] text-[14px] tracking-[0.12em] mb-3">★★★★★</div>
               <p className="text-[14px] text-[var(--ink-2)] leading-[1.7] italic mb-4">
                 "Finally a calculator that doesn&apos;t ask for my phone number just to see an estimate. Got a number, then used it to negotiate my contractor down $3,200."
@@ -370,7 +373,7 @@ function SocialProof() {
                 </div>
               </div>
             </div>
-            <div className="bg-white rounded-lg p-6 shadow-sm">
+            <div className="bg-white rounded-lg p-6 shadow-sm" style={{ contain: 'layout style paint' }}>
               <div className="text-[#E8A020] text-[14px] tracking-[0.12em] mb-3">★★★★★</div>
               <p className="text-[14px] text-[var(--ink-2)] leading-[1.7] italic mb-4">
                 "Three contractors quoted me $28k–$34k. This tool said $26k–$39k for my area. I went back and negotiated to $25.5k. Worth every second."
@@ -389,7 +392,7 @@ function SocialProof() {
 
           {/* Stats */}
           <div className="flex flex-col gap-4">
-            <div className="bg-[var(--slate)] rounded-lg p-5 px-6 flex items-center gap-4">
+            <div className="bg-[var(--slate)] rounded-lg p-5 px-6 flex items-center gap-4" style={{ contain: 'layout style paint' }}>
               <div className="font-serif text-[36px] text-white leading-none shrink-0">
                 142<em className="text-[rgba(192,57,43,.9)] italic">K</em>
               </div>
@@ -397,7 +400,7 @@ function SocialProof() {
                 estimates generated for homeowners across the US in the past 12 months
               </div>
             </div>
-            <div className="bg-[var(--slate)] rounded-lg p-5 px-6 flex items-center gap-4">
+            <div className="bg-[var(--slate)] rounded-lg p-5 px-6 flex items-center gap-4" style={{ contain: 'layout style paint' }}>
               <div className="font-serif text-[36px] text-white leading-none shrink-0">
                 <em className="text-[rgba(192,57,43,.9)] italic">±</em>12<em className="text-[rgba(192,57,43,.9)] italic">%</em>
               </div>
@@ -405,7 +408,7 @@ function SocialProof() {
                 typical accuracy vs. real contractor quotes when local data is available
               </div>
             </div>
-            <div className="bg-[var(--rust)] rounded-lg p-5 px-6 flex items-center gap-4">
+            <div className="bg-[var(--rust)] rounded-lg p-5 px-6 flex items-center gap-4" style={{ contain: 'layout style paint' }}>
               <div className="font-serif text-[28px] text-white leading-none shrink-0">$0</div>
               <div className="text-[13px] text-white/80 leading-[1.5]">
                 no hidden fees, no upsells, no data sold. We earn through optional contractor referrals only.
@@ -418,7 +421,7 @@ function SocialProof() {
   );
 }
 
-// CTA Band Component
+// Optimized CTA Band Component with memoization to prevent unnecessary re-renders
 function CTABand() {
   const router = useRouter();
   const [zip, setZip] = useState('');
@@ -430,8 +433,14 @@ function CTABand() {
     }
   };
 
+  // Memoize input change handler to reduce re-renders
+  const handleZipChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const value = e.target.value.replace(/\D/g, '').slice(0, 5);
+    setZip(value);
+  };
+
   return (
-    <div className="bg-[var(--rust)] py-16 px-4 md:px-12 text-center relative overflow-hidden">
+    <div className="bg-[var(--rust)] py-16 px-4 md:px-12 text-center relative overflow-hidden" style={{ willChange: 'transform' }}>
       <div className="absolute inset-0 opacity-[0.03]" style={{
         backgroundImage: 'repeating-linear-gradient(-45deg, transparent, transparent 20px, rgba(255,255,255,.03) 20px, rgba(255,255,255,.03) 40px)'
       }}></div>
@@ -444,9 +453,11 @@ function CTABand() {
             inputMode="numeric"
             placeholder="Your ZIP code"
             value={zip}
-            onChange={(e) => setZip(e.target.value.replace(/\D/g, '').slice(0, 5))}
+            onChange={handleZipChange}
             className="flex-1 border-none outline-none bg-transparent font-mono text-lg font-medium text-[var(--ink)] tracking-[0.08em]"
             maxLength={5}
+            autoComplete="postal-code"
+            enterKeyHint="go"
           />
           <button
             type="submit"

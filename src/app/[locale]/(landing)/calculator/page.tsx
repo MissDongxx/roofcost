@@ -1,9 +1,20 @@
-"use client";
-
 import { Suspense } from 'react';
 import { useTranslations } from 'next-intl';
-import { CalculatorForm } from '@/components/calculator/CalculatorForm';
+import dynamic from 'next/dynamic';
 import { Loader2 } from 'lucide-react';
+
+// Dynamic import for CalculatorForm to reduce initial JS bundle size
+const CalculatorForm = dynamic(
+  () => import('@/components/calculator/CalculatorForm').then(mod => ({ default: mod.CalculatorForm })),
+  {
+    loading: () => (
+      <div className="flex items-center justify-center p-12">
+        <Loader2 className="h-8 w-8 animate-spin text-muted-foreground" />
+      </div>
+    ),
+    ssr: true,
+  }
+);
 
 function CalculatorContent() {
   const t = useTranslations('Calculator');
@@ -18,7 +29,7 @@ function CalculatorContent() {
           {t('pageSubtitle') || 'Discover true roofing costs in your area. Enter your ZIP code and roof details for an instant, math-based estimate without the sales pressure.'}
         </p>
       </div>
-      
+
       <div className="flex flex-col gap-12 w-full max-w-4xl mx-auto">
         <section>
           <CalculatorForm />

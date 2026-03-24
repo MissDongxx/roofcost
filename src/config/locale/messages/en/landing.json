@@ -142,6 +142,16 @@
               "title": "Pricing",
               "url": "/pricing",
               "target": "_self"
+            },
+            {
+              "title": "About",
+              "url": "/about",
+              "target": "_self"
+            },
+            {
+              "title": "Contact",
+              "url": "/contact",
+              "target": "_self"
             }
           ]
         },

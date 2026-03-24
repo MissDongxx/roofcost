@@ -1,11 +1,11 @@
 import { CalendarIcon, TimerIcon } from 'lucide-react';
 
-import { MarkdownPreview } from '@/shared/blocks/common';
+import { MarkdownPreview, MDXContent } from '@/shared/blocks/common';
 import { type Post as PostType } from '@/shared/types/blocks/blog';
 
 import '@/config/style/docs.css';
 
-export async function PageDetail({ post }: { post: PostType }) {
+export function PageDetail({ post }: { post: PostType }) {
   return (
     <section id={post.id}>
       <div className="py-24 md:py-32">
@@ -27,14 +27,14 @@ export async function PageDetail({ post }: { post: PostType }) {
           <div className="ring-foreground/5 relative mt-8 rounded-3xl border border-transparent px-4 shadow ring-1 md:px-8">
             <div>
               {post.body ? (
-                <div className="docs text-foreground text-md my-8 space-y-4 font-normal *:leading-relaxed">
+                <div className="docs text-foreground text-md my-8 space-y-4 font-normal">
                   {post.body}
                 </div>
               ) : (
                 <>
                   {post.content && (
-                    <div className="text-muted-foreground my-8 space-y-4 text-lg *:leading-relaxed">
-                      <MarkdownPreview content={post.content} />
+                    <div className="text-muted-foreground my-8 space-y-4 text-lg">
+                      <MDXContent source={post.content} />
                     </div>
                   )}
                 </>

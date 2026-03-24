@@ -18,7 +18,7 @@ const dmSans = DM_Sans({
   weight: ['400', '500', '700'],
   variable: '--font-sans',
   display: 'swap',
-  preload: true,
+  preload: true, // Critical font - preload for better LCP
 });
 
 const dmSerifDisplay = DM_Serif_Display({
@@ -26,7 +26,7 @@ const dmSerifDisplay = DM_Serif_Display({
   weight: '400',
   variable: '--font-serif',
   display: 'swap',
-  preload: true,
+  preload: false, // Only used for headings - lazy load
 });
 
 const dmMono = DM_Mono({
@@ -34,7 +34,7 @@ const dmMono = DM_Mono({
   weight: ['400', '500'],
   variable: '--font-mono',
   display: 'swap',
-  preload: true,
+  preload: false, // Only used for code/monospace text - lazy load
 });
 
 export default async function RootLayout({
@@ -113,6 +113,10 @@ export default async function RootLayout({
         <link rel="icon" href={envConfigs.app_favicon} />
         <link rel="alternate icon" href="/favicon.ico" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        {/* Preconnect to Google Fonts for faster font loading */}
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
 
         {/* inject locales */}
         {locales ? (
