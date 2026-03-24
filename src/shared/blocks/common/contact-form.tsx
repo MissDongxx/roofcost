@@ -75,22 +75,22 @@ export function ContactForm() {
   if (isSuccess) {
     return (
       <div className="mx-auto max-w-xl py-8">
-        <div className="bg-green-50 border border-green-200 rounded-lg p-8 text-center">
+        <div className="bg-[#FBF0EE] border border-[#C0392B]/20 rounded-lg p-8 text-center">
           <div className="flex justify-center mb-4">
-            <div className="bg-green-100 rounded-full p-3">
-              <CheckCircle2 className="h-8 w-8 text-green-600" />
+            <div className="bg-[#C0392B]/10 rounded-full p-3">
+              <CheckCircle2 className="h-8 w-8 text-[#C0392B]" />
             </div>
           </div>
-          <h3 className="text-xl font-semibold text-green-900 mb-2">
+          <h3 className="text-xl font-semibold text-[#1B3A5C] mb-2">
             Message Sent Successfully!
           </h3>
-          <p className="text-green-700 mb-6">
+          <p className="text-[#1B3A5C]/80 mb-6">
             Thank you for reaching out. We've received your message and will get back to you within 24-48 hours.
           </p>
           <Button
             onClick={() => setIsSuccess(false)}
             variant="outline"
-            className="border-green-300 text-green-700 hover:bg-green-100"
+            className="border-[#C0392B]/30 text-[#C0392B] hover:bg-[#C0392B]/10"
           >
             Send Another Message
           </Button>

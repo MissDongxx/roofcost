@@ -476,8 +476,10 @@ function CTABand() {
 // Main Homepage Component
 export function RoofcostHomepage({
   section,
+  isCustomHomepage,
 }: {
   section?: any;
+  isCustomHomepage?: boolean;
 }) {
   return (
     <>

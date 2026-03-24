@@ -7,7 +7,10 @@ import { generateWebAppSchema } from '@/lib/calculator/schema-markup';
 export const revalidate = 3600;
 
 // Lazy load the homepage component for better initial load performance
-const RoofcostHomepage = dynamic(() => getThemeBlock('roofcost-homepage').then(mod => mod.default || mod), {
+const RoofcostHomepage = dynamic<{
+  section?: any;
+  isCustomHomepage?: boolean;
+}>(() => getThemeBlock('roofcost-homepage').then(mod => mod.default || mod), {
   loading: () => (
     <div className="min-h-[50vh] flex items-center justify-center">
       <div className="animate-pulse flex flex-col items-center gap-3">
