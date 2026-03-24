@@ -1,7 +1,6 @@
 import { getMDXComponents } from '@/mdx-components';
 import { and, count, desc, eq, like } from 'drizzle-orm';
 import { createRelativeLink } from 'fumadocs-ui/mdx';
-import moment from 'moment';
 
 import { db } from '@/core/db';
 import { logsSource, pagesSource, postsSource } from '@/core/docs/source';
@@ -550,14 +549,19 @@ export function getPostSlug({
 
 export function getPostDate({
   created_at,
-  locale,
+  locale = 'en',
 }: {
   created_at: string;
   locale?: string;
 }) {
-  return moment(created_at)
-    .locale(locale || 'en')
-    .format(locale === 'zh' ? 'YYYY/MM/DD' : 'MMM D, YYYY');
+  const date = new Date(created_at);
+  if (isNaN(date.getTime())) return '';
+
+  return new Intl.DateTimeFormat(locale === 'zh' ? 'zh-CN' : 'en-US', {
+    year: 'numeric',
+    month: locale === 'zh' ? '2-digit' : 'short',
+    day: locale === 'zh' ? '2-digit' : 'numeric',
+  }).format(date);
 }
 
 // Helper function to remove frontmatter from markdown content

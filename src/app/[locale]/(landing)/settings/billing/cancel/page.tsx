@@ -1,4 +1,3 @@
-import moment from 'moment';
 import { getTranslations } from 'next-intl/server';
 
 import { Empty } from '@/shared/blocks/common';
@@ -138,13 +137,13 @@ export default async function CancelBillingPage({
       {
         name: 'subscriptionCreatedAt',
         title: t('fields.subscription_created_at'),
-        value: moment(subscription.createdAt).format('YYYY-MM-DD'),
+        value: new Intl.DateTimeFormat('en-CA', { year: 'numeric', month: '2-digit', day: '2-digit' }).format(new Date(subscription.createdAt)),
         attributes: { disabled: true },
       },
       {
         name: 'currentPeriod',
         title: t('fields.current_period'),
-        value: `${moment(subscription.currentPeriodStart).format('YYYY-MM-DD')} ~ ${moment(subscription.currentPeriodEnd).format('YYYY-MM-DD')}`,
+        value: `${new Intl.DateTimeFormat('en-CA', { year: 'numeric', month: '2-digit', day: '2-digit' }).format(new Date(subscription.currentPeriodStart))} ~ ${new Intl.DateTimeFormat('en-CA', { year: 'numeric', month: '2-digit', day: '2-digit' }).format(new Date(subscription.currentPeriodEnd))}`,
         attributes: { disabled: true },
       },
     ],

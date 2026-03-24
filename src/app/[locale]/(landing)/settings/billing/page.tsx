@@ -1,4 +1,3 @@
-import moment from 'moment';
 import { getTranslations } from 'next-intl/server';
 
 import { Empty } from '@/shared/blocks/common';
@@ -99,22 +98,24 @@ export default async function BillingPage({
       {
         title: t('fields.current_period'),
         callback: function (item) {
-          let period = (
+          const start = new Date(item.currentPeriodStart);
+          const end = new Date(item.currentPeriodEnd);
+          const df = new Intl.DateTimeFormat('en-CA', { year: 'numeric', month: '2-digit', day: '2-digit' });
+
+          return (
             <div>
-              {`${moment(item.currentPeriodStart).format('YYYY-MM-DD')}`} ~
+              {df.format(start)} ~
               <br />
-              {`${moment(item.currentPeriodEnd).format('YYYY-MM-DD')}`}
+              {df.format(end)}
             </div>
           );
-
-          return period;
         },
       },
       {
         title: t('fields.end_time'),
         callback: function (item) {
           if (item.canceledEndAt) {
-            return <div>{moment(item.canceledEndAt).format('YYYY-MM-DD')}</div>;
+            return <div>{new Intl.DateTimeFormat('en-CA', { year: 'numeric', month: '2-digit', day: '2-digit' }).format(new Date(item.canceledEndAt))}</div>;
           }
           return '-';
         },
@@ -245,17 +246,13 @@ export default async function BillingPage({
             currentSubscription?.status === SubscriptionStatus.TRIALING ? (
               <div className="text-muted-foreground mt-4 text-sm font-normal">
                 {t('view.tip', {
-                  date: moment(currentSubscription?.currentPeriodEnd).format(
-                    'YYYY-MM-DD'
-                  ),
+                  date: new Intl.DateTimeFormat('en-CA', { year: 'numeric', month: '2-digit', day: '2-digit' }).format(new Date(currentSubscription?.currentPeriodEnd)),
                 })}
               </div>
             ) : (
-              <div className="text-destructive mt-4 text-sm font-normal">
+              <div className="text-muted-foreground mt-4 text-sm font-normal text-destructive">
                 {t('view.end_tip', {
-                  date: moment(currentSubscription?.canceledEndAt).format(
-                    'YYYY-MM-DD'
-                  ),
+                  date: new Intl.DateTimeFormat('en-CA', { year: 'numeric', month: '2-digit', day: '2-digit' }).format(new Date(currentSubscription?.canceledEndAt)),
                 })}
               </div>
             )}

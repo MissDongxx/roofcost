@@ -1,5 +1,4 @@
-import moment from 'moment';
-import { useLocale } from 'next-intl';
+import { useFormatter } from 'next-intl';
 
 export function Time({
   value,
@@ -12,6 +11,8 @@ export function Time({
   metadata?: Record<string, any>;
   className?: string;
 }) {
+  const format = useFormatter();
+
   if (!value) {
     if (placeholder) {
       return <div className={className}>{placeholder}</div>;
@@ -20,16 +21,18 @@ export function Time({
     return null;
   }
 
-  let locale = useLocale();
-  if (locale === 'zh') {
-    locale = 'zh-cn';
-  }
+  const date = value instanceof Date ? value : new Date(value);
 
   return (
     <div className={className}>
       {metadata?.format
-        ? moment(value).locale(locale).format(metadata?.format)
-        : moment(value).locale(locale).fromNow()}
+        ? format.dateTime(date, {
+            year: 'numeric',
+            month: 'short',
+            day: 'numeric',
+            ...metadata?.options, // Allow overriding or passing more options
+          })
+        : format.relativeTime(date)}
     </div>
   );
 }

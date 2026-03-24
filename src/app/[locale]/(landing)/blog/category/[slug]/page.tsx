@@ -1,5 +1,4 @@
-import moment from 'moment';
-import { getTranslations, setRequestLocale } from 'next-intl/server';
+import { getFormatter, getTranslations, setRequestLocale } from 'next-intl/server';
 
 import { getThemePage } from '@/core/theme';
 import { envConfigs } from '@/config';
@@ -107,13 +106,18 @@ export default async function CategoryBlogPage({
   });
 
   // build posts
+  const format = await getFormatter();
   const posts: PostType[] = postsData.map((post) => ({
     id: post.id,
     title: post.title || '',
     description: post.description || '',
     author_name: post.authorName || '',
     author_image: post.authorImage || '',
-    created_at: moment(post.createdAt).format('MMM D, YYYY') || '',
+    created_at: format.dateTime(new Date(post.createdAt), {
+      year: 'numeric',
+      month: 'short',
+      day: 'numeric',
+    }),
     image: post.image || '',
     url: `/blog/${post.slug}`,
   }));

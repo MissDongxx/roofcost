@@ -26,7 +26,7 @@ const dmSerifDisplay = DM_Serif_Display({
   weight: '400',
   variable: '--font-serif',
   display: 'swap',
-  preload: false, // Only used for headings - lazy load
+  preload: true, // Preload for better LCP and to prevent CLS
 });
 
 const dmMono = DM_Mono({
