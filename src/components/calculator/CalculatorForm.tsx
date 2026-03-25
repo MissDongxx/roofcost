@@ -32,7 +32,6 @@ export function CalculatorForm({ onCalculate, defaultZip, defaultMaterial }: Cal
 
   const [loading, setLoading] = useState(false);
   const [step, setStep] = useState(1);
-  const [initialStepSet, setInitialStepSet] = useState(false);
 
   const [formData, setFormData] = useState<CalculatorInput>({
     zipCode: defaultZip || '',
@@ -76,13 +75,7 @@ export function CalculatorForm({ onCalculate, defaultZip, defaultMaterial }: Cal
     }
   }, [formData.zipCode]);
 
-  // Auto-advance to Step 2 if URL has valid zip parameter
-  useEffect(() => {
-    if (!initialStepSet && urlZip && /^\d{5}$/.test(urlZip) && locationStr) {
-      setStep(2);
-      setInitialStepSet(true);
-    }
-  }, [urlZip, locationStr, initialStepSet]);
+  // Removed auto-advance logic - users must manually click Next to proceed
 
   const handleSubmit = async () => {
     if (!formData.zipCode || !formData.areaSqft || !formData.materialType) {
