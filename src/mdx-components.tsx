@@ -10,6 +10,8 @@ import {
 } from '@/shared/components/ui/accordion';
 import { cn } from '@/shared/lib/utils';
 import { ContactForm } from '@/shared/blocks/common/contact-form';
+import { FAQ } from '@/components/learn/FAQ';
+import { CalculatorCTA } from '@/components/learn/CalculatorCTA';
 
 // Custom link component with nofollow for external links
 const CustomLink = ({
@@ -114,6 +116,8 @@ export function getMDXComponents(components?: MDXComponents): MDXComponents {
     AccordionTrigger,
     AccordionContent,
     ContactForm,
+    FAQ,
+    CalculatorCTA,
     ...components,
   };
 

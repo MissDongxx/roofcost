@@ -97,7 +97,7 @@ export function Blog({
                       {item.created_at && (
                         <div className="flex items-center gap-2">
                           <Calendar className="size-4" />
-                          {item.created_at}
+                          {String(item.created_at)}
                         </div>
                       )}
                       <div className="flex-1"></div>
