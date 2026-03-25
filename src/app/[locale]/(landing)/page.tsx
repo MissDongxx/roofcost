@@ -11,6 +11,7 @@ export const revalidate = 3600;
 const RoofcostHomepage = dynamic<{
   section?: any;
   isCustomHomepage?: boolean;
+  locale?: string;
 }>(() => getThemeBlock('roofcost-homepage').then(mod => mod.default || mod), {
   loading: () => (
     <div className="w-full min-h-[calc(100vh-var(--nav-height))] flex items-center justify-center bg-[var(--cream)]">
