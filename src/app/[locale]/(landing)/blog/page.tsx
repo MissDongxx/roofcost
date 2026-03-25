@@ -10,7 +10,7 @@ import {
 } from '@/shared/types/blocks/blog';
 import { DynamicPage } from '@/shared/types/blocks/landing';
 import { postsSource } from '@/core/docs/source';
-import type { MDXPage } from 'fumadocs-core/source';
+import type { Page } from 'fumadocs-core/source';
 import { Clock, Tag } from 'lucide-react';
 
 export const revalidate = 3600;
@@ -57,7 +57,7 @@ export default async function BlogPage({
   const pages = postsSource.getPages(locale);
 
   // Map pages to articles with priority
-  const articlesWithPriority: ArticleWithPriority[] = pages.map((page: MDXPage<any>) => {
+  const articlesWithPriority: ArticleWithPriority[] = pages.map((page: Page<any>) => {
     const frontmatter = page.data;
     return {
       id: page.path,

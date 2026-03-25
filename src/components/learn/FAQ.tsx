@@ -9,13 +9,19 @@ import {
 } from '@/shared/components/ui/accordion';
 import { cn } from '@/shared/lib/utils';
 
+interface FAQProps {
+  children: React.ReactNode;
+}
+
 // Helper function to extract text from React children recursively
 function getTextFromChildren(children: React.ReactNode): string {
   if (!children) return '';
   if (typeof children === 'string') return children;
   if (typeof children === 'number') return children.toString();
   if (Array.isArray(children)) return children.map(getTextFromChildren).join('');
-  if (React.isValidElement(children)) return getTextFromChildren(children.props.children);
+  if (React.isValidElement(children)) {
+    return getTextFromChildren((children.props as any).children);
+  }
   return '';
 }
 
@@ -35,7 +41,7 @@ export function FAQ({ children }: FAQProps) {
 
     // Look for h3 elements as questions
     if (isH3) {
-      const questionText = getTextFromChildren(child.props.children)
+      const questionText = getTextFromChildren((child.props as any).children)
         .replace(/^Q:\s*/, '')
         .replace(/^\d+\.\s*/, '')
         .replace(/\?$/, ''); // Remove trailing ? for display
@@ -49,7 +55,7 @@ export function FAQ({ children }: FAQProps) {
     if (isP && faqItems.length > 0) {
       const lastItem = faqItems[faqItems.length - 1];
       if (!lastItem.answer) {
-        lastItem.answer = getTextFromChildren(child.props.children);
+        lastItem.answer = getTextFromChildren((child.props as any).children);
       }
     }
   });
