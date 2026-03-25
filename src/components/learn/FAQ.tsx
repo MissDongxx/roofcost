@@ -9,8 +9,14 @@ import {
 } from '@/shared/components/ui/accordion';
 import { cn } from '@/shared/lib/utils';
 
-interface FAQProps {
-  children?: React.ReactNode;
+// Helper function to extract text from React children recursively
+function getTextFromChildren(children: React.ReactNode): string {
+  if (!children) return '';
+  if (typeof children === 'string') return children;
+  if (typeof children === 'number') return children.toString();
+  if (Array.isArray(children)) return children.map(getTextFromChildren).join('');
+  if (React.isValidElement(children)) return getTextFromChildren(children.props.children);
+  return '';
 }
 
 // This is a wrapper component for FAQ content in MDX
@@ -22,22 +28,28 @@ export function FAQ({ children }: FAQProps) {
   React.Children.forEach(children, (child) => {
     if (!React.isValidElement(child)) return;
 
+    // Get the type of the child (could be a string like 'h3' or a component)
+    const type = child.type;
+    const isH3 = type === 'h3' || (typeof type === 'function' && (type as any).displayName === 'h3');
+    const isP = type === 'p' || (typeof type === 'function' && (type as any).displayName === 'p');
+
     // Look for h3 elements as questions
-    if (child.type === 'h3') {
-      const questionText = React.Children.toArray(child.props.children)
-        .join('')
+    if (isH3) {
+      const questionText = getTextFromChildren(child.props.children)
         .replace(/^Q:\s*/, '')
         .replace(/^\d+\.\s*/, '')
         .replace(/\?$/, ''); // Remove trailing ? for display
 
-      faqItems.push({ question: questionText, answer: '' });
+      if (questionText) {
+        faqItems.push({ question: questionText, answer: '' });
+      }
     }
 
     // Look for p elements as answers (after questions)
-    if (child.type === 'p' && faqItems.length > 0) {
+    if (isP && faqItems.length > 0) {
       const lastItem = faqItems[faqItems.length - 1];
       if (!lastItem.answer) {
-        lastItem.answer = React.Children.toArray(child.props.children).join('');
+        lastItem.answer = getTextFromChildren(child.props.children);
       }
     }
   });
@@ -51,7 +63,7 @@ export function FAQ({ children }: FAQProps) {
             <AccordionTrigger className="text-left font-medium">
               {item.question}?
             </AccordionTrigger>
-            <AccordionContent className="text-muted-foreground">
+            <AccordionContent className="text-muted-foreground whitespace-pre-wrap">
               {item.answer}
             </AccordionContent>
           </AccordionItem>
