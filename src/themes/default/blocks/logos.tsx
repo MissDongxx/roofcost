@@ -23,14 +23,31 @@ export function Logos({
         </ScrollAnimation>
         <ScrollAnimation delay={0.2}>
           <div className="mx-auto mt-12 flex max-w-4xl flex-wrap items-center justify-center gap-x-12 gap-y-8 sm:gap-x-16 sm:gap-y-12">
-            {section.items?.map((item, idx) => (
-              <LazyImage
-                key={idx}
-                className="h-8 w-fit dark:invert"
-                src={item.image?.src ?? ''}
-                alt={item.image?.alt ?? ''}
-              />
-            ))}
+            {section.items?.map((item, idx) => {
+              const content = (
+                <LazyImage
+                  className="h-8 w-fit dark:invert transition-opacity hover:opacity-80"
+                  src={item.image?.src ?? ''}
+                  alt={item.image?.alt ?? ''}
+                />
+              );
+
+              if (item.link) {
+                return (
+                  <a
+                    key={idx}
+                    href={item.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="cursor-pointer"
+                  >
+                    {content}
+                  </a>
+                );
+              }
+
+              return <div key={idx}>{content}</div>;
+            })}
           </div>
         </ScrollAnimation>
       </div>

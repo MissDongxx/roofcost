@@ -26,6 +26,10 @@ const CTABand = dynamic(() => import('./homepage/cta-band').then(mod => mod.CTAB
   ssr: true,
 });
 
+const Logos = dynamic<{ section: any; className?: string }>(() => import('./logos').then(mod => mod.Logos), {
+  ssr: true,
+});
+
 // Main Homepage Component
 export function RoofcostHomepage({
   section,
@@ -34,6 +38,20 @@ export function RoofcostHomepage({
   section?: any;
   isCustomHomepage?: boolean;
 }) {
+  const partnerLogos = {
+    title: "",
+    className: "bg-[var(--ink)] text-white/50 border-t border-white/5 py-10 md:py-16",
+    items: [
+      {
+        image: {
+          src: "https://www.toolpilot.ai/cdn/shop/files/tp-b-h_bec97d1a-5538-498b-8a26-77de74f90ed5_1692x468_crop_center.svg?v=1695882612",
+          alt: "ToolPilot"
+        },
+        link: "https://www.toolpilot.ai"
+      }
+    ]
+  };
+
   return (
     <>
       <HeroSection />
@@ -42,6 +60,7 @@ export function RoofcostHomepage({
       <Materials />
       <SocialProof />
       <CTABand />
+      <Logos section={partnerLogos as any} />
     </>
   );
 }
