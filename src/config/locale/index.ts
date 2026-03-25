@@ -55,5 +55,6 @@ export const localeMessagesPaths = [
   'pages/blog',
   'pages/updates',
   'pages/calculator',
+  'pages/materials',
   'Calculator',
 ];

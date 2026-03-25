@@ -1,9 +1,21 @@
 import { setRequestLocale } from 'next-intl/server';
+import { Metadata } from 'next';
 import Link from 'next/link';
 import citiesData from '@/data/cities.json';
 import { Card, CardContent, CardHeader, CardTitle } from '@/shared/components/ui/card';
 
 export const revalidate = 86400; // 24 hours
+
+export const generateMetadata = async (): Promise<Metadata> => {
+  return {
+    title: 'Roofing Costs by State and City (2026) | RoofCostAI',
+    description:
+      'Explore detailed roof replacement cost estimates by state and city. Our 2026 data is adjusted for local labor markets to provide the most accurate pricing available.',
+    alternates: {
+      canonical: '/roof-cost',
+    },
+  };
+};
 
 export default async function StateIndexPage({
   params,

@@ -1,9 +1,15 @@
 import { setRequestLocale } from 'next-intl/server';
 import Link from 'next/link';
+import { getMetadata } from '@/shared/lib/seo';
 import materialsData from '@/data/materials.json';
 import { Card, CardContent, CardHeader, CardTitle } from '@/shared/components/ui/card';
 
 export const revalidate = 86400; // 24 hours
+
+export const generateMetadata = getMetadata({
+  metadataKey: 'pages.materials.metadata',
+  canonicalUrl: '/materials',
+});
 
 export default async function MaterialsOverviewPage({
   params,

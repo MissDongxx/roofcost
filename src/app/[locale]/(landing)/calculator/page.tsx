@@ -2,6 +2,12 @@ import { Suspense } from 'react';
 import { useTranslations } from 'next-intl';
 import dynamic from 'next/dynamic';
 import { Loader2 } from 'lucide-react';
+import { getMetadata } from '@/shared/lib/seo';
+
+export const generateMetadata = getMetadata({
+  metadataKey: 'pages.calculator.metadata',
+  canonicalUrl: '/calculator',
+});
 
 // Dynamic import for CalculatorForm to reduce initial JS bundle size
 const CalculatorForm = dynamic(

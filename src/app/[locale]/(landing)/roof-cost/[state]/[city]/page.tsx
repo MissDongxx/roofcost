@@ -50,9 +50,14 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const lowPrice = new Intl.NumberFormat('en-US', { currency: 'USD', maximumFractionDigits: 0 }).format(estimate.low);
   const highPrice = new Intl.NumberFormat('en-US', { currency: 'USD', maximumFractionDigits: 0 }).format(estimate.high);
 
+  const canonicalUrl = `/roof-cost/${state.toLowerCase()}/${city.toLowerCase()}`;
+
   return {
     title: `Roof Replacement Cost in ${cityData.displayName}, ${cityData.stateCode} (2026)`,
-    description: `Average roof replacement cost in ${cityData.displayName} is ${lowPrice}–${highPrice}. Free instant calculator, no signup required.`,
+    description: `The average cost for a roof replacement in ${cityData.displayName} is currently ${lowPrice}–${highPrice}. Get your free, instant calculator estimate today—no signup or sales calls required.`,
+    alternates: {
+      canonical: canonicalUrl,
+    },
   };
 }
 
