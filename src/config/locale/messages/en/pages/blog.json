@@ -4,12 +4,12 @@
     "description": "Stay informed with the latest roofing industry insights, material cost guides, and professional replacement tips to help you save money on your next project."
   },
   "page": {
-    "title": "ShipAny Blog",
+    "title": "Roofing Blog & Cost Guides",
     "sections": {
       "blog": {
         "id": "blog",
-        "title": "Blog",
-        "description": "Read latest product features, solutions, and updates."
+        "title": "Roofing Cost Guides & Expert Insights",
+        "description": "Learn how to estimate roof replacement costs, compare materials, and save money with data-backed guides from roofing experts."
       }
     }
   },

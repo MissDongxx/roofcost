@@ -45,7 +45,7 @@ export default async function LandingPage({
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaMarkup) }}
         suppressHydrationWarning
       />
-      <RoofcostHomepage section={{}} isCustomHomepage={true} />
+      <RoofcostHomepage section={{}} isCustomHomepage={true} locale={locale} />
     </>
   );
 }

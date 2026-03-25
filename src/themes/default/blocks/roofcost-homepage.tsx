@@ -1,8 +1,5 @@
-"use client";
-
 import dynamic from 'next/dynamic';
-
-// Critical component loaded normally
+import { BlogSection } from './homepage/blog-section';
 import { HeroSection } from './homepage/hero-section';
 
 // Non-critical components loaded dynamically to reduce initial JS bundle
@@ -22,6 +19,10 @@ const SocialProof = dynamic(() => import('./homepage/social-proof').then(mod => 
   ssr: true,
 });
 
+const FAQSection = dynamic(() => import('./homepage/faq-section').then(mod => mod.FAQSection), {
+  ssr: true,
+});
+
 const CTABand = dynamic(() => import('./homepage/cta-band').then(mod => mod.CTABand), {
   ssr: true,
 });
@@ -30,13 +31,15 @@ const Logos = dynamic<{ section: any; className?: string }>(() => import('./logo
   ssr: true,
 });
 
-// Main Homepage Component
+// Main Homepage Component - Now a Server Component
 export function RoofcostHomepage({
   section,
   isCustomHomepage,
+  locale = 'en',
 }: {
   section?: any;
   isCustomHomepage?: boolean;
+  locale?: string;
 }) {
   const partnerLogos = {
     title: "",
@@ -59,6 +62,8 @@ export function RoofcostHomepage({
       <HowItWorks />
       <Materials />
       <SocialProof />
+      <BlogSection locale={locale} />
+      <FAQSection />
       <CTABand />
       <Logos section={partnerLogos as any} />
     </>

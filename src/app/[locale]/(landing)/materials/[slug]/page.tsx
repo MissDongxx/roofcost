@@ -1,9 +1,11 @@
 import { notFound } from 'next/navigation';
 import { setRequestLocale } from 'next-intl/server';
+import { Metadata } from 'next';
 import materialsData from '@/data/materials.json';
 import { CalculatorForm } from '@/components/calculator/CalculatorForm';
 import { Card, CardContent, CardHeader, CardTitle } from '@/shared/components/ui/card';
 import Link from 'next/link';
+import { envConfigs } from '@/config';
 
 export const revalidate = 86400; // 24 hours
 
@@ -15,6 +17,47 @@ export function generateStaticParams() {
   return Object.keys(materialsData).map((slug) => ({
     slug: slug.replace(/_/g, '-'),
   }));
+}
+
+export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+  const { slug, locale } = await params;
+  const materialKey = slug.replace(/-/g, '_');
+  const material = (materialsData as Record<string, any>)[materialKey];
+
+  if (!material) {
+    return {
+      title: 'Material Not Found',
+    };
+  }
+
+  const materialName = material.display_name || materialKey;
+  const lowPrice = material.price_low_sqft?.toFixed(2) || '0.00';
+  const highPrice = material.price_high_sqft?.toFixed(2) || '0.00';
+  const lifespan = material.lifespan_years || 20;
+
+  const canonicalUrl = locale === 'en'
+    ? `${envConfigs.app_url}/materials/${slug}`
+    : `${envConfigs.app_url}/${locale}/materials/${slug}`;
+
+  return {
+    title: `${materialName} Roofing Cost Guide (2026) | Prices per Sq Ft`,
+    description: `Complete ${materialName.toLowerCase()} roofing cost guide: $${lowPrice}–$${highPrice} per sq ft installed, ${lifespan}-year lifespan, pros & cons. Get a free, instant estimate for your home with our localized calculator.`,
+    keywords: `${materialName} roofing cost, ${materialName} roof price per sq ft, ${materialName} roof replacement, roofing materials cost comparison, roof cost calculator`,
+    alternates: {
+      canonical: canonicalUrl,
+    },
+    openGraph: {
+      title: `${materialName} Roofing Cost Guide (2026) | $${lowPrice}–$${highPrice} per Sq Ft`,
+      description: `Complete ${materialName.toLowerCase()} roofing cost guide with prices, lifespan, and free calculator. Get an instant estimate for your home.`,
+      type: 'website',
+      url: canonicalUrl,
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: `${materialName} Roofing Cost Guide (2026)`,
+      description: `$${lowPrice}–$${highPrice} per sq ft installed. ${lifespan}-year lifespan. Get a free estimate.`,
+    },
+  };
 }
 
 export default async function MaterialDetailPage({ params }: PageProps) {
