@@ -17,6 +17,9 @@ const nextConfig = {
   // opennextjs-cloudflare handles the build output
   reactStrictMode: true,
   pageExtensions: ['ts', 'tsx', 'js', 'jsx', 'md', 'mdx'],
+  // Exclude native Node.js modules from the server bundle — they are
+  // incompatible with Cloudflare Workers and not needed when using PostgreSQL.
+  serverExternalPackages: ['@libsql/client', 'libsql', 'mysql2'],
   images: {
     imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
     deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],

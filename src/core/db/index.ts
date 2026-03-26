@@ -3,7 +3,17 @@ import { envConfigs } from '@/config';
 import { getD1Db } from './d1';
 import { closeMysqlDb, getMysqlDb } from './mysql';
 import { closePostgresDb, getPostgresDb } from './postgres';
-import { getSqliteDb } from './sqlite';
+
+// Lazy-loaded sqlite module — avoids bundling @libsql/client (which has native
+// binaries incompatible with Cloudflare Workers) when DATABASE_PROVIDER != sqlite/turso.
+let _getSqliteDb: typeof import('./sqlite').getSqliteDb | null = null;
+function getSqliteDbLazy() {
+  if (!_getSqliteDb) {
+    // eslint-disable-next-line @typescript-eslint/no-require-imports
+    _getSqliteDb = (require('./sqlite') as typeof import('./sqlite')).getSqliteDb;
+  }
+  return _getSqliteDb();
+}
 
 const mysqlCompatProxyCache = new WeakMap<object, any>();
 const sqliteCompatProxyCache = new WeakMap<object, any>();
@@ -190,7 +200,7 @@ export function db(): any {
   }
 
   if (['sqlite', 'turso'].includes(envConfigs.database_provider)) {
-    return withSqliteCompat(getSqliteDb() as any);
+    return withSqliteCompat(getSqliteDbLazy() as any);
   }
 
   if (envConfigs.database_provider === 'mysql') {
@@ -216,12 +226,12 @@ export function dbMysql(): ReturnType<typeof getMysqlDb> {
   return getMysqlDb();
 }
 
-export function dbSqlite(): ReturnType<typeof getSqliteDb> {
+export function dbSqlite() {
   if (!['sqlite', 'turso'].includes(envConfigs.database_provider)) {
     throw new Error('Database provider is not SQLite');
   }
 
-  return getSqliteDb();
+  return getSqliteDbLazy();
 }
 
 export function dbD1(): ReturnType<typeof getD1Db> {

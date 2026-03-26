@@ -161,9 +161,58 @@ function main() {
     }
   }
 
+  // ── Patch A: Stub out `import fs from "node:fs"` and `import path from "node:path"` ──
+  // Cloudflare's unenv polyfill throws on fs.readFileSync even if it's in dead code.
+  // Replace the imports with dummy objects that won't trigger validation errors.
+  const fsStub = 'var fs = { readFileSync: function() { throw new Error("fs.readFileSync is not available in Cloudflare Workers"); }, existsSync: function() { return false; } };';
+  const pathStub = 'var path = { join: function() { return ""; }, resolve: function() { return ""; } };';
+  const path2Stub = 'var path2 = { join: function() { return ""; }, resolve: function() { return ""; } };';
+
+
+  if (handler.includes('import fs from "node:fs";')) {
+    handler = handler.replace('import fs from "node:fs";', fsStub);
+    patchCount++;
+    console.log('[patch-middleware] Stubbed out `import fs from "node:fs"`');
+  }
+  if (handler.includes('import path from "node:path";')) {
+    handler = handler.replace('import path from "node:path";', pathStub);
+    patchCount++;
+    console.log('[patch-middleware] Stubbed out `import path from "node:path"`');
+  }
+  if (handler.includes('import path2 from "node:path";')) {
+    handler = handler.replace('import path2 from "node:path";', path2Stub);
+    patchCount++;
+    console.log('[patch-middleware] Stubbed out `import path2 from "node:path"`');
+  }
+
+
+  // ── Patch B: Force FunctionsConfigManifest to have empty functions ──
+  // The FunctionsConfigManifest declares _middleware with "runtime": "nodejs",
+  // which causes the Node.js middleware adapter to be loaded at runtime.
+  // Since there's no actual middleware code, we force-empty the functions
+  // so `middleMatch` is empty and handleMiddleware short-circuits.
+  
+  /* Patched: Commented out to enable middleware
+  const emptyFCM = 'var FunctionsConfigManifest = {"functions":{},"version":1};';
+  const fcmRegex = /var FunctionsConfigManifest = \{[\s\S]*?_middleware[\s\S]*?\};/;
+  if (fcmRegex.test(handler)) {
+    handler = handler.replace(fcmRegex, emptyFCM);
+    patchCount++;
+    console.log('[patch-middleware] Forced FunctionsConfigManifest to empty functions');
+  } else {
+    // Try even simpler
+    const fcmSimple = /var FunctionsConfigManifest = \{[\s\S]*?\};/;
+    if (fcmSimple.test(handler) && handler.match(fcmSimple)[0].includes('_middleware')) {
+      handler = handler.replace(fcmSimple, emptyFCM);
+      patchCount++;
+      console.log('[patch-middleware] Forced FunctionsConfigManifest to empty functions (fallback match)');
+    }
+  }
+  */
+
   if (patchCount > 0) {
     fs.writeFileSync(HANDLER_FILE, handler, 'utf8');
-    console.log(`[patch-middleware] Successfully inlined ${patchCount} manifest(s) into middleware handler.`);
+    console.log(`[patch-middleware] Successfully applied ${patchCount} patch(es) to middleware handler.`);
   } else {
     console.log('[patch-middleware] No patterns matched — handler may already be patched or structure changed.');
   }
