@@ -69,12 +69,6 @@
               "icon": "Newspaper"
             },
             {
-              "title": "Updates",
-              "description": "Read Update Logs",
-              "url": "/updates",
-              "icon": "Clock"
-            },
-            {
               "title": "Docs",
               "description": "Read Documentation",
               "url": "/docs",
