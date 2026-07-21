@@ -6,7 +6,10 @@ import packageJson from '../../package.json';
 export type ConfigMap = Record<string, string>;
 
 export const envConfigs: ConfigMap = {
-  app_url: process.env.NEXT_PUBLIC_APP_URL ?? 'https://roofcostai.com',
+  app_url: (process.env.NEXT_PUBLIC_APP_URL ?? 'https://roofcostai.com').replace(
+    /^http:\/\/roofcostai\.com(?=\/|$)/,
+    'https://roofcostai.com'
+  ),
   app_name: process.env.NEXT_PUBLIC_APP_NAME ?? 'RoofCostAI',
   app_description: process.env.NEXT_PUBLIC_APP_DESCRIPTION ?? '',
   app_logo: process.env.NEXT_PUBLIC_APP_LOGO ?? '/logo.svg',

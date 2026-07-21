@@ -1,51 +1,42 @@
-import { setRequestLocale } from 'next-intl/server';
-import Image from 'next/image';
 import Link from 'next/link';
 import { Calendar } from 'lucide-react';
-import { postsSource } from '@/core/docs/source';
-import type { Page } from 'fumadocs-core/source';
-import { getTranslations } from 'next-intl/server';
 
 interface BlogPost {
   title: string;
   description: string;
   slug: string;
-  image?: string;
   created_at: string;
   url: string;
 }
 
-async function getBlogPosts(locale: string): Promise<BlogPost[]> {
-  setRequestLocale(locale);
+const posts: BlogPost[] = [
+  {
+    title: 'How Much Does a Roof Replacement Cost in 2026?',
+    description:
+      'Compare roof replacement costs by material, home size, and location across the United States.',
+    slug: 'roof-replacement-cost-2026',
+    created_at: '2026',
+    url: '/blog/roof-replacement-cost-2026',
+  },
+  {
+    title: 'Best Roofing Materials for 2026',
+    description:
+      'Compare roofing materials by installed cost, durability, maintenance, and expected lifespan.',
+    slug: 'best-roofing-materials-2026',
+    created_at: '2026',
+    url: '/blog/best-roofing-materials-2026',
+  },
+  {
+    title: 'How to Read a Roofing Estimate Like a Pro',
+    description:
+      'Understand labor, materials, tear-off, permits, warranties, and the hidden costs in contractor quotes.',
+    slug: 'how-to-read-roofing-estimate',
+    created_at: '2026',
+    url: '/blog/how-to-read-roofing-estimate',
+  },
+];
 
-  const pages = postsSource.getPages(locale);
-
-  const posts: BlogPost[] = pages
-    .map((page: Page<any>) => {
-      const frontmatter = page.data;
-      return {
-        title: frontmatter.title || page.data.title || '',
-        description: frontmatter.description || page.data.description || '',
-        slug: page.url.replace('/blog/', '').replace(`${locale}/blog/`, ''),
-        image: frontmatter.image,
-        created_at: String(frontmatter.publishedAt || frontmatter.created_at || ''),
-        url: page.url,
-      };
-    })
-    .filter((post) => post.title && post.description)
-    .slice(0, 3);
-
-  return posts;
-}
-
-export async function BlogSection({ locale = 'en' }: { locale?: string }) {
-  const posts = await getBlogPosts(locale);
-  const t = await getTranslations('homepage.blog');
-
-  if (posts.length === 0) {
-    return null;
-  }
-
+export function BlogSection() {
   return (
     <section className="bg-white">
       <div className="max-w-[1200px] mx-auto px-4 md:px-12 py-[60px] md:py-[100px]">
@@ -68,17 +59,6 @@ export async function BlogSection({ locale = 'en' }: { locale?: string }) {
               href={post.url}
               className="group block bg-white rounded-lg border border-[var(--cream-3)] overflow-hidden transition-all hover:shadow-lg hover:-translate-y-1"
             >
-              {post.image && (
-                <div className="relative aspect-[16/10] w-full overflow-hidden bg-[var(--cream-2)]">
-                  <Image
-                    src={post.image}
-                    alt={post.title}
-                    fill
-                    className="object-cover object-center transition-transform duration-300 group-hover:scale-105"
-                    unoptimized={post.image.startsWith('http')}
-                  />
-                </div>
-              )}
               <div className="p-6">
                 {post.created_at && (
                   <div className="flex items-center gap-1.5 text-[var(--ink-3)] text-[11px] font-mono uppercase tracking-[0.08em] mb-3">
